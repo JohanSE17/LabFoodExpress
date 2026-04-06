@@ -45,7 +45,9 @@ import { ApolloError, useMutation } from '@apollo/client';
 import { onUseLocalStorage } from '@/lib/utils/methods';
 import { SignInSchema } from '@/lib/utils/schema';
 import { useRouter } from 'next/navigation';
-import { useUserContext } from '@/lib/hooks/useUser';
+import { UserContext } from '@/lib/context/global/user-context';
+// import { useUserContext } from '@/lib/hooks/useUser'; // REMOVED FOR MAINTENANCE LAB
+
 
 const initialValues: ISignInForm = {
   email: '',
@@ -58,7 +60,11 @@ export default function LoginEmailPasswordMain() {
 
   // Hooks
   const router = useRouter();
-  const { setUser } = useUserContext();
+  // const { setUser } = useUserContext(); // Inlined below
+  const userContext = useContext(UserContext);
+  if (!userContext) throw new Error('UserContext must be used within a UserProvider');
+  const { setUser } = userContext;
+
 
   // API
   const [onLogin, { loading }] = useMutation(OWNER_LOGIN, {
