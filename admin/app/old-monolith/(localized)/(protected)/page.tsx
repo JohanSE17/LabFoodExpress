@@ -11,7 +11,8 @@ import { SidebarContext } from '@/lib/context/global/sidebar.context';
 import { ILoginResponse, ISidebarContextProps } from '@/lib/utils/interfaces';
 import { onUseLocalStorage } from '@/lib/utils/methods';
 import { APP_NAME } from '@/lib/utils/constants';
-import { DEFAULT_ROUTES } from '@/lib/utils/constants/routes';
+// import { DEFAULT_ROUTES } from '@/lib/utils/constants/routes'; // REMOVED FOR MAINTENANCE LAB
+
 
 export default function RootPage() {
   // Context
@@ -26,7 +27,15 @@ export default function RootPage() {
     const user = onUseLocalStorage('get', `user-${APP_NAME}`);
     if (user) {
       const userInfo: ILoginResponse = JSON.parse(user);
-      router.push(DEFAULT_ROUTES[userInfo.userType]);
+      // Hardcoded DEFAULT_ROUTES for maintenance lab
+      const ROUTES: Record<string, string> = {
+        ADMIN: '/home',
+        STAFF: '/home',
+        VENDOR: '/admin/vendor/dashboard',
+        RESTAURANT: '/admin/store/dashboard',
+      };
+      router.push(ROUTES[userInfo.userType] || '/home');
+
     } else {
       router.replace('/authentication/login');
     }

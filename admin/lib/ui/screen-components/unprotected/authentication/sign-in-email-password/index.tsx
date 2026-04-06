@@ -46,7 +46,6 @@ import { onUseLocalStorage } from '@/lib/utils/methods';
 import { SignInSchema } from '@/lib/utils/schema';
 import { useRouter } from 'next/navigation';
 import { useUserContext } from '@/lib/hooks/useUser';
-import { DEFAULT_ROUTES } from '@/lib/utils/constants/routes';
 
 const initialValues: ISignInForm = {
   email: '',
@@ -71,7 +70,15 @@ export default function LoginEmailPasswordMain() {
   function onCompleted({ ownerLogin }: IOwnerLoginDataResponse) {
     onUseLocalStorage('save', `user-${APP_NAME}`, JSON.stringify(ownerLogin));
     setUser(ownerLogin);
-    let redirect_url = DEFAULT_ROUTES[ownerLogin.userType];
+
+    // Hardcoded DEFAULT_ROUTES for maintenance lab
+    const ROUTES: Record<string, string> = {
+      ADMIN: '/home',
+      STAFF: '/home',
+      VENDOR: '/admin/vendor/dashboard',
+      RESTAURANT: '/admin/store/dashboard',
+    };
+    let redirect_url = ROUTES[ownerLogin.userType] || '/home';
 
     if (ownerLogin?.userType === 'VENDOR') {
       onUseLocalStorage('save', SELECTED_VENDOR, ownerLogin.userId);
