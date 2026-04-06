@@ -10,10 +10,12 @@ import { SidebarContext } from '@/lib/context/global/sidebar.context';
 // Interface & Types
 import { ILoginResponse, ISidebarContextProps } from '@/lib/utils/interfaces';
 import { onUseLocalStorage } from '@/lib/utils/methods';
-import { APP_NAME } from '@/lib/utils/constants';
+// import { APP_NAME } from '@/lib/utils/constants'; // REMOVED FOR MAINTENANCE LAB
 import { DEFAULT_ROUTES } from '@/lib/utils/constants/routes';
 
 export default function RootPage() {
+  const APP_NAME = 'FoodExpress'; // Hardcoded
+
   // Context
   const { setSelectedItem } = useContext<ISidebarContextProps>(SidebarContext);
 

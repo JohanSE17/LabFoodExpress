@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import CustomTab from '@/lib/ui/useable-components/custom-tab';
 
 // Constants
-import { RESTAURANTS_TABS } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 // Context
 import { RestaurantsContext } from '@/lib/context/super-admin/restaurants.context';

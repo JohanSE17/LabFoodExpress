@@ -12,7 +12,7 @@ import { ProfileContext } from '@/lib/context/vendor/profile.context';
 import { IVendorForm } from '@/lib/utils/interfaces/forms';
 
 // Constants and Methods
-import { MAX_SQUARE_FILE_SIZE, VendorErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';
 
 // Components
@@ -182,7 +182,7 @@ export default function VendorUpdateForms() {
                                 fileTypes={['image/png', 'image/jpg']}
                                 maxFileHeight={512}
                                 maxFileWidth={512}
-                                maxFileSize={MAX_SQUARE_FILE_SIZE}
+                                maxFileSize={500 * 1000}
                                 orientation={'SQUARE'}
                                 onSetImageUrl={setFieldValue}
                                 showExistingImage={false}

@@ -28,7 +28,7 @@ import CustomUploadImageComponent from '@/lib/ui/useable-components/upload/uploa
 import { onErrorMessageMatcher } from '@/lib/utils/methods';
 import {
   CuisineErrors,
-  MAX_SQUARE_FILE_SIZE,
+  500 * 1000,
 } from '@/lib/utils/constants';
 import { useTranslations } from 'next-intl';
 import { useShopTypes } from '@/lib/hooks/useShopType';
@@ -278,7 +278,7 @@ export default function CuisineForm({
                     fileTypes={['image/jpeg', 'image/jpg', 'image/webp']}
                     maxFileHeight={1080}
                     maxFileWidth={1080}
-                    maxFileSize={MAX_SQUARE_FILE_SIZE}
+                    maxFileSize={500 * 1000}
                     orientation="SQUARE"
                   />
 

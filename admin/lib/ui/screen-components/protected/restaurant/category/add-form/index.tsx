@@ -21,7 +21,7 @@ import TextIconClickable from '@/lib/ui/useable-components/text-icon-clickable';
 import CustomUploadImageComponent from '@/lib/ui/useable-components/upload/upload-image';
 
 // Utilities and Constants
-import { CategoryErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';
 
 //Toast

@@ -38,7 +38,7 @@ import {
 import { AutoComplete, AutoCompleteSelectEvent } from 'primereact/autocomplete';
 import { GoogleMapsContext } from '@/lib/context/global/google-maps.context';
 import CustomShape from '../shapes';
-import { DEFAULT_CENTER, DEFAULT_POLYGON } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { useTranslations } from 'next-intl';
 import { darkMapStyle } from '@/lib/utils/map-style/mapStyle';
 import { useTheme } from 'next-themes';

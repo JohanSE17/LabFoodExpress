@@ -15,7 +15,7 @@ import { VendorContext } from '@/lib/context/super-admin/vendor.context';
 import { IVendorMainComponentProps } from '@/lib/utils/interfaces';
 
 // Constants
-import { SELECTED_VENDOR_EMAIL } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 // Icons
 import CustomRestaurantCardSkeleton from '@/lib/ui/useable-components/custom-skeletons/restaurant.card.skeleton';
@@ -134,7 +134,7 @@ export default function VendorMain({ activeTab }: IVendorMainComponentProps) {
               <HeaderText text={t('Stores')} />
 
               <Chip
-                label={`${(onUseLocalStorage('get', SELECTED_VENDOR_EMAIL) ?? '').slice(0, 20)}`}
+                label={`${(onUseLocalStorage('get', 'vendorId'_EMAIL) ?? '').slice(0, 20)}`}
                 className="w-full"
               />
             </div>

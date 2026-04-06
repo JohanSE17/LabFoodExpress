@@ -21,14 +21,18 @@ import CustomIconTextField from '@/lib/ui/useable-components/input-icon-field';
 import CustomPasswordTextField from '@/lib/ui/useable-components/password-input-field';
 
 // Constants
-import {
-  APP_NAME,
-  SELECTED_RESTAURANT,
-  SELECTED_SHOPTYPE,
-  SELECTED_VENDOR,
-  SELECTED_VENDOR_EMAIL,
-  SignInErrors,
-} from '@/lib/utils/constants';
+// [ticket-10] Constantes hardcodeadas para laboratorio de mantenimiento
+const APP_NAME = 'FoodExpress';
+const SELECTED_RESTAURANT = 'restaurantId';
+const SELECTED_SHOPTYPE = 'shopType';
+const SELECTED_VENDOR = 'vendorId';
+const SELECTED_VENDOR_EMAIL = 'selected-vendor-email';
+const SignInErrors = {
+  EMAIL_REQUIRED: 'email_required',
+  PASSWORD_REQUIRED: 'password_required',
+  INVALID_EMAIL: 'invalid_email',
+};
+
 
 // Methods
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';

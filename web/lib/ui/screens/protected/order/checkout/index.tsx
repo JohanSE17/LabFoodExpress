@@ -46,7 +46,7 @@ import { InfoSvg } from "@/lib/utils/assets/svg";
 
 // Constants
 import { DAYS } from "@/lib/utils/constants/orders";
-import { PAYMENT_METHOD_LIST } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 
 // API
 import { PLACE_ORDER, VERIFY_COUPON, ORDERS } from "@/lib/api/graphql";

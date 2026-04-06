@@ -3,7 +3,7 @@
 import getEnv from "@/environment";
 // GQL
 import { GET_CONFIG } from "@/lib/api/graphql/queries";
-import { ENV } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 
 // Interfaces
 import { IConfigProps } from "@/lib/utils/interfaces";
@@ -59,7 +59,7 @@ export const ConfigurationProvider = ({
   const FIREBASE_VAPID_KEY = configuration?.vapidKey;
   const FIREBASE_AUTH_DOMAIN = configuration?.authDomain;
 
-  const { SERVER_URL } = getEnv(ENV);
+  const { SERVER_URL } = getEnv("STAGE");
 
   return (
     <ConfigurationContext.Provider

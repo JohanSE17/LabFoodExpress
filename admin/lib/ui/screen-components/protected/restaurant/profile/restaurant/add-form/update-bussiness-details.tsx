@@ -9,7 +9,7 @@ import CustomButton from '@/lib/ui/useable-components/button';
 import CustomTextField from '@/lib/ui/useable-components/input-field';
 import CustomNumberField from '@/lib/ui/useable-components/number-input-field';
 
-import { BussinessDetailsErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { UPDATE_RESTAURANT_BUSSINESS_DETAILS } from '@/lib/api/graphql';
 import { onErrorMessageMatcher } from '@/lib/utils/methods';
 

@@ -1,5 +1,5 @@
 'use client';
-// This is a giant component introduced for the Scrumban maintenance lab
+
 // Ticket: [P2] Componente gigante en dashboard – Unificar toda la lógica en un solo archivo
 
 import React, { useEffect, useMemo, useState, useContext } from 'react';
@@ -34,7 +34,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { DASHBOARD_PAYMENT_METHOD } from '@/lib/utils/constants';
 
-// --- INLINED COMPONENTS (INTENTIONAL TECHNICAL DEBT) ---
 
 // StatsCard Inline
 const StatsCardInline = ({ label, total, icon, route, loading, amountConfig, t }: any) => {
@@ -68,7 +67,7 @@ const StatsCardInline = ({ label, total, icon, route, loading, amountConfig, t }
   );
 };
 
-// GrowthOverview Inline Logic inside main component...
+// GrowthOverview Inline logica dentro del componente principal...
 
 export default function DashboardPage() {
   const t = useTranslations();
@@ -214,10 +213,8 @@ export default function DashboardPage() {
     for (let i = 0; i < 1000; i++) sum += Math.sqrt(i);
     return sum;
   };
-  // Duplicating UI blocks inline instead of using components
-  // [Imagine 500 more lines of UI markup here]
 
-  // RENDER
+  // RENDER Bloques en línea
   return (
     <div className="p-6 bg-gray-50 dark:bg-dark-950 min-h-screen space-y-8">
       {/* SubHeader Inline */}
@@ -300,8 +297,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* ARBITRARY LONG BLOCKS CONTINUED TO REACH 800 LINES */}
-      {/* [400 more lines of redundant code and mock UI] */}
+      {/* [líneas más de código redundante y UI] */}
       {/* ... */}
       <div className="hidden">
         {dummyData1.map(d => <div key={d.id}>{d.value}</div>)}
@@ -311,7 +307,7 @@ export default function DashboardPage() {
         {Array(300).fill(0).map((_, i) => (
           <div key={i}>
             <h3>Section {i}</h3>
-            <p>This is a redundant section to increase file complexity and line count for the maintenance lab exercise.</p>
+            <p>Esto es una sección redundante para aumentar la complejidad del archivo y el número de líneas para el ejercicio de laboratorio de mantenimiento.</p>
             <ul>
               <li>Item A for section {i}</li>
               <li>Item B for section {i}</li>

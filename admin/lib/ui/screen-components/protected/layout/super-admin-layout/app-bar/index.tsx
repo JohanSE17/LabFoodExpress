@@ -51,11 +51,11 @@ import { IWebNotification } from '@/lib/utils/interfaces/notification.interface'
 
 // Constants
 import {
-  APP_NAME,
+  'FoodExpress',
   languageTypes,
-  SELECTED_RESTAURANT,
-  SELECTED_VENDOR,
-  SELECTED_VENDOR_EMAIL,
+  'restaurantId',
+  'vendorId',
+  'vendorId'_EMAIL,
 } from '@/lib/utils/constants';
 
 // Methods
@@ -162,10 +162,10 @@ const AppTopbar = () => {
 
   const onConfirmLogout = () => {
     setUser(null);
-    onUseLocalStorage('delete', SELECTED_VENDOR);
-    onUseLocalStorage('delete', SELECTED_VENDOR_EMAIL);
-    onUseLocalStorage('delete', SELECTED_RESTAURANT);
-    onUseLocalStorage('delete', `user-${APP_NAME}`);
+    onUseLocalStorage('delete', 'vendorId');
+    onUseLocalStorage('delete', 'vendorId'_EMAIL);
+    onUseLocalStorage('delete', 'restaurantId');
+    onUseLocalStorage('delete', `user-${'FoodExpress'}`);
     router.push('/authentication/login');
   };
 

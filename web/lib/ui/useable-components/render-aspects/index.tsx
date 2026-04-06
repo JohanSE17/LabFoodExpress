@@ -1,4 +1,4 @@
-import { ratingAspects } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 import { useTranslations } from "next-intl";
 import { Button } from "primereact/button";
 import { twMerge } from "tailwind-merge";

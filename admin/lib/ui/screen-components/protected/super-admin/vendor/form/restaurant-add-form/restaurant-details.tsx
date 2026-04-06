@@ -33,8 +33,8 @@ import CuisineForm from '@/lib/ui/screen-components/protected/super-admin/cuisin
 
 // Constants
 import {
-  MAX_LANSDCAPE_FILE_SIZE,
-  MAX_SQUARE_FILE_SIZE,
+  2 * 1024 * 1024,
+  500 * 1000,
   RestaurantErrors,
 } from '@/lib/utils/constants';
 
@@ -569,7 +569,7 @@ export default function RestaurantDetails({
                           fileTypes={['image/jpg', 'image/webp', 'image/jpeg']}
                           maxFileHeight={1080}
                           maxFileWidth={1080}
-                          maxFileSize={MAX_SQUARE_FILE_SIZE}
+                          maxFileSize={500 * 1000}
                           orientation="SQUARE"
                           onSetImageUrl={setFieldValue}
                           existingImageUrl={values.logo}
@@ -591,7 +591,7 @@ export default function RestaurantDetails({
                           fileTypes={['image/jpg', 'image/webp', 'image/jpeg']}
                           maxFileHeight={841}
                           maxFileWidth={1980}
-                          maxFileSize={MAX_LANSDCAPE_FILE_SIZE}
+                          maxFileSize={2 * 1024 * 1024}
                           orientation="LANDSCAPE"
                           onSetImageUrl={setFieldValue}
                           existingImageUrl={values.image}

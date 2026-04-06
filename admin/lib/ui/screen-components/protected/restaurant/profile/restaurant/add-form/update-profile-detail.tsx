@@ -16,11 +16,11 @@ import CustomNumberField from '@/lib/ui/useable-components/number-input-field';
 import CustomUploadImageComponent from '@/lib/ui/useable-components/upload/upload-image';
 
 import {
-  MAX_LANSDCAPE_FILE_SIZE,
-  MAX_SQUARE_FILE_SIZE,
+  2 * 1024 * 1024,
+  500 * 1000,
   ProfileErrors,
   RestaurantErrors,
-  SELECTED_SHOPTYPE,
+  'shopType',
 } from '@/lib/utils/constants';
 import { RestaurantSchema } from '@/lib/utils/schema/restaurant';
 import { EDIT_RESTAURANT, GET_CUISINES } from '@/lib/api/graphql';
@@ -170,7 +170,7 @@ export default function UpdateRestaurantDetails({
           },
         },
       });
-      onUseLocalStorage('save', SELECTED_SHOPTYPE, data.shopType?.code);
+      onUseLocalStorage('save', 'shopType', data.shopType?.code);
     } catch (error) {
       showToast({
         type: 'error',
@@ -467,7 +467,7 @@ export default function UpdateRestaurantDetails({
                         fileTypes={['image/jpg', 'image/webp', 'image/jpeg']}
                         maxFileHeight={1080}
                         maxFileWidth={1080}
-                        maxFileSize={MAX_SQUARE_FILE_SIZE}
+                        maxFileSize={500 * 1000}
                         orientation="SQUARE"
                         onSetImageUrl={setFieldValue}
                         existingImageUrl={values.logo}
@@ -489,7 +489,7 @@ export default function UpdateRestaurantDetails({
                         fileTypes={['image/jpg', 'image/webp', 'image/jpeg']}
                         maxFileHeight={841}
                         maxFileWidth={1980}
-                        maxFileSize={MAX_LANSDCAPE_FILE_SIZE}
+                        maxFileSize={2 * 1024 * 1024}
                         orientation="LANDSCAPE"
                         onSetImageUrl={setFieldValue}
                         existingImageUrl={values.image}

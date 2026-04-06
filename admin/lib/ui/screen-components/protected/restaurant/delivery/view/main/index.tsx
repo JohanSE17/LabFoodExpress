@@ -13,7 +13,7 @@ import { RestaurantLayoutContext } from '@/lib/context/restaurant/layout-restaur
 import { ProfileContext } from '@/lib/context/restaurant/profile.context';
 
 // Utilities & Types
-import { RestaurantDeliveryErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { IRestaurantDeliveryForm } from '@/lib/utils/interfaces';
 import { onErrorMessageMatcher } from '@/lib/utils/methods';
 import { DeliverySchema } from '@/lib/utils/schema/delivery';

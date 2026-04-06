@@ -15,7 +15,7 @@ import { IVendorUpdateFormComponentProps } from '@/lib/utils/interfaces';
 import { IVendorForm } from '@/lib/utils/interfaces/forms';
 
 // Constants and Methods
-import { MAX_SQUARE_FILE_SIZE, VendorErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';
 
 // Components
@@ -251,7 +251,7 @@ export default function VendorUpdateForm({
                           fileTypes={['image/jpg', 'image/webp', 'image/jpeg']}
                           maxFileHeight={1080}
                           maxFileWidth={1080}
-                          maxFileSize={MAX_SQUARE_FILE_SIZE}
+                          maxFileSize={500 * 1000}
                           orientation="SQUARE"
                           onSetImageUrl={setFieldValue}
                           existingImageUrl={values.image}

@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useUserContext } from '@/lib/hooks/useUser';
 
 // Constants and Utils
-import { APP_NAME } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { onUseLocalStorage } from '@/lib/utils/methods';
 
 const RESTAURANT_GUARD = <T extends object>(
@@ -19,7 +19,7 @@ const RESTAURANT_GUARD = <T extends object>(
 
     useEffect(() => {
       // Check if logged in
-      const isLoggedIn = !!onUseLocalStorage('get', `user-${APP_NAME}`);
+      const isLoggedIn = !!onUseLocalStorage('get', `user-${'FoodExpress'}`);
       if (!isLoggedIn) {
         router.replace('/authentication/login');
       }

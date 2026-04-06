@@ -7,7 +7,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useUserContext } from '@/lib/hooks/useUser';
 
 // Constants and Utils
-import { APP_NAME, ROUTES } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { onUseLocalStorage } from '@/lib/utils/methods';
 
 const SUPER_ADMIN_GUARD = <T extends object>(
@@ -20,7 +20,7 @@ const SUPER_ADMIN_GUARD = <T extends object>(
 
     useEffect(() => {
       // Check if logged in
-      const isLoggedIn = !!onUseLocalStorage('get', `user-${APP_NAME}`);
+      const isLoggedIn = !!onUseLocalStorage('get', `user-${'FoodExpress'}`);
       if (!isLoggedIn) {
         router.replace('/authentication/login');
       }

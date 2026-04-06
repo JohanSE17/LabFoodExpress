@@ -5,7 +5,7 @@ import {
   formatNumber,
   formatNumberWithCurrency,
 } from '@/lib/utils/methods/currency';
-import { DASHBOARD_PAYMENT_METHOD_SUB_TITLE } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { useTranslations } from 'next-intl';
 
 export default function DashboardRestaurantStatsTable({
