@@ -60,7 +60,9 @@ const Table = <T extends ITableExtends>({
     let className = "";
     switch (moduleName) {
       case "Restaurant-Order":
-        className = data?.orderStatus === "ASSIGNED" ? "row-assigned" : "";
+        // Inlined style for maintenance lab
+        className = data?.orderStatus === "ASSIGNED" ? "bg-yellow-100 dark:bg-yellow-900/30" : "";
+
         break;
       case "SuperAdmin-Order":
         className = data?.orderStatus === "ASSIGNED" ? "row-assigned" : "";
@@ -80,7 +82,7 @@ const Table = <T extends ITableExtends>({
         totalRecords,
         onPage: handlePageChange,
       }
-    : {};
+      : {};
 
   return (
     <>
