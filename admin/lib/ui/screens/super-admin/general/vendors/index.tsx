@@ -11,7 +11,7 @@ import VendorMain from '@/lib/ui/screen-components/protected/super-admin/vendor/
 import VendorMobilesTabs from '@/lib/ui/screen-components/protected/super-admin/vendor/view/mobile-tabs';
 
 // Constants
-import { options } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 // Interface & Type
 import { RestaurantContext } from '@/lib/context/super-admin/restaurant.context';

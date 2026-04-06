@@ -12,7 +12,7 @@ import { ISidebarMenuItem, SubMenuItemProps } from '@/lib/utils/interfaces';
 // Styles
 import classes from './side-bar.module.css';
 import { onUseLocalStorage } from '@/lib/utils/methods';
-import { SELECTED_SIDEBAR_MENU } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 // This component is used to render the sub-menu items when hovered
 function HoveredSubMenuItem({ icon, text, active }: SubMenuItemProps) {

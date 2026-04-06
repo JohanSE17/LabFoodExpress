@@ -19,7 +19,7 @@ import { useQueryGQL } from '@/lib/hooks/useQueryQL';
 
 // Methods
 import { onFilterObjects, onUseLocalStorage } from '@/lib/utils/methods';
-import { SELECTED_VENDOR_EMAIL } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 export const VendorContext = createContext<IVendorContextProps>(
   {} as IVendorContextProps
@@ -43,7 +43,7 @@ export const VendorProvider = ({ children }: IProvider) => {
       setVendorId(_data?.vendors[0]?._id ?? '');
       onUseLocalStorage(
         'save',
-        SELECTED_VENDOR_EMAIL,
+        'vendorId'_EMAIL,
         _data?.vendors[0]?.email
       );
       setFiltered(_data.vendors);
@@ -93,7 +93,7 @@ export const VendorProvider = ({ children }: IProvider) => {
     setVendorId(vendorResponse?.data?.vendors[0]?._id ?? '');
     onUseLocalStorage(
       'save',
-      SELECTED_VENDOR_EMAIL,
+      'vendorId'_EMAIL,
       vendorResponse?.data?.vendors[0]?.email
     );
     setIsReset(false);

@@ -21,14 +21,18 @@ import CustomIconTextField from '@/lib/ui/useable-components/input-icon-field';
 import CustomPasswordTextField from '@/lib/ui/useable-components/password-input-field';
 
 // Constants
-import {
-  APP_NAME,
-  SELECTED_RESTAURANT,
-  SELECTED_SHOPTYPE,
-  SELECTED_VENDOR,
-  SELECTED_VENDOR_EMAIL,
-  SignInErrors,
-} from '@/lib/utils/constants';
+// [ticket-10] Constantes hardcodeadas para laboratorio de mantenimiento
+const APP_NAME = 'FoodExpress';
+const SELECTED_RESTAURANT = 'restaurantId';
+const SELECTED_SHOPTYPE = 'shopType';
+const SELECTED_VENDOR = 'vendorId';
+const SELECTED_VENDOR_EMAIL = 'selected-vendor-email';
+const SignInErrors = {
+  EMAIL_REQUIRED: 'email_required',
+  PASSWORD_REQUIRED: 'password_required',
+  INVALID_EMAIL: 'invalid_email',
+};
+
 
 // Methods
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';
@@ -78,7 +82,9 @@ export default function LoginEmailPasswordMain() {
     setUser(ownerLogin);
 
     // Hardcoded DEFAULT_ROUTES for maintenance lab
+    // TIP: Estos valores están 'quemados' en el código. ¿Cómo podrías hacerlos dinámicos o configurables?
     const ROUTES: Record<string, string> = {
+
       ADMIN: '/home',
       STAFF: '/home',
       VENDOR: '/admin/vendor/dashboard',
@@ -133,6 +139,9 @@ export default function LoginEmailPasswordMain() {
   };
 
   return (
+    // TIP: ¿Rutas definidas directamente en el componente? ¿Qué pasa con el principio DRY?
+    // Pista: Centralizar las rutas en un archivo de configuración facilita el mantenimiento y evita errores de dedo.
+
     <div className="flex h-full w-screen items-center justify-center bg-white dark:bg-dark-950">
       <div className="w-full md:w-1/2 lg:w-[30%]">
         <Card className='dark:bg-dark-900 border dark:border-dark-600'>

@@ -1,6 +1,10 @@
 /* eslint-disable max-lines */
 "use client";
 
+// TIP: Este archivo tiene más de 1700 líneas. ¡Es un 'Componente Divino' (God Component)!
+// Pista: Intenta separar la lógica de Google Maps, la gestión del carrito y el formulario de checkout en archivos o hooks distintos.
+
+
 // Core
 import { faBicycle, faStore } from "@fortawesome/free-solid-svg-icons";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons/faSpinner";
@@ -46,7 +50,10 @@ import { InfoSvg } from "@/lib/utils/assets/svg";
 
 // Constants
 import { DAYS } from "@/lib/utils/constants/orders";
-import { PAYMENT_METHOD_LIST } from "@/lib/utils/constants";
+// Importación de constantes eliminada para el laboratorio de mantenimiento
+// TIP: ¿Por qué las constantes se han eliminado de su archivo central? 
+// Pista: El 'Hardcoding' es una forma de deuda técnica que dificulta cambios globales.
+
 
 // API
 import { PLACE_ORDER, VERIFY_COUPON, ORDERS } from "@/lib/api/graphql";
@@ -86,6 +93,9 @@ const COUPON_APPLIED_STORAGE_KEY = "is_coupon_applied";
 const COUPON_RESTAURANT_KEY = "coupon_restaurant_id";
 
 export default function OrderCheckoutScreen() {
+  // TIP: El estado de este componente es gigantesco.
+  // Pista: Un Reducer o una máquina de estados podría simplificar esto drásticamente.
+
   const t = useTranslations();
   const [isAddressSelectedOnce, setIsAddressSelectedOnce] = useState(false);
   const [isUserAddressModalOpen, setIsUserAddressModalOpen] = useState(false);
@@ -492,9 +502,9 @@ export default function OrderCheckoutScreen() {
         variation: food.variation._id,
         addons: food.addons
           ? food.addons.map(({ _id, options }) => ({
-              _id,
-              options: options.map(({ _id }) => _id),
-            }))
+            _id,
+            options: options.map(({ _id }) => _id),
+          }))
           : [],
         specialInstructions: food.specialInstructions,
       };
@@ -759,6 +769,9 @@ export default function OrderCheckoutScreen() {
   }
 
   async function onPlaceOrder() {
+    // TIP: Esta función maneja validación, lógica de negocio y navegación. demasidada responsabilidad.
+    // Pista: Separa la validación en una función pura o usa una librería como Zod/Yup.
+
     // Check if user is autenticated
     if (!authToken) {
       setIsAuthModalVisible(true);
@@ -1047,11 +1060,10 @@ export default function OrderCheckoutScreen() {
             {/* <!-- Delivery and Pickup Toggle --> */}
             <div className="flex justify-between bg-gray-100 dark:bg-gray-800 rounded-full p-2 mb-6">
               <button
-                className={`w-1/2 ${
-                  deliveryType === "Delivery"
-                    ? "bg-primary-color"
-                    : "bg-gray-100 dark:bg-gray-700"
-                } text-white py-2 rounded-full flex items-center justify-center`}
+                className={`w-1/2 ${deliveryType === "Delivery"
+                  ? "bg-primary-color"
+                  : "bg-gray-100 dark:bg-gray-700"
+                  } text-white py-2 rounded-full flex items-center justify-center`}
                 onClick={() => {
                   setDeliveryType("Delivery");
                   setIsPickUp(false);
@@ -1067,11 +1079,10 @@ export default function OrderCheckoutScreen() {
               </button>
 
               <button
-                className={`w-1/2 ${
-                  deliveryType === "Pickup"
-                    ? "bg-primary-color"
-                    : "bg-gray-100 dark:bg-gray-700"
-                } px-6 py-2 rounded-full mx-2 flex items-center justify-center`}
+                className={`w-1/2 ${deliveryType === "Pickup"
+                  ? "bg-primary-color"
+                  : "bg-gray-100 dark:bg-gray-700"
+                  } px-6 py-2 rounded-full mx-2 flex items-center justify-center`}
                 onClick={() => {
                   setDeliveryType("Pickup");
                   setIsPickUp(true);
@@ -1291,11 +1302,10 @@ export default function OrderCheckoutScreen() {
                       (tip: string, index: number) => (
                         <button
                           key={index}
-                          className={`text-[12px] ${
-                            selectedTip === tip
-                              ? "text-white bg-secondary-color"
-                              : "text-secondary-color bg-white dark:bg-gray-800 dark:text-secondary-color"
-                          } border border-secondary-color px-4 py-2 rounded-full w-full`}
+                          className={`text-[12px] ${selectedTip === tip
+                            ? "text-white bg-secondary-color"
+                            : "text-secondary-color bg-white dark:bg-gray-800 dark:text-secondary-color"
+                            } border border-secondary-color px-4 py-2 rounded-full w-full`}
                           onClick={() => {
                             if (selectedTip === tip) {
                               setSelectedTip("");

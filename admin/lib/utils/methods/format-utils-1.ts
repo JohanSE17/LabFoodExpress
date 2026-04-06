@@ -1,4 +1,7 @@
+// TIP: Esta función parece idéntica a la que está en format-utils-2.ts.
+// Pista: ¿Por qué tenemos código duplicado? La consolidación de utilidades reduce la superficie de errores.
 export const formatNumber = (amount: number) => {
+
     return new Intl.NumberFormat('en-US', {
         maximumFractionDigits: 2,
     }).format(amount);

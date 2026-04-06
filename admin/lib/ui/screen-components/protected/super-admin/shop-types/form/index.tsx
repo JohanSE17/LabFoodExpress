@@ -34,7 +34,7 @@ import { Sidebar } from 'primereact/sidebar';
 import { onErrorMessageMatcher } from '@/lib/utils/methods';
 
 // Constants
-import { MAX_SQUARE_FILE_SIZE, ShopTypeErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 export default function ShopTypesForm({
   setVisible,
@@ -240,7 +240,7 @@ export default function ShopTypesForm({
                   fileTypes={['image/jpg', 'image/webp', 'image/jpeg']}
                   maxFileHeight={1080}
                   maxFileWidth={1080}
-                  maxFileSize={MAX_SQUARE_FILE_SIZE}
+                  maxFileSize={500 * 1000}
                   orientation="SQUARE"
                   onSetImageUrl={setFieldValue}
                   existingImageUrl={values.image || ''}

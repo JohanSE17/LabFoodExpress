@@ -16,7 +16,7 @@ import {
 import { CircleCrossSvg } from "@/lib/utils/assets/svg";
 import { onUseLocalStorage } from "@/lib/utils/methods/local-storage";
 import { useUserAddress } from "@/lib/context/address/address.context";
-import { USER_CURRENT_LOCATION_LS_KEY } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 import { useTranslations } from "next-intl";
 
 
@@ -46,7 +46,7 @@ const CitiesTiles: React.FC<CitiesTilesProps> = ({
 
     onUseLocalStorage(
       "save",
-      USER_CURRENT_LOCATION_LS_KEY,
+      "user-current-location",
       JSON.stringify({
         label: "Home",
         location: {

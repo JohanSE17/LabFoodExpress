@@ -1,6 +1,6 @@
 "use client"
 import ActionButton from "@/lib/ui/useable-components/action-button";
-import { ratingOptions } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 import { IRatingOption } from "@/lib/utils/interfaces/ratings.interface";
 import { useTranslations } from "next-intl";
 import { twMerge } from "tailwind-merge";

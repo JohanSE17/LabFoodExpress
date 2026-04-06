@@ -1,4 +1,4 @@
-import { SEVERITY_STYLES } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { IToastNotificationComponentProps } from '@/lib/utils/interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

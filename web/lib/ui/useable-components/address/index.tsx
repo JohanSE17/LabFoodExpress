@@ -60,7 +60,7 @@ import {
   SELECT_ADDRESS,
 } from "@/lib/api/graphql";
 import { onUseLocalStorage } from "@/lib/utils/methods/local-storage";
-import { USER_CURRENT_LOCATION_LS_KEY } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 import AppartmentSvg from "@/lib/utils/assets/svg/apartment";
 import { useTranslations } from "next-intl";
 import { darkMapStyle } from "@/lib/utils/mapStyles/mapStyle";
@@ -133,7 +133,7 @@ export default function UserAddressComponent(
   // Locatl Storage Constaints
   const hasCurrentLocation = !!onUseLocalStorage(
     "get",
-    USER_CURRENT_LOCATION_LS_KEY
+    "user-current-location"
   );
 
   // Memo
@@ -184,7 +184,7 @@ export default function UserAddressComponent(
         };
 
         setUserAddress(new_address);
-        onUseLocalStorage("delete", USER_CURRENT_LOCATION_LS_KEY);
+        onUseLocalStorage("delete", "user-current-location");
         setModifyingId("");
         onHide();
       },
@@ -389,7 +389,7 @@ export default function UserAddressComponent(
           },
         };
         setUserAddress(new_address);
-        onUseLocalStorage("delete", USER_CURRENT_LOCATION_LS_KEY);
+        onUseLocalStorage("delete", "user-current-location");
         setModifyingId("");
         onHide();
       },

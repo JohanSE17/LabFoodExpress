@@ -1,5 +1,5 @@
 // Constants
-import { PasswordErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { faDotCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslations } from 'next-intl';

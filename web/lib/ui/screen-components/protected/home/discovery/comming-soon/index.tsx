@@ -1,7 +1,7 @@
 "use client";
 
 import CustomButton from "@/lib/ui/useable-components/button";
-import { USER_CURRENT_LOCATION_LS_KEY } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 import { onUseLocalStorage } from "@/lib/utils/methods/local-storage";
 import { useTranslations } from "next-intl";
 
@@ -17,7 +17,7 @@ export default function ComingSoonScreen() {
   const handleClick = () => {
     onUseLocalStorage(
       "save",
-      USER_CURRENT_LOCATION_LS_KEY,
+      "user-current-location",
       JSON.stringify({
         label: "Home",
         location: {

@@ -35,8 +35,8 @@ import ShopTypesForm from '@/lib/ui/screen-components/protected/super-admin/shop
 import CuisineForm from '@/lib/ui/screen-components/protected/super-admin/cuisines/form';
 // Constants and Utils
 import {
-  MAX_LANSDCAPE_FILE_SIZE,
-  MAX_SQUARE_FILE_SIZE,
+  2 * 1024 * 1024,
+  500 * 1000,
   RestaurantErrors,
 } from '@/lib/utils/constants';
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';
@@ -548,7 +548,7 @@ export default function RestaurantDetails({
                           fileTypes={['image/webp', 'image/jpg', 'image/jpeg']}
                           maxFileHeight={1080}
                           maxFileWidth={1080}
-                          maxFileSize={MAX_SQUARE_FILE_SIZE}
+                          maxFileSize={500 * 1000}
                           orientation="SQUARE"
                           existingImageUrl={values.logo}
                           showExistingImage={true}
@@ -570,7 +570,7 @@ export default function RestaurantDetails({
                           fileTypes={['image/webp', 'image/jpg', 'image/jpeg']}
                           maxFileHeight={841}
                           maxFileWidth={1980}
-                          maxFileSize={MAX_LANSDCAPE_FILE_SIZE}
+                          maxFileSize={2 * 1024 * 1024}
                           orientation="LANDSCAPE"
                           existingImageUrl={values.image}
                           showExistingImage={true}

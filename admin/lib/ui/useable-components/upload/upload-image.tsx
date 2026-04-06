@@ -33,7 +33,7 @@ import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'use-intl';
-// import { MAX_VIDEO_FILE_SIZE } from '@/lib/utils/constants';
+// // Constant import removed for maintenance lab
 
 function CustomUploadImageComponent({
   name,

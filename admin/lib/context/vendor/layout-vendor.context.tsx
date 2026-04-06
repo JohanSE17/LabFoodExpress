@@ -11,7 +11,7 @@ import {
 } from '@/lib/utils/interfaces';
 
 // Costants
-import { SELECTED_VENDOR } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 // Methods
 import { onUseLocalStorage } from '@/lib/utils/methods';
 
@@ -22,7 +22,7 @@ export const VendorLayoutContext = createContext<VendorLayoutContextProps>(
 export const VendorLayoutProvider = ({ children }: IProvider) => {
   const [vendorLayoutContextData, setVendorLayoutContextData] =
     useState<VendorLayoutContextData>({
-      vendorId: onUseLocalStorage('get', SELECTED_VENDOR),
+      vendorId: onUseLocalStorage('get', 'vendorId'),
     } as VendorLayoutContextData);
 
   // Handlers

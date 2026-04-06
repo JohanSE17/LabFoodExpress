@@ -27,7 +27,7 @@ import { useMutation } from '@apollo/client';
 import { ChangeEvent, useContext } from 'react';
 import CustomInputSwitch from '@/lib/ui/useable-components/custom-input-switch';
 import { onErrorMessageMatcher } from '@/lib/utils/methods';
-import { CouponErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { useTranslations } from 'next-intl';
 
 export default function CouponForm({

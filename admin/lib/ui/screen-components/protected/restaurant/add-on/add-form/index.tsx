@@ -17,7 +17,7 @@ import TextIconClickable from '@/lib/ui/useable-components/text-icon-clickable';
 import OptionsAddForm from '@/lib/ui/screen-components/protected/restaurant/options/add-form';
 
 // Utilities and Constants
-import { AddonsErrors, OptionErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 //Toast
 import useToast from '@/lib/hooks/useToast';

@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { ILoginResponse } from '@/lib/utils/interfaces';
-import { APP_NAME } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 interface IUserContext {
   user: ILoginResponse | null;
@@ -15,7 +15,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
   const [user, setUser] = useState<ILoginResponse | null>(null);
 
   useEffect(() => {
-    const savedUser = localStorage.getItem(`user-${APP_NAME}`);
+    const savedUser = localStorage.getItem(`user-${'FoodExpress'}`);
     if (savedUser) {
       setUser(JSON.parse(savedUser));
     } else {

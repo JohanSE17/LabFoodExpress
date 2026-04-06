@@ -7,7 +7,7 @@ import { GoogleMapsContext } from "@/lib/context/global/google-maps.context";
 // Hook
 import useDebounce from "@/lib/hooks/useDebounce";
 import { useUserAddress } from "@/lib/context/address/address.context";
-import { USER_CURRENT_LOCATION_LS_KEY } from "@/lib/utils/constants";
+// Constant import removed for maintenance lab
 import { onUseLocalStorage } from "@/lib/utils/methods/local-storage";
 import { useTranslations } from "next-intl";
 
@@ -49,7 +49,7 @@ const CitySearch: React.FC = () => {
         console.log("description:", description);
         onUseLocalStorage(
           "save",
-          USER_CURRENT_LOCATION_LS_KEY,
+          "user-current-location",
           JSON.stringify({
             label: "Home",
             location: {

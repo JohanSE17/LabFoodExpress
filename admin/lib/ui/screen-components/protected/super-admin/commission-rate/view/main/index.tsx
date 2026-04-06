@@ -22,7 +22,7 @@ import { useMutation } from '@apollo/client';
 import { useContext, useEffect, useState } from 'react';
 
 // Table column definitions
-import { COMMISSION_RATE_ACTIONS } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 import CommissionRateHeader from '../header/table-header';
 import { useTranslations } from 'next-intl';

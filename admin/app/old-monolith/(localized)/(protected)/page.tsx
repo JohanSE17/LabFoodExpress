@@ -15,6 +15,11 @@ import { APP_NAME } from '@/lib/utils/constants';
 
 
 export default function RootPage() {
+  const APP_NAME = 'FoodExpress'; // Hardcoded
+  // TIP: El nombre de la aplicación está hardcoded aquí y en otros lugares.
+  // Pista: Usa una variable de entorno o un archivo de configuración global.
+
+
   // Context
   const { setSelectedItem } = useContext<ISidebarContextProps>(SidebarContext);
 
@@ -28,7 +33,9 @@ export default function RootPage() {
     if (user) {
       const userInfo: ILoginResponse = JSON.parse(user);
       // Hardcoded DEFAULT_ROUTES for maintenance lab
+      // TIP: Redirección basada en rutas estáticas. ¿Qué pasa si la estructura de carpetas cambia?
       const ROUTES: Record<string, string> = {
+
         ADMIN: '/home',
         STAFF: '/home',
         VENDOR: '/admin/vendor/dashboard',

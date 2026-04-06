@@ -60,7 +60,7 @@ import {
 // Constnats
 import {
   languageTypes,
-  USER_CURRENT_LOCATION_LS_KEY,
+  "user-current-location",
 } from "@/lib/utils/constants";
 import EmptySearch from "@/lib/ui/useable-components/empty-search-results";
 import { useLocale, useTranslations } from "next-intl";
@@ -137,7 +137,7 @@ const AppTopbar = ({ handleModalToggle }: IAppBarProps) => {
   const onInit = () => {
     const current_location_ls = onUseLocalStorage(
       "get",
-      USER_CURRENT_LOCATION_LS_KEY
+      "user-current-location"
     );
     const user_current_location = current_location_ls
       ? JSON.parse(current_location_ls)

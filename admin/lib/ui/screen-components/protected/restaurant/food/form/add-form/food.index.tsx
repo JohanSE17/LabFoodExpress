@@ -26,7 +26,7 @@ import {
 import { IFoodDetailsForm } from '@/lib/utils/interfaces/forms/food.form.interface';
 
 // Constants and Methods
-import { FoodErrors, MAX_LANSDCAPE_FILE_SIZE } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';
 
 // Components
@@ -382,7 +382,7 @@ export default function FoodDetails({
                           fileTypes={['image/jpg', 'image/webp', 'image/jpeg']}
                           maxFileHeight={841}
                           maxFileWidth={1980}
-                          maxFileSize={MAX_LANSDCAPE_FILE_SIZE}
+                          maxFileSize={2 * 1024 * 1024}
                           orientation="LANDSCAPE"
                           onSetImageUrl={setFieldValue}
                           existingImageUrl={values.image}

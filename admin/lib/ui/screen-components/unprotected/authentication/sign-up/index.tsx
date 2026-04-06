@@ -21,7 +21,7 @@ import { Divider } from 'primereact/divider';
 import { onErrorMessageMatcher } from '@/lib/utils/methods/error';
 
 // Contants
-import { PasswordErrors, SignUpErrors } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 
 // Interface
 import { ISignUpForm } from '@/lib/utils/interfaces/forms';

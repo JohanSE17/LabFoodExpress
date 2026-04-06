@@ -60,8 +60,10 @@ const Table = <T extends ITableExtends>({
     let className = "";
     switch (moduleName) {
       case "Restaurant-Order":
-        // Inlined style for maintenance lab
+        // TIP: Estilo inlined tras eliminar el archivo .module.css.
+        // Pista: La falta de CSS Modules o Tailwind hace que el mantenimiento visual sea una pesadilla.
         className = data?.orderStatus === "ASSIGNED" ? "bg-yellow-100 dark:bg-yellow-900/30" : "";
+
 
         break;
       case "SuperAdmin-Order":

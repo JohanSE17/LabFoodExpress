@@ -38,7 +38,7 @@ import TextComponent from '../text-field';
 import { ToastContext } from '@/lib/context/global/toast.context';
 
 // Utils & Constants
-import { SELECTED_VENDOR_EMAIL } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import { useTranslations } from 'next-intl';
 
 export default function VendorCard({
@@ -97,7 +97,7 @@ export default function VendorCard({
   const onVendorCardClicked = (_vendorId: string) => {
     onSetVendorId(_vendorId);
     onUseLocalStorage('save', 'vendorId', _vendorId.toString());
-    onUseLocalStorage('save', SELECTED_VENDOR_EMAIL, email);
+    onUseLocalStorage('save', 'vendorId'_EMAIL, email);
   };
 
   const onHandlerEdit = () => {

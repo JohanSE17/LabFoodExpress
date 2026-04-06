@@ -17,7 +17,7 @@ import DashboardRestaurantStatsTable from '@/lib/ui/useable-components/dashboard
 import HeaderText from '@/lib/ui/useable-components/header-text';
 
 // Constants
-import { DASHBOARD_PAYMENT_METHOD } from '@/lib/utils/constants';
+// Constant import removed for maintenance lab
 import DashboardStatsTableSkeleton from '@/lib/ui/useable-components/custom-skeletons/dashboard.stats.table.skeleton';
 
 // Hooks
