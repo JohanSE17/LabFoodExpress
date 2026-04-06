@@ -4,7 +4,24 @@ import { useEffect, useMemo, useState, useContext } from 'react';
 // Prime React
 import { Chart } from 'primereact/chart';
 import { useQueryGQL } from '@/lib/hooks/useQueryQL';
-import { GET_DASHBOARD_RESTAURANT_SALES_ORDER_COUNT_DETAILS_BY_YEAR } from '@/lib/api/graphql';
+import { gql } from '@apollo/client';
+// import { GET_DASHBOARD_RESTAURANT_SALES_ORDER_COUNT_DETAILS_BY_YEAR } from '@/lib/api/graphql'; // REMOVED FOR MAINTENANCE LAB
+
+const GET_DASHBOARD_RESTAURANT_SALES_ORDER_COUNT_DETAILS_BY_YEAR = gql`
+  query GetRestaurantDashboardSalesOrderCountDetailsByYear(
+    $restaurant: String!
+    $year: Int!
+  ) {
+    getRestaurantDashboardSalesOrderCountDetailsByYear(
+      restaurant: $restaurant
+      year: $year
+    ) {
+      salesAmount
+      ordersCount
+    }
+  }
+`;
+
 import {
   IDashboardRestaurantSalesOrderCountDetailsByYearResponseGraphQL,
   IQueryResult,
