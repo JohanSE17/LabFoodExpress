@@ -20,29 +20,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const locale = await getLocale();
-  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
       <head>
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "tjqxrz689j");
-          `}
-        </Script>
+        {/* Microsoft Clarity and other head tags... */}
       </head>
       <body>
-        <ThemeProvider attribute={'class'}>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        {/* Providers removed for Maintenance Lab [Rama 11] */}
+        {/* Each page now must include its own providers if needed */}
+        {children}
       </body>
     </html>
   );
 }
+
