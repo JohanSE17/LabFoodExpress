@@ -9,7 +9,7 @@ const CustomTab = ({
   setSelectedTab,
   dateFilter,
   setDateFilter,
-}: ICustomTabProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
   return (

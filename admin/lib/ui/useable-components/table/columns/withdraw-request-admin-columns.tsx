@@ -34,7 +34,7 @@ export const WITHDRAW_REQUESTS_ADMIN_TABLE_COLUMNS = () => {
       {
         headerName: t('User Type'),
         propertyName: 'rider.name',
-        body: (rowData: IWithDrawRequest) => (
+        body: (rowData: any) => (
           <div className="flex flex-col">
             <span className="font-medium">
               {rowData.rider?.name || rowData.store?.slug || '-'}
@@ -48,7 +48,7 @@ export const WITHDRAW_REQUESTS_ADMIN_TABLE_COLUMNS = () => {
       {
         headerName: t('Amount'),
         propertyName: 'requestAmount',
-        body: (rowData: IWithDrawRequest) => (
+        body: (rowData: any) => (
           <span className="font-medium">
             {CURRENT_SYMBOL || '$'}
             {rowData?.requestAmount?.toFixed(2)}
@@ -58,7 +58,7 @@ export const WITHDRAW_REQUESTS_ADMIN_TABLE_COLUMNS = () => {
       {
         headerName: t('Date'),
         propertyName: 'requestTime',
-        body: (rowData: IWithDrawRequest) => {
+        body: (rowData: any) => {
           const date = new Date(rowData.requestTime);
           const formattedDate = date?.toISOString().split('T')[0];
           return <div>{formattedDate}</div>;
@@ -67,7 +67,7 @@ export const WITHDRAW_REQUESTS_ADMIN_TABLE_COLUMNS = () => {
       {
         headerName: t('Status'),
         propertyName: 'status',
-        body: (rowData: IWithDrawRequest) => {
+        body: (rowData: any) => {
           const findSeverity = (code: string | undefined) => {
             switch (code) {
               case 'REQUESTED':

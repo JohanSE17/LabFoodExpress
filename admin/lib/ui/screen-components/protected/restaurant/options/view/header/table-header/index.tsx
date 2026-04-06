@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function OptionTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: ICategoryTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

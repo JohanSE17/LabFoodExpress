@@ -35,7 +35,7 @@ import { useQueryGQL } from '@/lib/hooks/useQueryQL';
 import { useTranslations } from 'next-intl';
 
 // Status templates
-const valueTemplate = (option: IDropdownSelectItem) => (
+const valueTemplate = (option: any) => (
   <div className="flex items-center justify-start gap-2 dark:text-white">
     <Tag
       severity={severityChecker(option?.code)}
@@ -47,7 +47,7 @@ const valueTemplate = (option: IDropdownSelectItem) => (
 
 // Item templates
 // Item templates
-const itemTemplate = (option: IDropdownSelectItem) => {
+const itemTemplate = (option: any) => {
   return (
     <div
       className={`flex flex-row-reverse items-center justify-start gap-2 ${
@@ -127,7 +127,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
   });
 
   // Query
-  const { data: ridersData } = useQueryGQL(GET_RIDERS, {}) as IQueryResult<
+  const { data: ridersData } = useQueryGQL(GET_RIDERS, {}) as any<
     IRidersDataResponse | undefined,
     undefined
   >;
@@ -145,7 +145,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
   }, [ridersData]);
 
   // Order Subscription
-  const useOrderSubscription = (rowData: IActiveOrders) => {
+  const useOrderSubscription = (rowData: any) => {
     useSubscription(SUBSCRIPTION_ORDER, {
       variables: {
         _id: rowData._id,
@@ -161,7 +161,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
       },
     });
   };
-  const OrderSubscription = ({ rowData }: { rowData: IActiveOrders }) => {
+  const OrderSubscription = ({ rowData }: { rowData: any }) => {
     useOrderSubscription(rowData);
     return <p>{rowData.isPickedUp === false ? 'Delivery' : 'Pick Up'}</p>;
   };
@@ -212,8 +212,8 @@ export const DISPATCH_TABLE_COLUMNS = () => {
 
   //Handlers
   const handleAssignRider = async (
-    item: IDropdownSelectItem,
-    rowData: IActiveOrders
+    item: any,
+    rowData: any
   ) => {
     if (item._id) {
       setIsRiderLoading({
@@ -246,7 +246,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
 
   const handleStatusDropDownChange = async (
     e: DropdownChangeEvent,
-    rowData: IActiveOrders
+    rowData: any
   ) => {
     console.log(rowData);
     // // Set the loader to true for the specific row
@@ -288,7 +288,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
     {
       propertyName: 'deliveryAddress.deliveryAddress',
       headerName: t('Order Information'),
-      body: (rowData: IActiveOrders) => <OrderSubscription rowData={rowData} />,
+      body: (rowData: any) => <OrderSubscription rowData={rowData} />,
     },
     {
       propertyName: 'restaurant.name',
@@ -309,8 +309,8 @@ export const DISPATCH_TABLE_COLUMNS = () => {
     {
       propertyName: 'rider.name',
       headerName: t('Rider'),
-      body: (rowData: IActiveOrders) => {
-        const selectedRider: IDropdownSelectItem = {
+      body: (rowData: any) => {
+        const selectedRider: any = {
           label: rowData?.rider?.name.toString() ?? '',
           code: rowData?.rider?.name.toString().toUpperCase() ?? '',
           _id: rowData?.rider?._id.toString() ?? '',
@@ -368,7 +368,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
     {
       propertyName: 'createdAt',
       headerName: t('Order Time'),
-      body: (rowData: IActiveOrders) => (
+      body: (rowData: any) => (
         <span>
           {new Date(rowData.createdAt)
             .toLocaleDateString()
@@ -380,9 +380,9 @@ export const DISPATCH_TABLE_COLUMNS = () => {
     //   propertyName: 'orderStatus',
     //   headerName: t('Status'),
 
-    //   body: (rowData: IActiveOrders) => {
+    //   body: (rowData: any) => {
     //     const currentStatus = actionStatusOptions.find(
-    //       (status: IDropdownSelectItem) => status.code === rowData?.orderStatus
+    //       (status: any) => status.code === rowData?.orderStatus
     //     );
 
     //     return (
@@ -405,7 +405,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
     {
       propertyName: 'orderStatus',
       headerName: t('Status'),
-      body: (rowData: IActiveOrders) => {
+      body: (rowData: any) => {
         // CHANGE 2: Filter status options based on whether it's a pickup order
         const filteredOptions = rowData.isPickedUp
           ? actionStatusOptions.filter((status) =>
@@ -456,7 +456,7 @@ export const DISPATCH_TABLE_COLUMNS = () => {
         });
 
         const currentStatus = availableStatuses.find(
-          (status: IDropdownSelectItem) => status.code === rowData?.orderStatus
+          (status: any) => status.code === rowData?.orderStatus
         );
 
         // CHANGE 3: Disable status changes for delivered orders

@@ -5,7 +5,7 @@ const VendorCustomTab = ({
   options,
   selectedTab,
   setSelectedTab,
-}: IVendorCustomTabProps) => {
+}: any) => {
   return (
     <div className="flex h-10 w-fit space-x-2 rounded bg-gray-100 p-1">
       {options.map((option) => (

@@ -166,7 +166,7 @@ export default function DispatchMain() {
         }
         loading={showLoading}
         selectedData={selectedData}
-        setSelectedData={(e) => setSelectedData(e as IActiveOrders[])}
+        setSelectedData={(e) => setSelectedData(e as any[])}
         header={
           <DispatchTableHeader
             globalFilterValue={globalFilterValue}

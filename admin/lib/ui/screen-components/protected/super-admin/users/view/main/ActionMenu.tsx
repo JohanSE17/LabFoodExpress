@@ -29,7 +29,7 @@ type ModalType =
   | null;
 
 interface ActionMenuProps {
-  rowData: IUserResponse;
+  rowData: any;
   openMenuId?: string | null;
   setOpenMenuId?: (id: string | null) => void;
 }

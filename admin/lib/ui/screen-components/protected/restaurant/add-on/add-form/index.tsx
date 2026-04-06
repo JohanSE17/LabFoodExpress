@@ -52,14 +52,14 @@ import { useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 // State
-const initialFormValuesTemplate: IAddonForm = {
+const initialFormValuesTemplate: any = {
   title: '',
   description: '',
   quantityMinimum: 1,
   quantityMaximum: 1,
   options: null,
 };
-const initialEditFormValuesTemplate: IAddonForm = {
+const initialEditFormValuesTemplate: any = {
   _id: '',
   title: '',
   description: '',
@@ -74,7 +74,7 @@ export default function AddonAddForm({
   position = 'right',
   isAddAddonVisible,
 
-}: IAddonAddFormComponentProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { theme } = useTheme();
@@ -105,12 +105,12 @@ export default function AddonAddForm({
       onCompleted: onFetchAddonsByRestaurantCompleted,
       onError: onErrorFetchAddonsByRestaurant,
     }
-  ) as IQueryResult<IOptionsByRestaurantResponse | undefined, undefined>;
+  ) as any<IOptionsByRestaurantResponse | undefined, undefined>;
 
   // Memoized Constants
   const optionsDropdown = useMemo(
     () =>
-      data?.restaurant?.options.map((option: IOptions) => {
+      data?.restaurant?.options.map((option: any) => {
         return { label: toTextCase(option.title, 'title'), code: option._id };
       }),
     [data?.restaurant?.options]
@@ -162,16 +162,16 @@ export default function AddonAddForm({
     });
   }
 
-  function mapOptions(addons: IAddonForm[]) {
+  function mapOptions(addons: any[]) {
     return addons.map((addon) => ({
       ...addon,
       options: addon?.options?.map(
-        (option: IDropdownSelectItem) => option.code
+        (option: any) => option.code
       ),
     }));
   }
   // Form Submission
-  const handleSubmit = ({ addons }: { addons: IAddonForm[] }) => {
+  const handleSubmit = ({ addons }: { addons: any[] }) => {
     createAddons({
       variables: {
         addonInput: {
@@ -199,7 +199,7 @@ export default function AddonAddForm({
 
     const updated_addon = addon
       ? JSON.parse(JSON.stringify(addon))
-      : ({} as IAddonForm);
+      : ({} as any);
     delete updated_addon.options;
 
     setInitialValues({
@@ -248,8 +248,8 @@ export default function AddonAddForm({
                   setFieldValue,
                   handleSubmit,
                 }) => {
-                  const _errors: FormikErrors<IAddonForm>[] =
-                    (errors?.addons as FormikErrors<IAddonForm>[]) ?? [];
+                  const _errors: FormikErrors<any>[] =
+                    (errors?.addons as FormikErrors<any>[]) ?? [];
 
                   return (
                     <Form onSubmit={handleSubmit}>
@@ -259,7 +259,7 @@ export default function AddonAddForm({
                             <div>
                               {values.addons.length > 0 &&
                                 values.addons.map(
-                                  (value: IAddonForm, index: number) => {
+                                  (value: any, index: number) => {
                                     return (
                                       <div
                                         className="mb-2"

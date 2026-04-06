@@ -10,7 +10,7 @@ const ConfigCard = ({
   toggleLabel,
   toggleValue,
   toggleOnChange = () => {},
-}: IConfigCardComponentProps) => {
+}: any) => {
   return (
     <div className="flex w-full sm:w-2/3 mx-auto flex-col overflow-hidden rounded-lg border">
       {/* header */}

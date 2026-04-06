@@ -30,7 +30,7 @@ import { COMMISSION_RATE_COLUMNS } from '@/lib/ui/useable-components/table/colum
 
 interface CommissionRateData {
   commissionRate: {
-    restaurant: ICommissionRateRestaurantResponse[];
+    restaurant: any[];
     currentPage: number;
     totalPages: number;
     nextPage: boolean;
@@ -68,7 +68,7 @@ export default function CommissionRateMain() {
     {
       fetchPolicy: 'network-only',
     }
-  ) as IQueryResult<CommissionRateData | undefined, IPaginationCommissionRateVars>;
+  ) as any<CommissionRateData | undefined, IPaginationCommissionRateVars>;
 
   // Mutation
   const [updateCommissionMutation] = useMutation(updateCommission);

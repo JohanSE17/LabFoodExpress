@@ -34,7 +34,7 @@ export default function CuisinesMain({
   setVisible,
   isEditing,
   setIsEditing,
-}: ICuisineMainProps) {
+}: any) {
   // Mutations
   const [deleteCuisine, { loading: deleteCuisineLoading }] = useMutation(
     DELETE_CUISINE,
@@ -47,7 +47,7 @@ export default function CuisinesMain({
   // Queries
   const { data, fetch } = useLazyQueryQL(GET_CUISINES, {
     onCompleted: () => setIsLoading(false),
-  }) as ILazyQueryResult<IGetCuisinesData | undefined, undefined>;
+  }) as any<IGetCuisinesData | undefined, undefined>;
 
   // Hooks
   const t = useTranslations();
@@ -55,7 +55,7 @@ export default function CuisinesMain({
 
   // States
   const [selectedData, setSelectedData] = useState<ICuisine[]>([]);
-  const [isDeleting, setIsDeleting] = useState<IEditState<ICuisine>>({
+  const [isDeleting, setIsDeleting] = useState<IEditState<any>>({
     bool: false,
     data: {
       _id: '',
@@ -83,10 +83,10 @@ export default function CuisinesMain({
   };
 
   // Menu Items
-  const menuItems: IActionMenuItem<ICuisine>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: ICuisine) => {
+      command: (data?: any) => {
         if (data) {
           setIsEditing({
             bool: true,
@@ -108,7 +108,7 @@ export default function CuisinesMain({
     },
     {
       label: t('Delete'),
-      command: (data?: ICuisine) => {
+      command: (data?: any) => {
         if (data) {
           setIsDeleting({
             bool: true,
@@ -171,7 +171,7 @@ export default function CuisinesMain({
         columns={CUISINE_TABLE_COLUMNS({ menuItems })}
         data={data?.cuisines || (isLoading ? generateDummyCuisines() : [])}
         selectedData={selectedData}
-        setSelectedData={(e) => setSelectedData(e as ICuisine[])}
+        setSelectedData={(e) => setSelectedData(e as any[])}
         filters={filters}
         loading={isLoading}
         header={

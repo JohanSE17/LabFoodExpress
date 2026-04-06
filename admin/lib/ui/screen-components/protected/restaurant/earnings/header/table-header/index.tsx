@@ -15,7 +15,7 @@ export default function EarningRestaurantTableHeader({
   dateFilters,
   setDateFilters,
   onClearFilters,
-}: IEarningTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

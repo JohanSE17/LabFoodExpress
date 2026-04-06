@@ -37,14 +37,14 @@ export default function OrderVendorMain() {
       fetchPolicy: 'network-only',
       enabled: !!restaurantId,
     }
-  ) as IQueryResult<IOrdersData | undefined, undefined>;
+  ) as any<IOrdersData | undefined, undefined>;
 
   const handleSearch = (newSearchTerm: string) => {
     setSearchTerm(newSearchTerm);
   };
 
   const handleRowClick = (event: DataTableRowClickEvent) => {
-    const selectedOrder = event.data as IExtendedOrder;
+    const selectedOrder = event.data as any;
     setSelectedRestaurant(selectedOrder);
     setIsModalOpen(true);
   };
@@ -53,7 +53,7 @@ export default function OrderVendorMain() {
     if (!data?.ordersByRestIdWithoutPagination) return [];
 
     return data.ordersByRestIdWithoutPagination.map(
-      (order: IOrder): IExtendedOrder => ({
+      (order: any): any => ({
         ...order,
         itemsTitle:
           order.items
@@ -68,7 +68,7 @@ export default function OrderVendorMain() {
   }, [data]);
 
   const filteredData = useMemo(() => {
-    return tableData.filter((order: IExtendedOrder) => {
+    return tableData.filter((order: any) => {
       const statusFilter =
         selectedActions.length === 0 ||
         selectedActions.includes(order.orderStatus);
@@ -95,7 +95,7 @@ export default function OrderVendorMain() {
         onSearch={handleSearch}
       />
       <Table
-        data={displayData as IExtendedOrder[]}
+        data={displayData as any[]}
         setSelectedData={setSelectedData}
         selectedData={selectedData}
         columns={ORDER_COLUMNS()}

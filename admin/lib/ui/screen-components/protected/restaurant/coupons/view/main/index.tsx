@@ -38,7 +38,7 @@ import { useTranslations } from 'next-intl';
 export default function CouponsMain({
   setIsAddCouponVisible,
   setCoupon,
-}: ICouponRestaurantMainComponentsProps) {
+}: any) {
   // Context
   const { restaurantLayoutContextData } = useContext(RestaurantLayoutContext);
   const restaurantId = restaurantLayoutContextData?.restaurantId || '';
@@ -60,7 +60,7 @@ export default function CouponsMain({
   // Query
   const { data, loading } = useQueryGQL(GET_RESTAURANT_COUPONS, {
     restaurantId: restaurantId,
-  }) as IQueryResult<ICouponRestaurantGQLResponse | undefined, undefined>;
+  }) as any<ICouponRestaurantGQLResponse | undefined, undefined>;
 
   //Mutation
   const [mutateDelete, { loading: mutationLoading }] = useMutation(
@@ -81,10 +81,10 @@ export default function CouponsMain({
     setGlobalFilterValue(value);
   };
 
-  const menuItems: IActionMenuItem<ICouponRestaurantResponse>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: ICouponRestaurantResponse) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddCouponVisible(true);
           setCoupon(data);
@@ -93,7 +93,7 @@ export default function CouponsMain({
     },
     {
       label: t('Delete'),
-      command: (data?: ICouponRestaurantResponse) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }

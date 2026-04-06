@@ -7,7 +7,7 @@ import { Skeleton } from 'primereact/skeleton';
 // Localization
 import { useTranslations } from 'next-intl';
 
-const PersonalDetails = ({ loading, rider }: IRiderDetailsProps) => {
+const PersonalDetails = ({ loading, rider }: any) => {
   const t = useTranslations();
 
   return (

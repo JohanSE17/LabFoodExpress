@@ -10,13 +10,13 @@ import VendorDashboardMain from '@/lib/ui/screen-components/protected/vendor/das
 export default function VendorDashboardScreen() {
   // State
   const [isStoreView, setIsStoreView] = useState(false);
-  const [dateFilter, setDateFilter] = useState<IDateFilter>({
+  const [dateFilter, setDateFilter] = useState<any>({
     dateKeyword: 'All',
     startDate: `${new Date().getFullYear()}-01-01`, // Current year, January 1st
     endDate: `${new Date().getFullYear()}-${String(new Date().getMonth()).padStart(2, '0')}-${String(new Date(new Date().getFullYear(), new Date().getMonth(), 0).getDate()).padStart(2, '0')}`, // Last day of previous month
   });
 
-  const handleDateFilter = (dateFilter: IDateFilter) => {
+  const handleDateFilter = (dateFilter: any) => {
     setDateFilter({
       dateKeyword: dateFilter.dateKeyword ?? '',
       endDate: dateFilter.endDate ?? new Date().toDateString(),

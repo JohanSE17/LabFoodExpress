@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 
 export default function NotificationHeader({
   handleButtonClick,
-}: INotificationHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

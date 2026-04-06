@@ -14,9 +14,9 @@ import {
 
 // Types
 
-export const FoodsContext = createContext({} as IFoodContextProps);
+export const FoodsContext = createContext({} as any);
 
-export const FoodsProvider = ({ children }: IFoodProvider) => {
+export const FoodsProvider = ({ children }: any) => {
   // Form Visibility
   const [isFoodFormVisible, setFoodFormVisible] = useState<boolean>(false);
 
@@ -24,8 +24,8 @@ export const FoodsProvider = ({ children }: IFoodProvider) => {
     useState<IFoodContextPropData | null>({
       food: {
         _id: '',
-        data: {} as IFoodNew,
-        variations: [] as IVariationForm[],
+        data: {} as any,
+        variations: [] as any[],
       },
       isEditing: false,
     });
@@ -48,22 +48,22 @@ export const FoodsProvider = ({ children }: IFoodProvider) => {
     onSetFoodContextData({
       food: {
         _id: '',
-        data: {} as IFoodNew,
-        variations: [] as IVariationForm[],
+        data: {} as any,
+        variations: [] as any[],
       },
 
       isEditing: false,
     });
   };
 
-  const onSetFoodContextData = (data: Partial<IFoodContextPropData>) => {
+  const onSetFoodContextData = (data: Partial<any>) => {
     setFoodContextData((prevData) => ({
       ...prevData,
       ...data,
     }));
   };
 
-  const value: IFoodContextProps = {
+  const value: any = {
     // Form Visibility
     isFoodFormVisible,
     onFoodFormVisible,

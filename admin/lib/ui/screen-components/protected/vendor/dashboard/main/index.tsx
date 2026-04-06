@@ -8,7 +8,7 @@ import VendorLiveMonitor from '../live-monitor';
 export default function VendorDashboardMain({
   isStoreView,
   dateFilter,
-}: IDashboardMainComponentProps) {
+}: any) {
   return (
     <div className="flex flex-col lg:flex-row gap-4 border-t">
       <div className="w-full lg:w-[70%]">

@@ -39,7 +39,7 @@ const UserDetailScreen: React.FC<UserDetailScreenProps> = ({ userId }) => {
     data: userData,
     loading: userLoading,
     error: userError,
-  } = useQuery<{ user: IUserResponse }>(GET_USER_BY_ID, {
+  } = useQuery<{ user: any }>(GET_USER_BY_ID, {
     variables: { userId },
     fetchPolicy: 'cache-and-network',
   });
@@ -51,7 +51,7 @@ const UserDetailScreen: React.FC<UserDetailScreenProps> = ({ userId }) => {
     data: ordersData,
     loading: ordersLoading,
     error: ordersError,
-  } = useQuery<{ ordersByUser: IOrdersByUserResponse }>(GET_ORDERS_BY_USER, {
+  } = useQuery<{ ordersByUser: any }>(GET_ORDERS_BY_USER, {
     variables: { userId, page: currentPage, limit },
     fetchPolicy: 'cache-and-network',
   });
@@ -148,8 +148,8 @@ const UserDetailScreen: React.FC<UserDetailScreenProps> = ({ userId }) => {
     );
   }
 
-  const user: IUserResponse | undefined = userData?.user;
-  const orders: IExtendedOrder[] = ordersData?.ordersByUser?.orders || [];
+  const user: any | undefined = userData?.user;
+  const orders: any[] = ordersData?.ordersByUser?.orders || [];
   const totalOrders: number = ordersData?.ordersByUser?.totalCount || 0;
 
   if (!user) {

@@ -1,6 +1,6 @@
 import { ITimingForm } from '@/lib/utils/interfaces/timing.interface';
 
-export const TIMING_INITIAL_VALUE: ITimingForm[] = [
+export const TIMING_INITIAL_VALUE: any[] = [
   { day: 'MON', times: [{ startTime: null, endTime: null }] },
   { day: 'TUE', times: [{ startTime: null, endTime: null }] },
   { day: 'WED', times: [{ startTime: null, endTime: null }] },

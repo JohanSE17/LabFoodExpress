@@ -41,9 +41,9 @@ export default function ZoneAddForm({
   zone,
   position = 'right',
   isAddZoneVisible,
-}: IZoneAddFormComponentProps) {
+}: any) {
   // State
-  const initialValues: IZoneForm = {
+  const initialValues: any = {
     _id: zone?._id ?? '',
     title: zone?.title || '',
     description: zone?.description || '',
@@ -60,7 +60,7 @@ export default function ZoneAddForm({
   // Query
   const { data } = useQueryGQL(GET_ZONES, {
     fetchPolicy: 'cache-and-network',
-  }) as IQueryResult<IRiderZonesResponse | undefined, undefined>;
+  }) as any<IRiderZonesResponse | undefined, undefined>;
 
   // Mutation
   const [createZone, { loading: mutationLoading }] = useMutation(
@@ -72,8 +72,8 @@ export default function ZoneAddForm({
 
   // Form Submission
   const handleSubmit = (
-    values: IZoneForm,
-    { resetForm }: FormikHelpers<IZoneForm>
+    values: any,
+    { resetForm }: FormikHelpers<any>
   ) => {
     if (values.coordinates[0].length < 2) {
       return showToast({

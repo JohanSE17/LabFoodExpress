@@ -12,7 +12,7 @@ import React, { useContext } from 'react';
 
 export default function VendorLiveMonitor({
   dateFilter,
-}: IVendorLiveMonitorProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -35,7 +35,7 @@ export default function VendorLiveMonitor({
       enabled: !!vendorId,
       pollInterval: 15000,
     }
-  ) as IQueryResult<IVendorLiveMonitorResponseGraphQL | undefined, undefined>;
+  ) as any<IVendorLiveMonitorResponseGraphQL | undefined, undefined>;
 
   // Constants
   const {
@@ -43,7 +43,7 @@ export default function VendorLiveMonitor({
     cancelled_orders = 0,
     delayed_orders = 0,
     ratings,
-  } = data?.getLiveMonitorData ?? ({} as IVendorLiveMonitor);
+  } = data?.getLiveMonitorData ?? ({} as any);
 
   return (
     <div className="mx-auto max-w-md p-2 lg:p-4">

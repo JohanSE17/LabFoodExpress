@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function RidersTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: IRidersTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

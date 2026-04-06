@@ -32,7 +32,7 @@ export default function GrowthOverView() {
       fetchPolicy: 'network-only',
       debounceMs: 300,
     }
-  ) as IQueryResult<
+  ) as any<
     IDashboardUsersByYearResponseGraphQL | undefined,
     undefined
   >;

@@ -21,11 +21,11 @@ import { useQueryGQL } from '@/lib/hooks/useQueryQL';
 import { onFilterObjects, onUseLocalStorage } from '@/lib/utils/methods';
 import { SELECTED_VENDOR_EMAIL } from '@/lib/utils/constants';
 
-export const VendorContext = createContext<IVendorContextProps>(
-  {} as IVendorContextProps
+export const VendorContext = createContext<any>(
+  {} as any
 );
 
-export const VendorProvider = ({ children }: IProvider) => {
+export const VendorProvider = ({ children }: any) => {
   // States
   const [vendorFormVisible, setVendorFormVisible] = useState<boolean>(false);
   const [filtered, setFiltered] = useState<IVendorReponse[]>();
@@ -39,7 +39,7 @@ export const VendorProvider = ({ children }: IProvider) => {
   const vendorResponse = useQueryGQL(GET_VENDORS, {
     debounceMs: 300,
     onCompleted: (data: unknown) => {
-      const _data = data as IVendorResponseGraphQL;
+      const _data = data as any;
       setVendorId(_data?.vendors[0]?._id ?? '');
       onUseLocalStorage(
         'save',
@@ -49,7 +49,7 @@ export const VendorProvider = ({ children }: IProvider) => {
       setFiltered(_data.vendors);
       // Ensure filtered list updates
     },
-  }) as IQueryResult<IVendorResponseGraphQL | undefined, undefined>;
+  }) as any<IVendorResponseGraphQL | undefined, undefined>;
 
   // State Handler
   const onSetVendorFormVisible = (status: boolean, isEdit?: boolean) => {
@@ -77,7 +77,7 @@ export const VendorProvider = ({ children }: IProvider) => {
 
   // Data Handler
   const onHandlerFilterData = () => {
-    const _filtered: IVendorReponse[] = onFilterObjects(
+    const _filtered: any[] = onFilterObjects(
       vendorResponse?.data?.vendors ?? [],
       globalFilter,
       [`name`,'email', 'userType', 'unique_id']
@@ -113,7 +113,7 @@ export const VendorProvider = ({ children }: IProvider) => {
     onVendorReponseFetchCompleted();
   }, [vendorResponse?.data]);
 
-  const value: IVendorContextProps = {
+  const value: any = {
     vendorFormVisible,
     onSetVendorFormVisible,
     vendorId,

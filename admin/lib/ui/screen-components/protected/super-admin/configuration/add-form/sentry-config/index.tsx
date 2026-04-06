@@ -53,7 +53,7 @@ const SentryAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: ISentryForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

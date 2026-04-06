@@ -17,7 +17,7 @@ const CustomDialog = ({
   onConfirm,
   loading,
   buttonConfig,
-}: IDialogComponentProps) => {
+}: any) => {
   const t = useTranslations();
   const { theme } = useTheme();
   const {

@@ -16,7 +16,7 @@ export default function CuisinesScreen() {
   const handleButtonClick = () => {
     setVisible(true);
   };
-  const [isEditing, setIsEditing] = useState<IEditState<ICuisine>>({
+  const [isEditing, setIsEditing] = useState<IEditState<any>>({
     bool: false,
     data: {
       _id: '',

@@ -13,7 +13,7 @@ export default function CustomTextAreaField({
   rows = 0,
   maxLength,
   ...props
-}: ICustomTextAreaField) {
+}: any) {
   return (
     <div className="flex flex-col justify-center gap-y-1">
       {showLabel && (

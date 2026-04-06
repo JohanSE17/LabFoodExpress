@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 
 export const GoogleMapsLoader = ({
   children,
-}: IGoogleMapsLoaderComponentProps) => {
+}: any) => {
   const context = useContext(GoogleMapsContext);
 
   console.log('GoogleMapsLoader - Context:', context);

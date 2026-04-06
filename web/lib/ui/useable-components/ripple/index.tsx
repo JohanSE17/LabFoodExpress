@@ -9,7 +9,7 @@ const RippleEffect = ({
   className = '',
   onClick,
   ...props
-}: IRippleComponentProps) => {
+}: any) => {
   return (
     <div
       className={`ripple-container ${className}`}

@@ -27,7 +27,7 @@ import { useTranslations } from 'next-intl';
 
 export default function RestaurantStats({
   dateFilter,
-}: IDashboardOrderStatsComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -49,7 +49,7 @@ export default function RestaurantStats({
       fetchPolicy: 'network-only',
       debounceMs: 300,
     }
-  ) as IQueryResult<
+  ) as any<
     IVendorDashboardStatsCardDetailsResponseGraphQL | undefined,
     undefined
   >;

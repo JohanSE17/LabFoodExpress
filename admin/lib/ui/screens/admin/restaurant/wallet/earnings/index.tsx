@@ -4,8 +4,8 @@ import EarningsRestaurantMain from '@/lib/ui/screen-components/protected/restaur
 import { IStoreEarnings } from '@/lib/utils/interfaces/earnings.interface';
 import { useState } from 'react';
 export default function EarningsRestaurantScreen() {
-  const [earnings, setTotalEarnings] = useState<IStoreEarnings>(
-    {} as IStoreEarnings
+  const [earnings, setTotalEarnings] = useState<any>(
+    {} as any
   );
 
   return (

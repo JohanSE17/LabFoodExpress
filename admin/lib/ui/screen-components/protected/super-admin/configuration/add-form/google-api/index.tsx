@@ -42,7 +42,7 @@ const GoogleApiAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: IGoogleApiForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

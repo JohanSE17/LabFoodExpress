@@ -88,7 +88,7 @@ export default function FoodsMain() {
       enabled: !!restaurantId,
       onError: onErrorFetchFoodsByRestaurant,
     }
-  ) as IQueryResult<IFoodByRestaurantResponse | undefined, undefined>;
+  ) as any<IFoodByRestaurantResponse | undefined, undefined>;
 
   const { data } = useQueryGQL(
     GET_ADDONS_BY_RESTAURANT_ID,
@@ -97,7 +97,7 @@ export default function FoodsMain() {
       fetchPolicy: 'network-only',
       enabled: !!restaurantId,
     }
-  ) as IQueryResult<IAddonByRestaurantResponse | undefined, undefined>;
+  ) as any<IAddonByRestaurantResponse | undefined, undefined>;
   const [fetchSubcategory, { loading: subCategoriesLoading }] = useLazyQuery(
     GET_SUBCATEGORY,
     {
@@ -114,7 +114,7 @@ export default function FoodsMain() {
 
   const { data: sub_categories } = useQuery(
     GET_SUBCATEGORIES
-  ) as QueryResult<ISubCategoryResponse>;
+  ) as QueryResult<any>;
 
   //Mutation
   const [deleteFood, { loading: mutationLoading }] = useMutation(DELETE_FOOD, {
@@ -138,7 +138,7 @@ export default function FoodsMain() {
   // Memoized Data
   const addons = useMemo(
     () =>
-      data?.restaurant?.addons.map((addon: IAddon) => {
+      data?.restaurant?.addons.map((addon: any) => {
         return { label: addon.title, code: addon._id };
       }),
     [data?.restaurant?.addons]
@@ -155,10 +155,10 @@ export default function FoodsMain() {
   // Restaurant Profile Complete
   function onFetchFoodsByRestaurantCompleted() {
     if (!foodsData) return;
-    const refined_food_items: IFoodNew[] = [];
+    const refined_food_items: any[] = [];
     setIsLoading(true);
     foodsData.restaurant.categories.map((ctg) =>
-      ctg.foods.map((fd: IFood) => {
+      ctg.foods.map((fd: any) => {
         return refined_food_items.push({
           __typename: fd.__typename,
           _id: fd._id,
@@ -195,10 +195,10 @@ export default function FoodsMain() {
   }
 
   // Constants
-  const menuItems: IActionMenuItem<IFoodNew>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: async (data?: IFoodNew) => {
+      command: async (data?: any) => {
         if (subCategoriesLoading) {
           return console.log({ subCategoriesLoading });
         }
@@ -226,12 +226,12 @@ export default function FoodsMain() {
                 addons: variation?.addons?.map((addonId) => {
                   return (
                     addons?.find(
-                      (addon: IDropdownSelectItem) => addon.code === addonId
-                    ) ?? ({} as IDropdownSelectItem)
+                      (addon: any) => addon.code === addonId
+                    ) ?? ({} as any)
                   );
                 }),
               };
-            }) as IVariationForm[]) ?? ([] as IVariationForm[]);
+            }) as any[]) ?? ([] as any[]);
 
           if (!subCategoriesLoading) {
             await onSetFoodContextData({
@@ -249,7 +249,7 @@ export default function FoodsMain() {
     },
     {
       label: t('Delete'),
-      command: (data?: IFoodNew) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId({ id: data._id, categoryId: data?.category?.code ?? '' });
         }

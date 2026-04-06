@@ -9,7 +9,7 @@ import TextIconClickable from '@/lib/ui/useable-components/text-icon-clickable';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 
-const StaffHeader = ({ setIsAddStaffVisible }: IStaffHeaderProps) => {
+const StaffHeader = ({ setIsAddStaffVisible }: any) => {
   // Hooks
   const t = useTranslations();
   return (

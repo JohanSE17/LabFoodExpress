@@ -9,7 +9,7 @@ import TextIconClickable from '@/lib/ui/useable-components/text-icon-clickable';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 
-const RiderHeader = ({ setIsAddRiderVisible }: IRiderHeaderProps) => {
+const RiderHeader = ({ setIsAddRiderVisible }: any) => {
   // Hooks
   const t = useTranslations();
 

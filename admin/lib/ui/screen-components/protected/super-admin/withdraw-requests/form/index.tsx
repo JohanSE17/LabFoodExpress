@@ -15,14 +15,14 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 interface IWithdrawRequestFormProps {
   setVisible: (value: boolean) => void;
   visible: boolean;
-  selectedRequest?: IWithDrawRequest;
+  selectedRequest?: any;
 }
 
 export default function WithdrawRequestForm({
   setVisible,
   visible,
   selectedRequest,
-}: IWithdrawRequestFormProps) {
+}: any) {
   const { showToast } = useContext(ToastContext);
 
   const initialValues = {

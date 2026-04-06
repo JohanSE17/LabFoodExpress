@@ -82,7 +82,7 @@ export const ConfigurationContext = React.createContext<
   enableAdminDemo: false,
 });
 
-export const ConfigurationProvider: React.FC<IConfigurationProviderProps> = ({
+export const ConfigurationProvider: React.FC<any> = ({
   children,
 }) => {
   const [configuration, setConfiguration] = useState<
@@ -92,14 +92,14 @@ export const ConfigurationProvider: React.FC<IConfigurationProviderProps> = ({
 
   const { fetch, loading, error, data } = useLazyQueryQL(GET_CONFIGURATION, {
     debounceMs: 300,
-  }) as ILazyQueryResult<
-    { configuration: IConfiguration } | undefined,
+  }) as any<
+    { configuration: any } | undefined,
     undefined
   >;
 
   // Handlers
   const onFetchConfiguration = () => {
-    const configuration: IConfiguration | undefined =
+    const configuration: any | undefined =
       loading || error || !data
         ? {
             _id: '',

@@ -18,7 +18,7 @@ import useDebounce from '@/lib/hooks/useDebounce';
 
 export default function EarningsRestaurantMain({
   setTotalEarnings,
-}: IEarningsRestaurantMainComponentProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -40,7 +40,7 @@ export default function EarningsRestaurantMain({
   const { restaurantLayoutContextData } = useContext(RestaurantLayoutContext);
   const { restaurantId } = restaurantLayoutContextData;
 
-  const [dateFilters, setDateFilters] = useState<IEarningFilters>({
+  const [dateFilters, setDateFilters] = useState<any>({
     startingDate: '',
     endingDate: '',
     userType: undefined,

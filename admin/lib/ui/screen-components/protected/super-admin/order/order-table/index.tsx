@@ -9,7 +9,7 @@ import { DataTableFilterMeta } from 'primereact/datatable';
 
 interface OrderTableProps {
   data: {
-    orders: IOrder[];
+    orders: any[];
     totalCount: number;
     currentPage: number;
     totalPages: number;
@@ -19,7 +19,7 @@ interface OrderTableProps {
   loading: boolean;
   isInitialLoad: boolean; // New prop
   handleRowClick: (event: DataTableRowClickEvent) => void; // Changed type
-  selectedData: IExtendedOrder[];
+  selectedData: any[];
   setSelectedData: React.Dispatch<React.SetStateAction<IExtendedOrder[]>>;
   first: number;
   rows: number;
@@ -57,7 +57,7 @@ export default function OrderTable({
     // If loading but not initial load, return last valid orders
     if (loading && !isInitialLoad && !data?.orders) {
       return lastValidOrders.map(
-        (order: IOrder): IExtendedOrder => ({
+        (order: any): any => ({
           ...order,
           itemsTitle:
             order?.items
@@ -74,7 +74,7 @@ export default function OrderTable({
     if (!data?.orders) return [];
 
     return data.orders.map(
-      (order: IOrder): IExtendedOrder => ({
+      (order: any): any => ({
         ...order,
         itemsTitle:
           order?.items
@@ -90,7 +90,7 @@ export default function OrderTable({
 
   return (
     <Table
-      data={displayData as IExtendedOrder[]}
+      data={displayData as any[]}
       setSelectedData={setSelectedData}
       selectedData={selectedData}
       columns={ORDER_SUPER_ADMIN_COLUMNS()}

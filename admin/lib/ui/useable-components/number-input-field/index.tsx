@@ -20,7 +20,7 @@ export default function CustomNumberField({
   min,
   max,
   ...props
-}: INumberTextFieldProps) {
+}: any) {
   // Toast
   const { showToast } = useToast();
 

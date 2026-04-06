@@ -23,7 +23,7 @@ export default function CustomPasswordTextField({
   placeholder,
   showLabel,
   ...props
-}: IPasswordTextFieldProps) {
+}: any) {
   // States
   const [isVisible, setIsVisible] = useState<boolean>(false);
 

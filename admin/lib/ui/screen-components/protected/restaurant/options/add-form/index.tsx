@@ -43,12 +43,12 @@ import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
 // State
-const initialFormValuesTemplate: IOptionForm = {
+const initialFormValuesTemplate: any = {
   title: '',
   description: '',
   price: 1,
 };
-const initialEditFormValuesTemplate: IOptionForm = {
+const initialEditFormValuesTemplate: any = {
   _id: '',
   title: '',
   description: '',
@@ -60,7 +60,7 @@ export default function OptionAddForm({
   option,
   position = 'right',
   isAddOptionsVisible,
-}: IOptionsAddFormComponentProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { showToast } = useToast();
@@ -117,7 +117,7 @@ export default function OptionAddForm({
   );
 
   // Form Submission
-  const handleSubmit = ({ options }: { options: IOptionForm[] }) => {
+  const handleSubmit = ({ options }: { options: any[] }) => {
     createOption({
       variables: {
         optionInput: {
@@ -160,8 +160,8 @@ export default function OptionAddForm({
                   setFieldValue,
                   handleSubmit,
                 }) => {
-                  const _errors: FormikErrors<IOptionForm>[] =
-                    (errors?.options as FormikErrors<IOptionForm>[]) ?? [];
+                  const _errors: FormikErrors<any>[] =
+                    (errors?.options as FormikErrors<any>[]) ?? [];
 
                   return (
                     <Form onSubmit={handleSubmit}>
@@ -171,7 +171,7 @@ export default function OptionAddForm({
                             <div>
                               {values.options.length > 0 &&
                                 values.options.map(
-                                  (value: IOptionForm, index: number) => {
+                                  (value: any, index: number) => {
                                     return (
                                       <div
                                         className="mb-2"

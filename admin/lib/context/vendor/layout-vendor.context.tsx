@@ -19,7 +19,7 @@ export const VendorLayoutContext = createContext<VendorLayoutContextProps>(
   {} as VendorLayoutContextProps
 );
 
-export const VendorLayoutProvider = ({ children }: IProvider) => {
+export const VendorLayoutProvider = ({ children }: any) => {
   const [vendorLayoutContextData, setVendorLayoutContextData] =
     useState<VendorLayoutContextData>({
       vendorId: onUseLocalStorage('get', SELECTED_VENDOR),

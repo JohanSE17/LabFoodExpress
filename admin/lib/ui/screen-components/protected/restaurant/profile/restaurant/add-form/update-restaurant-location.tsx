@@ -14,7 +14,7 @@ import {
 import UpdateRestaurantLocationBounds from '@/lib/ui/useable-components/google-maps/location-bounds-profile-restaurants';
 import { GoogleMapsContext } from '@/lib/context/global/google-maps.context';
 
-const initialValues: IVendorForm = {
+const initialValues: any = {
   name: '',
   email: '',
   password: '',
@@ -25,7 +25,7 @@ export default function UpdateRestaurantLocation({
   stepperProps,
   height,
   hideControls,
-}: IRestaurantsRestaurantLocationComponentProps) {
+}: any) {
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => {},
     order: -1,
@@ -35,7 +35,7 @@ export default function UpdateRestaurantLocation({
   const { isLoaded } = useContext(GoogleMapsContext);
 
   // States
-  const [formInitialValues] = useState<IVendorForm>({
+  const [formInitialValues] = useState<any>({
     ...initialValues,
   });
 

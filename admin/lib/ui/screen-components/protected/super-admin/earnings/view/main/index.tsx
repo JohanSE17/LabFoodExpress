@@ -15,7 +15,7 @@ import useDebounce from '@/lib/hooks/useDebounce';
 
 export default function EarningsMain({
   setTotalEarnings,
-}: IEarningsMainComponentProps) {
+}: any) {
   const [selectedEarnings, setSelectedEarnings] = useState<IEarning[]>([]);
   const [globalFilterValue, setGlobalFilterValue] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,7 +31,7 @@ export default function EarningsMain({
   // Hooks
   const debouncedSearch = useDebounce(globalFilterValue);
 
-  const [dateFilters, setDateFilters] = useState<IEarningFilters>({
+  const [dateFilters, setDateFilters] = useState<any>({
     startingDate: '',
     endingDate: '',
     userType: undefined,

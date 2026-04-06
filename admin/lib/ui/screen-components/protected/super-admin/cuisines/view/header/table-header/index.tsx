@@ -21,7 +21,7 @@ export default function CuisineTableHeader({
   onGlobalFilterChange,
   selectedActions,
   setSelectedActions,
-}: ICuisineTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const {theme } = useTheme()

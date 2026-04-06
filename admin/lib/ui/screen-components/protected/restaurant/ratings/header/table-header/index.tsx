@@ -14,7 +14,7 @@ interface MenuItem {
   value: string;
 }
 
-const RatingsHeaderDataView: React.FC<ICommissionRateHeaderProps> = ({
+const RatingsHeaderDataView: React.FC<any> = ({
   setSelectedActions,
   selectedActions,
   onSearch,

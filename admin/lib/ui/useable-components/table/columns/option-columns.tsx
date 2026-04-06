@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export const OPTION_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IOptions>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -15,7 +15,7 @@ export const OPTION_TABLE_COLUMNS = ({
     { headerName: t('Description'), propertyName: 'description' },
     {
       propertyName: 'actions',
-      body: (option: IOptions) => (
+      body: (option: any) => (
         <ActionMenu items={menuItems} data={option} />
       ),
     },

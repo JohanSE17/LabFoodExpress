@@ -43,7 +43,7 @@ const CloudinaryAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: ICloudinaryForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

@@ -10,10 +10,10 @@ import { useConfiguration } from '@/lib/hooks/useConfiguration';
 interface ITransactionDetailModalProps {
   visible: boolean;
   onHide: () => void;
-  transaction: ITransactionHistory | null;
+  transaction: any | null;
 }
 
-const TransactionDetailModal: React.FC<ITransactionDetailModalProps> = ({
+const TransactionDetailModal: React.FC<any> = ({
   visible,
   onHide,
   transaction,

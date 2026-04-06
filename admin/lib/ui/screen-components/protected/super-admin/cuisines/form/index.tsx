@@ -38,7 +38,7 @@ export default function CuisineForm({
   setIsEditing,
   isEditing,
   visible,
-}: IAddCuisineProps) {
+}: any) {
   // Utility function to capitalize the first word of a string
   const capitalizeFirstWord = (str: string): string => {
     if (!str) return '';

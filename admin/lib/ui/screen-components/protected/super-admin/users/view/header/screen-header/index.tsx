@@ -13,10 +13,10 @@ import { IDropdownSelectItem } from '@/lib/utils/interfaces';
 interface UserHeaderProps {
   search: string;
   setSearch: (value: string) => void;
-  registrationMethodFilter: IDropdownSelectItem[];
-  setRegistrationMethodFilter: (value: IDropdownSelectItem[]) => void;
-  accountStatusFilter: IDropdownSelectItem[];
-  setAccountStatusFilter: (value: IDropdownSelectItem[]) => void;
+  registrationMethodFilter: any[];
+  setRegistrationMethodFilter: (value: any[]) => void;
+  accountStatusFilter: any[];
+  setAccountStatusFilter: (value: any[]) => void;
 }
 
 const UserHeader: React.FC<UserHeaderProps> = ({
@@ -46,12 +46,12 @@ const UserHeader: React.FC<UserHeaderProps> = ({
     setSearch(e.target.value);
   };
 
-  const handleRegistrationMethodChange = (e: IDropdownSelectItem[]) => {
-    setRegistrationMethodFilter(e as IDropdownSelectItem[]);
+  const handleRegistrationMethodChange = (e: any[]) => {
+    setRegistrationMethodFilter(e as any[]);
   };
 
-  const handleAccountStatusChange = (e: IDropdownSelectItem[]) => {
-    setAccountStatusFilter(e as IDropdownSelectItem[]);
+  const handleAccountStatusChange = (e: any[]) => {
+    setAccountStatusFilter(e as any[]);
   };
 
   return (

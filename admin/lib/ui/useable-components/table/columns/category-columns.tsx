@@ -13,7 +13,7 @@ import { GET_SUBCATEGORIES_BY_PARENT_ID } from '@/lib/api/graphql/queries/sub-ca
 interface ColumnDefinition {
   headerName: string;
   propertyName: string;
-  body?: (data: ICategory) => ReactNode;
+  body?: (data: any) => ReactNode;
 }
 
 // Component for the subcategory column
@@ -23,7 +23,7 @@ const SubcategoryCell = ({ categoryId }: { categoryId: string }) => {
     GET_SUBCATEGORIES_BY_PARENT_ID,
     { parentCategoryId: categoryId },
     { enabled: !!categoryId }
-  ) as IQueryResult<ISubCategoryByParentIdResponse | undefined, { parentCategoryId: string }>;
+  ) as any<ISubCategoryByParentIdResponse | undefined, { parentCategoryId: string }>;
 
   useEffect(() => {
     if (data?.subCategoriesByParentId) {
@@ -51,7 +51,7 @@ export const CATEGORY_TABLE_COLUMNS = ({
   shopType,
   setIsAddSubCategoriesVisible,
 }: {
-  menuItems: IActionMenuProps<ICategory>['items'];
+  menuItems: any<any>['items'];
   shopType: string;
   setIsAddSubCategoriesVisible: Dispatch<
     SetStateAction<{
@@ -73,7 +73,7 @@ export const CATEGORY_TABLE_COLUMNS = ({
     columns.push({
       headerName: t('Image'),
       propertyName: 'image',
-      body: (item: ICategory) =>
+      body: (item: any) =>
         item.image ? (
           <Image src={item.image} width={40} height={40} alt="item.png" />
         ) : (
@@ -89,7 +89,7 @@ export const CATEGORY_TABLE_COLUMNS = ({
     columns.push({
       headerName: t('Subcategories'),
       propertyName: 'subcategories',
-      body: (category: ICategory) => <SubcategoryCell categoryId={category._id} />
+      body: (category: any) => <SubcategoryCell categoryId={category._id} />
     });
   }
   
@@ -97,7 +97,7 @@ export const CATEGORY_TABLE_COLUMNS = ({
   columns.push({
     propertyName: 'actions',
     headerName: '',
-    body: (rider: ICategory) => {
+    body: (rider: any) => {
       return (
         <div className="flex justify-between items-center">
           {shopType === 'grocery' && (

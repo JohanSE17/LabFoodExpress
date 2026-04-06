@@ -34,7 +34,7 @@ import CustomGoogleMapsLocationBounds from '@/lib/ui/useable-components/google-m
 import { GoogleMapsContext } from '@/lib/context/global/google-maps.context';
 import { useTranslations } from 'next-intl';
 
-const initialValues: IRestaurantDeliveryForm = {
+const initialValues: any = {
   minDeliveryFee: null,
   deliveryDistance: null,
   deliveryFee: null,
@@ -42,7 +42,7 @@ const initialValues: IRestaurantDeliveryForm = {
 
 export default function RestaurantDelivery({
   stepperProps,
-}: IRestaurantsRestaurantDeliveryComponentProps) {
+}: any) {
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => {},
     type: '',
@@ -75,7 +75,7 @@ export default function RestaurantDelivery({
   });
 
   // Handlers
-  const onCreateDelivery = async (data: IRestaurantDeliveryForm) => {
+  const onCreateDelivery = async (data: any) => {
     try {
       await createRestaurant({
         variables: {

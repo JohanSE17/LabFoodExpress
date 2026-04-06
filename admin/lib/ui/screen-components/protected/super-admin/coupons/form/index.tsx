@@ -35,7 +35,7 @@ export default function CouponForm({
   isEditing,
   visible,
   setIsEditing,
-}: IAddCouponProps) {
+}: any) {
   // Hooks
   const { showToast } = useContext(ToastContext);
   const t = useTranslations();

@@ -27,7 +27,7 @@ export default function WithdrawRequestSuperAdminTableHeader({
   onGlobalFilterChange,
   selectedActions,
   setSelectedActions,
-}: IWithdrawRequestsTableHeaderProps) {
+}: any) {
   // Refs
   // const statusOverlayRef = useRef<OverlayPanel>(null);
   const userTypeOverlayRef = useRef<OverlayPanel>(null);

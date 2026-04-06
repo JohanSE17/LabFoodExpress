@@ -38,7 +38,7 @@ import { useTranslations } from 'next-intl';
 export default function OptionMain({
   setIsAddAddonVisible,
   setAddon,
-}: IAddonMainComponentsProps) {
+}: any) {
   // Context
   const { restaurantLayoutContextData } = useContext(RestaurantLayoutContext);
   const restaurantId = restaurantLayoutContextData?.restaurantId || '';
@@ -65,7 +65,7 @@ export default function OptionMain({
       onCompleted: onFetchAddonsByRestaurantCompleted,
       onError: onErrorFetchAddonsByRestaurant,
     }
-  ) as IQueryResult<IAddonByRestaurantResponse | undefined, undefined>;
+  ) as any<IAddonByRestaurantResponse | undefined, undefined>;
 
   //Mutation
   const [deleteCategory, { loading: mutationLoading }] = useMutation(
@@ -106,10 +106,10 @@ export default function OptionMain({
   }
 
   // Constants
-  const menuItems: IActionMenuItem<IAddon>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: IAddon) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddAddonVisible(true);
 
@@ -119,7 +119,7 @@ export default function OptionMain({
     },
     {
       label: t('Delete'),
-      command: (data?: IAddon) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }

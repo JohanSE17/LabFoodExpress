@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 
 const BannersHeader = ({
   setIsAddBannerVisible,
-}: IBannersHeaderComponentsProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
   return (

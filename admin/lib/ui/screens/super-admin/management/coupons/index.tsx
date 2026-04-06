@@ -10,7 +10,7 @@ import { useState } from 'react';
 export default function CouponsScreen() {
   //states
   const [visible, setVisible] = useState(false);
-  const [isEditing, setIsEditing] = useState<IEditState<ICoupon>>({
+  const [isEditing, setIsEditing] = useState<IEditState<any>>({
     bool: false,
     data: {
       __typename: '',

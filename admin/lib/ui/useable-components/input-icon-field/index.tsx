@@ -26,7 +26,7 @@ export default function CustomIconTextField({
   showLabel,
   isLoading = false,
   ...props
-}: IIconTextFieldProps) {
+}: any) {
   const { icon, position, style } = iconProperties;
 
   return !isLoading ? (

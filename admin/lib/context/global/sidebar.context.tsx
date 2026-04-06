@@ -13,18 +13,18 @@ import {
 // Types
 import {} from '@/lib/utils/interfaces';
 
-export const SidebarContext = createContext<ISidebarContextProps>(
-  {} as ISidebarContextProps
+export const SidebarContext = createContext<any>(
+  {} as any
 );
 
-export const SidebarProvider = ({ children }: IProvider) => {
+export const SidebarProvider = ({ children }: any) => {
   const [selectedItem, setSelectedItem] = useState<ISelectedItems | null>(null);
 
-  const onSetSelectedItems = (items: ISelectedItems) => {
+  const onSetSelectedItems = (items: any) => {
     setSelectedItem(items);
   };
 
-  const value: ISidebarContextProps = {
+  const value: any = {
     selectedItem: selectedItem,
     setSelectedItem: onSetSelectedItems,
   };

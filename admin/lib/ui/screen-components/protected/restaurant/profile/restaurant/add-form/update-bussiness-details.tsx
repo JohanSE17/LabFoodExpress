@@ -24,7 +24,7 @@ import { useTranslations } from 'next-intl';
 
 export default function UpdateBusinessDetails({
   stepperProps,
-}: IUpdateProfileProps) {
+}: any) {
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => { },
     order: -1,
@@ -60,7 +60,7 @@ export default function UpdateBusinessDetails({
     }
   );
 
-  const initialValues: IUpdateBussinessDetailsForm = useMemo(() => {
+  const initialValues: any = useMemo(() => {
     const restaurantData = restaurantProfileResponse.data?.restaurant;
 
     return {
@@ -74,7 +74,7 @@ export default function UpdateBusinessDetails({
     };
   }, [restaurantProfileResponse.data?.restaurant]);
 
-  const onEditRestaurant = async (data: IUpdateBussinessDetailsForm) => {
+  const onEditRestaurant = async (data: any) => {
     if (!restaurantId) {
       showToast({
         type: 'error',

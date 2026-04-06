@@ -6,7 +6,7 @@ import { useConfiguration } from '@/lib/hooks/useConfiguration';
 export const EARNING_COLUMNS = ({
   isSuperAdmin = false,
 }: {
-  menuItems: IActionMenuProps<IEarning>['items'];
+  menuItems: any<any>['items'];
   isSuperAdmin?: boolean;
 }) => {
   // Hooks
@@ -24,7 +24,7 @@ export const EARNING_COLUMNS = ({
     {
       headerName: t('Created At'),
       propertyName: 'createdAt',
-      body: (earning: IEarning) => {
+      body: (earning: any) => {
         const date = new Date(earning?.createdAt);
         const day = date.getDate().toString().padStart(2, '0');
         const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -45,7 +45,7 @@ export const EARNING_COLUMNS = ({
       headerName: t('platform_earnings'),
       propertyName: 'platformEarnings.totalEarnings',
       hidden: !isSuperAdmin,
-      body: (earning: IEarning) =>
+      body: (earning: any) =>
         isSuperAdmin ? (
           <div>
             {CURRENT_SYMBOL || '$'}{' '}
@@ -58,7 +58,7 @@ export const EARNING_COLUMNS = ({
     {
       headerName: t('Store') + ' ID',
       propertyName: 'storeEarnings.storeId.username',
-      body: (earning: IEarning) => (
+      body: (earning: any) => (
         <div>{earning?.storeEarnings?.storeId?.username}</div>
       ),
     },
@@ -66,7 +66,7 @@ export const EARNING_COLUMNS = ({
       headerName: t('Store Earnings'),
       propertyName: 'storeEarnings.totalEarnings.',
 
-      body: (earning: IEarning) => (
+      body: (earning: any) => (
         <div>
           {CURRENT_SYMBOL || '$'}{' '}
           {earning?.storeEarnings?.totalEarnings?.toFixed(2)}
@@ -77,7 +77,7 @@ export const EARNING_COLUMNS = ({
       headerName: t('Rider') + ' ID',
       propertyName: 'riderEarnings.riderId.username',
       hidden: !isSuperAdmin,
-      body: (earning: IEarning) => (
+      body: (earning: any) => (
         <div>{earning?.riderEarnings?.riderId?.username}</div>
       ),
     },
@@ -85,7 +85,7 @@ export const EARNING_COLUMNS = ({
       headerName: t('Riders') + ' ' + t('Earnings'),
       propertyName: 'riderEarnings.totalEarnings',
       hidden: !isSuperAdmin,
-      body: (earning: IEarning) => (
+      body: (earning: any) => (
         <div>
           {CURRENT_SYMBOL || '$'}{' '}
           {earning?.riderEarnings?.totalEarnings?.toFixed(2)}

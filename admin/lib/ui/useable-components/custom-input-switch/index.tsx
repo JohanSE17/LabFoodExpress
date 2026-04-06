@@ -8,7 +8,7 @@ export default function CustomInputSwitch({
   onChange,
   reverse = false,
   className
-}: ICustomInputSwitchComponentProps) {
+}: any) {
   return loading ? (
     <div className="ml-4">
       <CustomLoader size="14.7px" />

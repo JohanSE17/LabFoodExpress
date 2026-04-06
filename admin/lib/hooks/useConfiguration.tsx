@@ -13,7 +13,7 @@ import { ConfigurationContext } from '@/lib/context/global/configuration.context
 import { Libraries } from '@react-google-maps/api';
 
 export const useConfiguration = () => {
-  const configuration: IConfiguration | undefined =
+  const configuration: any | undefined =
     useContext(ConfigurationContext);
 
   const GOOGLE_CLIENT_ID = configuration?.webClientID;

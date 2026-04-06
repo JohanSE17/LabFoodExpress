@@ -7,7 +7,7 @@ import AppTopbar from '@/lib/ui/screen-components/unprotected/layout/app-bar';
 // Interface & Types
 import { IProvider } from '@/lib/utils/interfaces';
 
-const Layout = ({ children }: IProvider) => {
+const Layout = ({ children }: any) => {
   return (
     <div className="layout-main">
       <div className="layout-top-container">

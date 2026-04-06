@@ -13,7 +13,7 @@ export default function DashboardRestaurantStatsTable({
   title,
   data,
   amountConfig,
-}: IDashboardRestaurantStatsTableComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

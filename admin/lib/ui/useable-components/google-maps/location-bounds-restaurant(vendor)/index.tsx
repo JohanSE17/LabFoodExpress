@@ -139,7 +139,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
     {
       update: (cache, { data }) => {
         if (data) {
-          updateCache(cache, { data } as IRestaurantProfileResponse);
+          updateCache(cache, { data } as any);
         }
       },
 
@@ -150,7 +150,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
 
   // Get Zones
 
-  useQuery<IZonesResponse>(GET_ZONES, {
+  useQuery<any>(GET_ZONES, {
     onCompleted: (data) => {
       if (data) {
         setZones(data?.zones);
@@ -173,9 +173,9 @@ const CustomGoogleMapsLocationBounds: React.FC<
   // API Handlers
   function updateCache(
     cache: ApolloCache<unknown>,
-    { data }: IRestaurantProfileResponse
+    { data }: any
   ) {
-    const cachedData: IRestaurantProfileResponse | null = cache.readQuery({
+    const cachedData: any | null = cache.readQuery({
       query: GET_RESTAURANT_PROFILE,
       variables: { id: restaurantContextData?.id ?? '' },
     });
@@ -209,7 +209,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
   function onRestaurantProfileFetchCompleted({
     restaurant,
   }: {
-    restaurant: IRestaurantProfile;
+    restaurant: any;
   }) {
     const isLocationZero =
       +restaurant?.location?.coordinates[0] === 0 &&
@@ -249,7 +249,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
   function onRestaurantZoneInfoFetchCompleted({
     getRestaurantDeliveryZoneInfo,
   }: {
-    getRestaurantDeliveryZoneInfo: IRestaurantDeliveryZoneInfo;
+    getRestaurantDeliveryZoneInfo: any;
   }) {
     const {
       address,
@@ -302,7 +302,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
   function onRestaurantZoneUpdateCompleted({
     restaurant,
   }: {
-    restaurant: IRestaurantProfile;
+    restaurant: any;
   }) {
     if (restaurant) {
       setCenter({
@@ -327,7 +327,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
     });
 
     if (onStepChange) onStepChange(2);
-    // onSetRestaurantContextData({} as IRestaurantsContextPropData);
+    // onSetRestaurantContextData({} as any);
     // onSetRestaurantFormVisible(false);
   }
 
@@ -338,7 +338,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
   const onHandlerAutoCompleteSelectionChange = (
     event: AutoCompleteSelectEvent
   ) => {
-    const selectedOption = event?.value as IPlaceSelectedOption;
+    const selectedOption = event?.value as any;
     if (selectedOption) {
       const geocoder = new window.google.maps.Geocoder();
       geocoder.geocode(
@@ -379,7 +379,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
       { lat: e?.latLng?.lat() ?? 0, lng: e?.latLng?.lng() ?? 0 },
     ]);
   };
-  const getPolygonPathFromCircle = (center: ILocationPoint, radius: number) => {
+  const getPolygonPathFromCircle = (center: any, radius: number) => {
     try {
       const points = 4;
       const angleStep = (2 * Math.PI) / points;
@@ -401,7 +401,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
     }
   };
   function getPolygonPath(
-    center: ILocationPoint,
+    center: any,
     radius: number,
     numPoints: number = 4
   ) {
@@ -435,7 +435,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
     const newDistance = Math.max(0, val); // Only ensure it's not negative
     setDistance(newDistance);
   };
-  const locationCallback = (error: string | null, data?: ILocation) => {
+  const locationCallback = (error: string | null, data?: any) => {
     if (error) {
       return;
     }
@@ -535,7 +535,7 @@ const CustomGoogleMapsLocationBounds: React.FC<
         bounds = getPolygonPath(center, radiusInMeter);
       }
 
-      let variables: IUpdateRestaurantDeliveryZoneVariables = {
+      let variables: any = {
         id: restaurantContextData?.id ?? '',
         location,
         boundType: deliveryZoneType,
@@ -578,9 +578,9 @@ const CustomGoogleMapsLocationBounds: React.FC<
       return undefined;
     }
 
-    fetch({ input: search }, (results: IPlaceSelectedOption[]) => {
+    fetch({ input: search }, (results: any[]) => {
       if (active) {
-        let newOptions: IPlaceSelectedOption[] = [];
+        let newOptions: any[] = [];
         if (selectedPlaceObject) {
           newOptions = [selectedPlaceObject];
         }

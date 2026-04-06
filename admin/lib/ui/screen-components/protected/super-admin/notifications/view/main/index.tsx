@@ -24,7 +24,7 @@ export default function NotificationMain() {
   const { data: notificationData, loading: notificationLoading } = useQueryGQL(
     GET_NOTIFICATIONS,
     {}
-  ) as IQueryResult<IGetNotifications | undefined, undefined>;
+  ) as any<IGetNotifications | undefined, undefined>;
 
   // States
   const [selectedActions, setSelectedActions] = useState<string[]>([]);

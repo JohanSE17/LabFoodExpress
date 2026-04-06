@@ -43,7 +43,7 @@ export default function CategoryMain({
   setSubCategories,
   setCategory,
   setIsAddSubCategoriesVisible,
-}: ICategoryMainComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -81,7 +81,7 @@ export default function CategoryMain({
       onCompleted: onFetchCategoriesByRestaurantCompleted,
       onError: onErrorFetchCategoriesByRestaurant,
     }
-  ) as IQueryResult<ICategoryByRestaurantResponse | undefined, undefined>;
+  ) as any<ICategoryByRestaurantResponse | undefined, undefined>;
 
   const { data: subCategoriesData, loading: loadingSubCategories } =
     useQueryGQL(GET_SUBCATEGORIES, {
@@ -96,7 +96,7 @@ export default function CategoryMain({
             t('An error occured while fetching the sub-categories'),
         });
       },
-    }) as IQueryResult<ISubCategoryResponse | undefined, undefined>;
+    }) as any<ISubCategoryResponse | undefined, undefined>;
 
   //Mutation
   const [deleteCategory, { loading: mutationLoading }] = useMutation(
@@ -141,10 +141,10 @@ export default function CategoryMain({
   }
 
   // Constants
-  const menuItems: IActionMenuItem<ICategory>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: ICategory) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddCategoryVisible(true);
           setCategory(data);
@@ -160,7 +160,7 @@ export default function CategoryMain({
     },
     {
       label: t('Delete'),
-      command: (data?: ICategory) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }
@@ -170,7 +170,7 @@ export default function CategoryMain({
       ? [
           {
             label: t('View Sub-Categories'),
-            command: (data?: ICategory) => {
+            command: (data?: any) => {
               if (data && data._id) {
                 handleCategoryRowClick(data?._id);
               } else {

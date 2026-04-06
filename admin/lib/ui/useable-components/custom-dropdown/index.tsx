@@ -22,7 +22,7 @@ const CustomDropdownComponent = ({
   filter = true,
   extraFooterButton,
   ...props
-}: IDropdownComponentProps) => {
+}: any) => {
   const t = useTranslations();
   const { theme } = useTheme();
 

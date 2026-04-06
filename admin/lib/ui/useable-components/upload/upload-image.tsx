@@ -51,9 +51,9 @@ function CustomUploadImageComponent({
     'video/webm',
     'video/mp4',
   ],
-}: IImageUploadComponentProps) {
+}: any) {
   // Context
-  // const configuration: IConfiguration | undefined =
+  // const configuration: any | undefined =
   //   useContext(ConfigurationContext);
   const { showToast } = useContext(ToastContext);
 

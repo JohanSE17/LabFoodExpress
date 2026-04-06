@@ -10,7 +10,7 @@ export default function OrdersDashboardDateFilter({
   dateFilter,
   setDateFilter,
   className,
-}: IDashboardDateFilterComponentsProps) {
+}: any) {
   // State
   const [localDateFilter, setLocalDateFilter] = useState({
     startDate: dateFilter.startDate,

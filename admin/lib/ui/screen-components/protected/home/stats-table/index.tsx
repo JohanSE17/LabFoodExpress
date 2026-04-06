@@ -19,7 +19,7 @@ export default function StatesTable() {
   const { data, loading } = useQueryGQL(GET_DASHBOARD_ORDERS_BY_TYPE, {
     fetchPolicy: 'network-only',
     debounceMs: 300,
-  }) as IQueryResult<
+  }) as any<
     IDashboardOrdersByTypeResponseGraphQL | undefined,
     undefined
   >;
@@ -30,7 +30,7 @@ export default function StatesTable() {
       fetchPolicy: 'network-only',
       debounceMs: 300,
     }
-  ) as IQueryResult<
+  ) as any<
     IDashboardSalesByTypeResponseGraphQL | undefined,
     undefined
   >;

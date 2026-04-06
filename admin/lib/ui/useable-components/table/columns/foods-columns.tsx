@@ -19,7 +19,7 @@ import { useTranslations } from 'next-intl';
 export const FOODS_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IFoodNew>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -90,12 +90,12 @@ export const FOODS_TABLE_COLUMNS = ({
     {
       headerName: t('Category'),
       propertyName: 'category.label',
-      body: (item: IFoodNew) => <div>{item?.category?.label ?? ''}</div>,
+      body: (item: any) => <div>{item?.category?.label ?? ''}</div>,
     },
     {
       headerName: t('Image'),
       propertyName: 'image',
-      body: (item: IFoodNew) =>
+      body: (item: any) =>
         item.image ? (
           <Image src={item.image} width={40} height={40} alt="item.png" />
         ) : (
@@ -105,7 +105,7 @@ export const FOODS_TABLE_COLUMNS = ({
     {
       headerName: t('Out of Stock'),
       propertyName: 'isOutOfStock',
-      body: (item: IFoodNew) => {
+      body: (item: any) => {
         return (
           <CustomInputSwitch
             loading={isFoodLoading === item._id}
@@ -119,7 +119,7 @@ export const FOODS_TABLE_COLUMNS = ({
     },
     {
       propertyName: 'actions',
-      body: (option: IFoodNew) => {
+      body: (option: any) => {
         return <ActionMenu items={menuItems} data={option} />;
       },
     },

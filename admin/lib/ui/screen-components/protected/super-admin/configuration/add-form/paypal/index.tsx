@@ -43,7 +43,7 @@ const PayPalAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: IPaypalForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

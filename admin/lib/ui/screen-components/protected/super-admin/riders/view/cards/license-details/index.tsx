@@ -8,7 +8,7 @@ import { Skeleton } from 'primereact/skeleton';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-const LicenseDetails = ({ loading, rider }: IRiderDetailsProps) => {
+const LicenseDetails = ({ loading, rider }: any) => {
   const t = useTranslations();
 
   return (

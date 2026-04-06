@@ -6,11 +6,11 @@ import {
   IReview,
 } from '@/lib/utils/interfaces/ratings.interface';
 
-const CustomDataView: React.FC<ICustomDataViewProps> = ({
+const CustomDataView: React.FC<any> = ({
   products,
   header,
 }) => {
-  const itemTemplate = (review: IReview) => {
+  const itemTemplate = (review: any) => {
     const orderedItems = review?.createdAt
       ? review.order.items.map((item) => item.title).join(', ')
       : '';

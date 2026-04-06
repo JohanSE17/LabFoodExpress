@@ -6,7 +6,7 @@ const Toggle = ({
   disabled,
   showLabel = false,
   placeholder,
-}: IToggleComponentProps) => {
+}: any) => {
   return (
     <div className="flex items-center justify-between">
       {showLabel && <label className="text-sm font-[500]">{placeholder}</label>}

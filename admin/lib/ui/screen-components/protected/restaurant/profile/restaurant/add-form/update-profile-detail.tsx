@@ -49,7 +49,7 @@ import { useShopTypes } from '@/lib/hooks/useShopType';
 
 export default function UpdateRestaurantDetails({
   stepperProps,
-}: IUpdateProfileProps) {
+}: any) {
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => {},
     order: -1,
@@ -99,18 +99,18 @@ export default function UpdateRestaurantDetails({
 
   const cuisineResponse = useQueryGQL(GET_CUISINES, {
     debounceMs: 300,
-  }) as IQueryResult<IGetCuisinesData | undefined, undefined>;
+  }) as any<IGetCuisinesData | undefined, undefined>;
 
   const cuisinesDropdown = useMemo(
     () =>
-      cuisineResponse.data?.cuisines?.map((cuisine: ICuisine) => ({
+      cuisineResponse.data?.cuisines?.map((cuisine: any) => ({
         label: toTextCase(cuisine.name, 'title'),
         code: cuisine.name,
       })),
     [cuisineResponse.data?.cuisines]
   );
 
-  const initialValues: IUpdateProfileForm = useMemo(() => {
+  const initialValues: any = useMemo(() => {
     const restaurantData = restaurantProfileResponse.data?.restaurant;
     return {
       name: restaurantData?.name ?? '',
@@ -138,7 +138,7 @@ export default function UpdateRestaurantDetails({
     };
   }, [restaurantProfileResponse.data?.restaurant, dropdownList]);
 
-  const onEditRestaurant = async (data: IUpdateProfileForm) => {
+  const onEditRestaurant = async (data: any) => {
     if (!restaurantId) {
       showToast({
         type: 'error',

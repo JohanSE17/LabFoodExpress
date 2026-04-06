@@ -40,7 +40,7 @@ export default function GrowthOverView() {
       enabled: !!restaurantId,
       debounceMs: 300,
     }
-  ) as IQueryResult<
+  ) as any<
     IDashboardRestaurantSalesOrderCountDetailsByYearResponseGraphQL | undefined,
     undefined
   >;

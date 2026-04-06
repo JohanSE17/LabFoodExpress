@@ -33,7 +33,7 @@ import { useTranslations } from 'next-intl';
 export default function StaffMain({
   setIsAddStaffVisible,
   setStaff,
-}: IStaffMainComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { showToast } = useToast();
@@ -51,7 +51,7 @@ export default function StaffMain({
   // Query
   const { data, loading } = useQueryGQL(GET_STAFFS, {
     fetchPolicy: 'cache-and-network',
-  }) as IQueryResult<IStaffGQLResponse | undefined, undefined>;
+  }) as any<IStaffGQLResponse | undefined, undefined>;
 
   // For global search
   const onGlobalFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,10 +70,10 @@ export default function StaffMain({
     }
   );
 
-  const menuItems: IActionMenuItem<IStaffResponse>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: IStaffResponse) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddStaffVisible(true);
           setStaff(data);
@@ -82,7 +82,7 @@ export default function StaffMain({
     },
     {
       label: t('Delete'),
-      command: (data?: IStaffResponse) => {
+      command: (data?: any) => {
         if (data) {
           console.log(data);
           setDeleteId(data._id);

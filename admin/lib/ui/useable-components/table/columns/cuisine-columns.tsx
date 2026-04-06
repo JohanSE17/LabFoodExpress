@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl';
 export const CUISINE_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<ICuisine>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -24,7 +24,7 @@ export const CUISINE_TABLE_COLUMNS = ({
       {
         headerName: t('Image'),
         propertyName: 'image',
-        body: (data: ICuisine) => (
+        body: (data: any) => (
           <div className="flex h-8 w-8 items-center justify-start overflow-hidden rounded-md">
             <Image
               src={
@@ -53,7 +53,7 @@ export const CUISINE_TABLE_COLUMNS = ({
       {
         headerName: t('Actions'),
         propertyName: 'action',
-        body: (rowData: ICuisine) => (
+        body: (rowData: any) => (
           <div className="three-dots">
             <ActionMenu data={rowData} items={menuItems} />
           </div>

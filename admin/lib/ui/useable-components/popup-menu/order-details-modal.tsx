@@ -7,10 +7,10 @@ import { useConfiguration } from '@/lib/hooks/useConfiguration';
 interface IOrderDetailModalProps {
   visible: boolean;
   onHide: () => void;
-  restaurantData: IExtendedOrder | null;
+  restaurantData: any | null;
 }
 
-const OrderDetailModal: React.FC<IOrderDetailModalProps> = ({
+const OrderDetailModal: React.FC<any> = ({
   visible,
   onHide,
   restaurantData,

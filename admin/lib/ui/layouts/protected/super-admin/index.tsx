@@ -24,7 +24,7 @@ import { useConfiguration } from '@/lib/hooks/useConfiguration';
 import { UPLOAD_TOKEN } from '@/lib/api/graphql/queries/token';
 import { useApolloClient } from '@apollo/client';
 
-const Layout = ({ children }: IProvider) => {
+const Layout = ({ children }: any) => {
   // Context
   const { isSuperAdminSidebarVisible } =
     useContext<LayoutContextProps>(LayoutContext);

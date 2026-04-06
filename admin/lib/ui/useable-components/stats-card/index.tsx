@@ -17,7 +17,7 @@ export default function StatsCard({
   loading = false,
   amountConfig,
   isClickable = true,
-}: IStatsCardProps) {
+}: any) {
   const stats_card = () => (
     <div
       className={`card flex flex-col justify-between min-h-28 bg-white border border-gray-200 dark:bg-dark-900 dark:border-dark-600 dark:text-white ${

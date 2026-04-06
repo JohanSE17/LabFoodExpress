@@ -30,7 +30,7 @@ const DeliveryRateAddForm = () => {
   const { DELIVERY_RATE, COST_TYPE } = useConfiguration();
   const { showToast } = useToast();
 
-  const initialValues: IDeliveryRateForm = {
+  const initialValues: any = {
     deliveryRate: DELIVERY_RATE ?? null,
     costType: COST_TYPE,
   };
@@ -42,7 +42,7 @@ const DeliveryRateAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: IDeliveryRateForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

@@ -17,21 +17,21 @@ export const COMMISSION_RATE_COLUMNS = ({
   handleSave,
   handleCommissionRateChange,
   loadingRestaurant,
-}: ICommissionColumnProps & { loadingRestaurant: string | null }) => {
+}: any & { loadingRestaurant: string | null }) => {
   // Hooks
   const t = useTranslations();
   return [
     {
       headerName: t('Name'),
       propertyName: 'name',
-      body: (restaurant: ICommissionRateRestaurantResponse) => (
+      body: (restaurant: any) => (
         <span style={{ fontWeight: 'bold' }}>{restaurant.name}</span>
       ),
     },
     {
       headerName: t('Set Commission Rate'),
       propertyName: 'commissionRate',
-      body: (restaurant: ICommissionRateRestaurantResponse) => (
+      body: (restaurant: any) => (
         <Formik
           initialValues={{
             [`commissionRate-${restaurant._id}`]: restaurant.commissionRate,
@@ -68,7 +68,7 @@ export const COMMISSION_RATE_COLUMNS = ({
     {
       headerName: t('Actions'),
       propertyName: 'action',
-      body: (restaurant: ICommissionRateRestaurantResponse) => (
+      body: (restaurant: any) => (
         <Formik initialValues={{}} onSubmit={() => handleSave(restaurant._id)}>
           {({ handleSubmit, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>

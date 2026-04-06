@@ -8,7 +8,7 @@ import { useConfiguration } from '@/lib/hooks/useConfiguration';
 
 const EarningsSuperAdminHeader = ({
   earnings,
-}: IEarningsHeaderComponentProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
   const { CURRENT_SYMBOL } = useConfiguration();

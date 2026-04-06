@@ -23,7 +23,7 @@ export default function CustomNumberTextField({
   isLoading = false,
   onChange,
   ...props
-}: INumberTextFieldProps) {
+}: any) {
   // Formik
   const { setFieldValue } = useFormikContext();
 

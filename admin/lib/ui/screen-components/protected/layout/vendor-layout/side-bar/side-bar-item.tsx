@@ -46,7 +46,7 @@ export default function SidebarItem({
   route,
   isParent,
   isClickable,
-}: ISidebarMenuItem) {
+}: any) {
   // States
   const [expandSubMenu, setExpandSubMenu] = useState(false);
   const { showVendorSidebar } = useContext<LayoutContextProps>(LayoutContext);

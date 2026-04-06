@@ -22,7 +22,7 @@ import { useTranslations } from 'next-intl';
 export const COUPONS_RESTAURANT_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<ICouponRestaurantResponse>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -43,7 +43,7 @@ export const COUPONS_RESTAURANT_TABLE_COLUMNS = ({
   // Handle availability toggle
   const onHandleBannerStatusChange = async (
     enabled: boolean,
-    coupon: ICouponRestaurantResponse
+    coupon: any
   ) => {
     try {
       setSelectedCouponId(coupon._id);
@@ -73,7 +73,7 @@ export const COUPONS_RESTAURANT_TABLE_COLUMNS = ({
     {
       headerName: t('Enabled'),
       propertyName: 'enabled',
-      body: (coupon: ICouponRestaurantResponse) => (
+      body: (coupon: any) => (
         <CustomInputSwitch
           loading={coupon._id === selectedCouponId && loading}
           isActive={coupon.enabled}
@@ -85,7 +85,7 @@ export const COUPONS_RESTAURANT_TABLE_COLUMNS = ({
     },
     {
       propertyName: 'actions',
-      body: (coupon: ICouponRestaurantResponse) => (
+      body: (coupon: any) => (
         <ActionMenu items={menuItems} data={coupon} />
       ),
     },

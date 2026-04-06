@@ -26,7 +26,7 @@ import { useTranslations } from 'next-intl';
 
 export default function RestaurantStatesTable({
   dateFilter,
-}: IDashboardRestaurantStatesTableComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { CURRENCY_CODE } = useConfiguration();
@@ -48,7 +48,7 @@ export default function RestaurantStatesTable({
       debounceMs: 300,
       enabled: !!restaurantLayoutContextData?.restaurantId,
     }
-  ) as IQueryResult<
+  ) as any<
     IDashboardOrderSalesDetailsByPaymentMethodResponseGraphQL | undefined,
     undefined
   >;

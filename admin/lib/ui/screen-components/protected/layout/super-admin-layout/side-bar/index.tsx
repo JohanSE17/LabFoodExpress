@@ -30,7 +30,7 @@ import SidebarItem from './side-bar-item';
 import { useTranslations } from 'next-intl';
 import { faHeadset } from '@fortawesome/free-solid-svg-icons/faHeadset';
 
-function SuperAdminSidebar({ children }: IGlobalComponentProps) {
+function SuperAdminSidebar({ children }: any) {
   // Contexts
   const { isSuperAdminSidebarVisible } =
     useContext<LayoutContextProps>(LayoutContext);
@@ -59,7 +59,7 @@ export default function MakeSidebar() {
   const { isSuperAdminSidebarVisible } =
     useContext<LayoutContextProps>(LayoutContext);
 
-  const navBarItems: ISidebarMenuItem[] = [
+  const navBarItems: any[] = [
     {
       text: 'My Website',
       label: t('My Website'),

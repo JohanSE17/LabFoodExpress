@@ -9,7 +9,7 @@ import { ICategoryHeaderProps } from '@/lib/utils/interfaces';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 
-const CategoryHeader = ({ setIsAddCategoryVisible }: ICategoryHeaderProps) => {
+const CategoryHeader = ({ setIsAddCategoryVisible }: any) => {
   // Hooks
   const t = useTranslations();
   return (

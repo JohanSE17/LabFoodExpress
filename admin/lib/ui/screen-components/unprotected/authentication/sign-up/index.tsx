@@ -26,7 +26,7 @@ import { PasswordErrors, SignUpErrors } from '@/lib/utils/constants';
 // Interface
 import { ISignUpForm } from '@/lib/utils/interfaces/forms';
 
-const initialValues: ISignUpForm = {
+const initialValues: any = {
   firstName: '',
   lastName: '',
   email: '',
@@ -35,7 +35,7 @@ const initialValues: ISignUpForm = {
 };
 
 export default function SignupMain() {
-  const [account] = useState<ISignUpForm>(initialValues);
+  const [account] = useState<any>(initialValues);
 
   const SignupSchema = Yup.object().shape({
     firstName: Yup.string().min(2).max(35).required('Required'),

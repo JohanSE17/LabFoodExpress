@@ -39,7 +39,7 @@ import { useTranslations } from 'next-intl';
 
 const RestaurantTiming = ({
   stepperProps,
-}: IRestaurantsRestaurantTimingComponentProps) => {
+}: any) => {
   const { onStepChange } = stepperProps ?? {
     onStepChange: () => {},
   };
@@ -63,9 +63,9 @@ const RestaurantTiming = ({
   });
 
   //for conversion from ["HH","MM"] to 'HH:MM' format
-  const openingTimes: ITimingForm[] =
-    data?.restaurant?.openingTimes?.map((opening: ITimingResponseGQL) => {
-      const times = opening?.times?.map((timing: ITimeSlotResponseGQL) => {
+  const openingTimes: any[] =
+    data?.restaurant?.openingTimes?.map((opening: any) => {
+      const times = opening?.times?.map((timing: any) => {
         const formatTime = (time: string[]) =>
           `${time[0].padStart(2, '0')}:${time[1].padStart(2, '0')}`;
 
@@ -81,13 +81,13 @@ const RestaurantTiming = ({
       };
     }) ?? [];
 
-  const initialValues: ITimingForm[] =
+  const initialValues: any[] =
     openingTimes.length > 0 ? openingTimes : TIMING_INITIAL_VALUE;
 
   const [mutate, { loading: mutationLoading }] = useMutation(UPDATE_TIMINGS);
 
   // Form Submission
-  const handleSubmit = (values: ITimingForm[]) => {
+  const handleSubmit = (values: any[]) => {
     //conversion from 'HH:MM' to ["HH","MM"]
     const formattedData = [...values]?.map((v) => {
       const tempTime = [...v.times];
@@ -119,7 +119,7 @@ const RestaurantTiming = ({
 
         onSetRestaurantFormVisible(false);
         onStepChange(0);
-        onSetRestaurantContextData({} as IRestaurantsContextPropData);
+        onSetRestaurantContextData({} as any);
       },
       onError: (error) => {
         let message = '';
@@ -177,7 +177,7 @@ const RestaurantTiming = ({
                   {/* center */}
                   {value?.times?.length > 0 ? (
                     <div className="flex flex-col gap-4">
-                      {value?.times?.map((time: ITimeSlot, timeIndex) => {
+                      {value?.times?.map((time: any, timeIndex) => {
                         return (
                           <div
                             key={timeIndex}
@@ -202,7 +202,7 @@ const RestaurantTiming = ({
                                       (
                                         errors?.[dayIndex]?.times?.[
                                           timeIndex
-                                        ] as FormikErrors<ITimeSlot>
+                                        ] as FormikErrors<any>
                                       )?.startTime &&
                                       touched?.[dayIndex]?.times?.[timeIndex]
                                         ?.startTime
@@ -241,7 +241,7 @@ const RestaurantTiming = ({
                                       (
                                         errors?.[dayIndex]?.times?.[
                                           timeIndex
-                                        ] as FormikErrors<ITimeSlot>
+                                        ] as FormikErrors<any>
                                       )?.endTime &&
                                       touched?.[dayIndex]?.times?.[timeIndex]
                                         ?.endTime

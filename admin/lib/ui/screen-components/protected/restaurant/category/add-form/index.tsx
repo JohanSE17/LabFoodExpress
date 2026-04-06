@@ -58,7 +58,7 @@ export default function CategoryAddForm({
   position = 'right',
   isAddCategoryVisible,
   onCategoryAdded,
-}: ICategoryAddFormComponentProps & { onCategoryAdded?: () => void }) {
+}: any & { onCategoryAdded?: () => void }) {
   // Hooks
   const t = useTranslations();
   // Queries
@@ -66,7 +66,7 @@ export default function CategoryAddForm({
     data: subCategories,
     loading: subCategoriesLoading,
     refetch: refetchSubCatrgories,
-  } = useQuery<ISubCategoryByParentIdResponse>(GET_SUBCATEGORIES_BY_PARENT_ID, {
+  } = useQuery<any>(GET_SUBCATEGORIES_BY_PARENT_ID, {
     variables: {
       parentCategoryId: category?._id,
     },
@@ -87,7 +87,7 @@ export default function CategoryAddForm({
   });
 
   // StateS
-  const initialValues: ICategoryForm = {
+  const initialValues: any = {
     _id: '',
     title: '',
     subCategories:
@@ -177,12 +177,12 @@ export default function CategoryAddForm({
   );
 
   // Form Submission
-  const handleSubmit = async (values: ICategoryForm) => {
+  const handleSubmit = async (values: any) => {
     // Duplicate name check (case-insensitive, ignore self if editing)
     const allCategories =
       allCategoriesData?.restaurant?.categories || [];
     const isDuplicate = allCategories.some(
-      (cat: ICategoryForm) =>
+      (cat: any) =>
         cat.title.trim().toLowerCase() === values.title.trim().toLowerCase() &&
         (!category || cat._id !== category._id)
     );
@@ -303,7 +303,7 @@ export default function CategoryAddForm({
                               {({ remove, push }) => (
                                 <div>
                                   {values?.subCategories?.map(
-                                    (value: ISubCategory, index) => {
+                                    (value: any, index) => {
                                       if (values._id) {
                                         setTimeout(
                                           () =>

@@ -61,7 +61,7 @@ export default function WithdrawRequestsAdminMain() {
       userId: restaurantId, // Added restaurantId
     },
     fetchPolicy: 'network-only', // Add this line
-  }) as unknown as IQueryResult<
+  }) as unknown as any<
     IGetWithDrawRequestsData | undefined,
     undefined
   >;

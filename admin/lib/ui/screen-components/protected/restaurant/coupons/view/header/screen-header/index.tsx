@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 
 const CouponsHeader = ({
   setIsAddCouponVisible,
-}: ICouponRestaurantHeaderProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
   return (

@@ -21,18 +21,18 @@ import { VendorLayoutContext } from './layout-vendor.context';
 // Types
 
 export const VendorLayoutRestaurantContext =
-  createContext<IRestaurantContextProps>({} as IRestaurantContextProps);
+  createContext<any>({} as any);
 
-export const VendorLayoutRestaurantProvider = ({ children }: IProvider) => {
+export const VendorLayoutRestaurantProvider = ({ children }: any) => {
   // Context
   const {
     vendorLayoutContextData: { vendorId },
   } = useContext(VendorLayoutContext);
   // States
   const [restaurantContextData, setRestaurantContextData] =
-    useState<IVendorLayoutRestaurantContextData>({
+    useState<any>({
       id: '',
-      filtered: [] as IRestaurantByOwner[] | undefined,
+      filtered: [] as any[] | undefined,
       globalFilter: '',
       isEditing: false,
       autoCompleteAddress: '',
@@ -54,13 +54,13 @@ export const VendorLayoutRestaurantProvider = ({ children }: IProvider) => {
       enabled: !!vendorId,
       debounceMs: 300,
       onCompleted: (data: unknown) => {
-        const _data = data as IRestaurantsByOwnerResponseGraphQL;
+        const _data = data as any;
         onSetRestaurantContextData({
           id: _data?.restaurantByOwner?.restaurants[0]?._id ?? '',
         });
       },
     }
-  ) as IQueryResult<IRestaurantsByOwnerResponseGraphQL | undefined, undefined>;
+  ) as any<IRestaurantsByOwnerResponseGraphQL | undefined, undefined>;
 
   const onActiveStepChange = (activeStep: number) => {
     setActiveIndex(activeStep);
@@ -75,7 +75,7 @@ export const VendorLayoutRestaurantProvider = ({ children }: IProvider) => {
   };
 
   const onSetRestaurantContextData = (
-    data: Partial<IRestaurantContextData>
+    data: Partial<any>
   ) => {
     setRestaurantContextData((prevData) => ({
       ...prevData,
@@ -84,7 +84,7 @@ export const VendorLayoutRestaurantProvider = ({ children }: IProvider) => {
   };
 
   const onHandlerFilterData = () => {
-    const _filtered: IRestaurantByOwner[] = onFilterObjects(
+    const _filtered: any[] = onFilterObjects(
       restaurantByOwnerResponse?.data?.restaurantByOwner?.restaurants ?? [],
       restaurantContextData?.globalFilter ?? '',
       ['name', 'address', 'shopType']
@@ -104,7 +104,7 @@ export const VendorLayoutRestaurantProvider = ({ children }: IProvider) => {
     restaurantByOwnerResponse.refetch();
   }, [vendorId]);
 
-  const value: IRestaurantContextProps = {
+  const value: any = {
     // Vendor Information
     vendorId,
     // Form Visibility

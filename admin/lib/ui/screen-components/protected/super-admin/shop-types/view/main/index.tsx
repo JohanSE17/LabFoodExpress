@@ -40,7 +40,7 @@ export default function ShopTypesMain({
   setVisible,
   isEditing,
   setIsEditing,
-}: IShopTypesMainProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -49,7 +49,7 @@ export default function ShopTypesMain({
 
   // States
   const [selectedData, setSelectedData] = useState<IShopType[]>([]);
-  const [isDeleting, setIsDeleting] = useState<IEditState<IShopType>>({
+  const [isDeleting, setIsDeleting] = useState<IEditState<any>>({
     bool: false,
     data: {
       __typename: '',
@@ -63,7 +63,7 @@ export default function ShopTypesMain({
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Filters
-  const filters: IFilterType = {
+  const filters: any = {
     global: { value: globalFilterValue, matchMode: FilterMatchMode.CONTAINS },
   };
 
@@ -72,7 +72,7 @@ export default function ShopTypesMain({
     fetchPolicy: 'network-only',
     debounceMs: 5000,
     onCompleted: () => setIsLoading(false),
-  }) as ILazyQueryResult<IGetShopTypesData | undefined, undefined>;
+  }) as any<IGetShopTypesData | undefined, undefined>;
 
   // Mutations
   const [deleteShopType, { loading: deleteShopTypeLoading }] = useMutation(
@@ -119,10 +119,10 @@ export default function ShopTypesMain({
   }
 
   // Menu Items
-  const menuItems: IActionMenuItem<IShopType>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: IShopType) => {
+      command: (data?: any) => {
         if (data) {
           setIsEditing({
             bool: true,
@@ -137,7 +137,7 @@ export default function ShopTypesMain({
     },
     {
       label: t('Delete'),
-      command: (data?: IShopType) => {
+      command: (data?: any) => {
         if (data) {
           setIsDeleting({
             bool: true,

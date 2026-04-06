@@ -25,7 +25,7 @@ const CustomMultiSelectComponent = ({
   className,
   multiSelectClassName,
   ...props
-}: IMultiSelectComponentProps) => {
+}: any) => {
    const t = useTranslations()
   const itemTemplate = (option: { label: string }) => {
     return (

@@ -10,7 +10,7 @@ import { IMenuItem } from '@/lib/utils/interfaces/orders/order-vendor.interface'
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
-const OrderTableHeader: React.FC<IOrderVendorHeaderProps> = ({
+const OrderTableHeader: React.FC<any> = ({
   setSelectedActions,
   selectedActions,
   onSearch,
@@ -30,7 +30,7 @@ const OrderTableHeader: React.FC<IOrderVendorHeaderProps> = ({
     );
   };
 
-  const menuItems: IMenuItem[] = [
+  const menuItems: any[] = [
     { label: t('PENDING'), value: 'PENDING' },
     { label: t('ACCEPTED'), value: 'ACCEPTED' },
     { label: t('ASSIGNED'), value: 'ASSIGNED' },

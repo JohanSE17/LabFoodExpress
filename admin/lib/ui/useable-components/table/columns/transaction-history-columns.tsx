@@ -8,7 +8,7 @@ export const TRANSACTION_HISTORY_COLUMNS = ({
   openMenuId, // NEW: Track which menu is open
   setOpenMenuId, // NEW: Function to set the open menu
 }: {
-  menuItems: IActionMenuProps<ITransactionHistory>['items'];
+  menuItems: any<any>['items'];
   openMenuId: string;
   setOpenMenuId: (id: string) => void;
 }) => {
@@ -28,7 +28,7 @@ export const TRANSACTION_HISTORY_COLUMNS = ({
     {
       headerName: t('User'),
       propertyName: 'user',
-      body: (transaction: ITransactionHistory) => {
+      body: (transaction: any) => {
         if (transaction.userType === 'RIDER' && transaction.rider) {
           return transaction.rider.name;
         }
@@ -41,13 +41,13 @@ export const TRANSACTION_HISTORY_COLUMNS = ({
     {
       headerName: t('Amount'),
       propertyName: 'amount',
-      body: (transaction: ITransactionHistory) =>
+      body: (transaction: any) =>
         `${transaction.amountCurrency} ${transaction.amountTransferred?.toFixed(2)}`,
     },
     {
       headerName: t('Created At'),
       propertyName: 'createdAt',
-      body: (transaction: ITransactionHistory) => {
+      body: (transaction: any) => {
         const date = new Date(transaction.createdAt);
         const formattedDate = date?.toISOString().split('T')[0]; // Format as YYYY-MM-DD
         return <div>{formattedDate}</div>;
@@ -56,7 +56,7 @@ export const TRANSACTION_HISTORY_COLUMNS = ({
     {
       headerName: t('Status'),
       propertyName: 'status',
-      body: (transaction: ITransactionHistory) => (
+      body: (transaction: any) => (
         <span
           className={`rounded-full px-2 py-1 text-sm ${
             transaction.status === 'COMPLETED'
@@ -70,7 +70,7 @@ export const TRANSACTION_HISTORY_COLUMNS = ({
     },
     {
       propertyName: 'actions',
-      body: (transaction: ITransactionHistory) => (
+      body: (transaction: any) => (
         <ActionMenu
           items={menuItems}
           data={transaction}

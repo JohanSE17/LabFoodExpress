@@ -59,7 +59,7 @@ const FirebaseAdminAddForm = () => {
   );
 
   // Handle form submission
-  const handleSubmit = (values: IFirebaseForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

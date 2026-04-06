@@ -101,7 +101,7 @@ export default function RestaurantsMain() {
       fetchPolicy: 'cache-and-network',
       debounceMs: 300,
     }
-  ) as IQueryResult<IRestaurantsResponseGraphQL | undefined, undefined>;
+  ) as any<IRestaurantsResponseGraphQL | undefined, undefined>;
 
   // API
   const [hardDeleteRestaurant, { loading: isHardDeleting }] = useMutation(
@@ -153,10 +153,10 @@ export default function RestaurantsMain() {
   };
 
   // Constants
-  const menuItems: IActionMenuItem<IRestaurantResponse>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('View'),
-      command: (data?: IRestaurantResponse) => {
+      command: (data?: any) => {
         if (data) {
           onUseLocalStorage('save', 'restaurantId', data?._id);
           onUseLocalStorage('save', 'shopType', data?.shopType);
@@ -168,7 +168,7 @@ export default function RestaurantsMain() {
     },
     {
       label: t('Duplicate'),
-      command: (data?: IRestaurantResponse) => {
+      command: (data?: any) => {
         if (data) {
           setDuplicateId(data._id);
         }
@@ -176,7 +176,7 @@ export default function RestaurantsMain() {
     },
     {
       label: t('Delete'),
-      command: (data?: IRestaurantResponse) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }

@@ -5,7 +5,7 @@ export default function CustomIconButton({
   Icon,
   title,
   setVisible,
-}: IGlobalButtonProps) {
+}: any) {
   return (
     <Button
       className="flex items-center justify-center gap-3 rounded-md bg-black px-3 py-2 hover:bg-[#272727]"

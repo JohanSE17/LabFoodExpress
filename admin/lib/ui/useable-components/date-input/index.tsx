@@ -9,7 +9,7 @@ const CustomDateInput = ({
   value,
   onChange,
   ...props
-}: IDateTextField) => {
+}: any) => {
   return !isLoading ? (
     <div className="flex w-full flex-col justify-center gap-y-1">
       {showLabel && (

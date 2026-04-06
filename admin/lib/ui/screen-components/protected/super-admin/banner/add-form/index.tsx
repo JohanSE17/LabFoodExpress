@@ -34,11 +34,11 @@ const BannersAddForm = ({
   onHide,
   banner,
   position = 'right',
-}: IBannersAddFormComponentProps) => {
+}: any) => {
   // Queries
   const { data } = useQueryGQL(GET_RESTAURANTS_DROPDOWN, {
     fetchPolicy: 'cache-and-network',
-  }) as IQueryResult<IRestaurantsResponseGraphQL | undefined, undefined>;
+  }) as any<IRestaurantsResponseGraphQL | undefined, undefined>;
 
   // Hooks
   const t = useTranslations();
@@ -52,7 +52,7 @@ const BannersAddForm = ({
   }, [data]);
   
   //State
-  const initialValues: IBannersForm = {
+  const initialValues: any = {
     title: banner?.title || '',
     description: banner?.description || '',
     action: banner
@@ -87,8 +87,8 @@ const BannersAddForm = ({
 
   // Form Submission
   const handleSubmit = (
-    values: IBannersForm,
-    { resetForm }: FormikHelpers<IBannersForm>
+    values: any,
+    { resetForm }: FormikHelpers<any>
   ) => {
     if (data) {
       mutate({

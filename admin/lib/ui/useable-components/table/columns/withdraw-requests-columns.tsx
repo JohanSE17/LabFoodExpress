@@ -27,7 +27,7 @@ export const WITHDRAW_REQUESTS_TABLE_COLUMNS = ({
   search,
   selectedActions,
 }: {
-  menuItems: IActionMenuProps<IWithDrawRequest>['items'];
+  menuItems: any<any>['items'];
   currentPage: number;
   pageSize: number;
   search: string;
@@ -121,7 +121,7 @@ export const WITHDRAW_REQUESTS_TABLE_COLUMNS = ({
 
   // Handlers
   const handleDropDownChange = useCallback(
-    async (e: any, rowData: IWithDrawRequest) => {
+    async (e: any, rowData: any) => {
       try {
         setSelectedWithDrawRequest(e.value.code);
         console.log('New status:', setSelectedWithDrawRequest);
@@ -236,7 +236,7 @@ export const WITHDRAW_REQUESTS_TABLE_COLUMNS = ({
       {
         headerName: t('User Type'),
         propertyName: 'rider.name',
-        body: (rowData: IWithDrawRequest) => (
+        body: (rowData: any) => (
           <div className="flex flex-col">
             <span className="font-medium">
               {rowData.rider?.name || rowData.store?.slug || '-'}
@@ -250,7 +250,7 @@ export const WITHDRAW_REQUESTS_TABLE_COLUMNS = ({
       {
         headerName: t('Amount'),
         propertyName: 'requestAmount',
-        body: (rowData: IWithDrawRequest) => (
+        body: (rowData: any) => (
           <span className="font-medium">
             {CURRENT_SYMBOL || '$'}
             {rowData?.requestAmount.toFixed(2)}
@@ -260,7 +260,7 @@ export const WITHDRAW_REQUESTS_TABLE_COLUMNS = ({
       {
         headerName: t('Date'),
         propertyName: 'requestTime',
-        body: (rowData: IWithDrawRequest) => {
+        body: (rowData: any) => {
           const date = new Date(rowData.requestTime);
           const formattedDate = date?.toISOString().split('T')[0];
           return <div>{formattedDate}</div>;
@@ -269,7 +269,7 @@ export const WITHDRAW_REQUESTS_TABLE_COLUMNS = ({
       {
         headerName: t('Status'),
         propertyName: 'status',
-        body: (rowData: IWithDrawRequest) => (
+        body: (rowData: any) => (
           <Dropdown
             value={options?.find((option) => option?.code === rowData.status)}
             options={options}
@@ -287,7 +287,7 @@ export const WITHDRAW_REQUESTS_TABLE_COLUMNS = ({
       },
       // {
       //   propertyName: 'actions',
-      //   body: (rowData: IWithDrawRequest) => (
+      //   body: (rowData: any) => (
       //     <ActionMenu items={menuItems} data={rowData} menuRef={menuRef} />
       //   ),
       // },

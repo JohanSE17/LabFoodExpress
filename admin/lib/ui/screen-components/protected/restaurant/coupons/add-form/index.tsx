@@ -38,13 +38,13 @@ export default function CouponsAddForm({
   coupon,
   position = 'right',
   isAddCouponVisible,
-}: ICouponRestaurantAddFormComponentProps) {
+}: any) {
   // Context
   const { restaurantLayoutContextData } = useContext(RestaurantLayoutContext);
   const restaurantId = restaurantLayoutContextData?.restaurantId || '';
 
   // State
-  const initialValues: ICouponRestaurantForm = {
+  const initialValues: any = {
     title: '',
     discount: null,
     enabled: true,
@@ -65,8 +65,8 @@ export default function CouponsAddForm({
 
   // Form Submission
   const handleSubmit = (
-    values: ICouponRestaurantForm,
-    { resetForm }: FormikHelpers<ICouponRestaurantForm>
+    values: any,
+    { resetForm }: FormikHelpers<any>
   ) => {
     mutate({
       variables: {

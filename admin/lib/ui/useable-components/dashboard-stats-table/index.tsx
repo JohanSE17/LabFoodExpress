@@ -12,7 +12,7 @@ export default function DashboardStatsTable({
   title,
   data,
   amountConfig,
-}: IDashboardStatsTableComponentsProps) {
+}: any) {
   const t = useTranslations();
 
   if (loading) return <DashboardStatsTableSkeleton />;

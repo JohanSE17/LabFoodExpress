@@ -28,7 +28,7 @@ export default function WithdrawRequestsSuperAdminMain({
   setSelectedRequest,
 }: {
   setVisible: (value: boolean) => void;
-  setSelectedRequest: (request: IWithDrawRequest | undefined) => void;
+  setSelectedRequest: (request: any | undefined) => void;
 }) {
   // States
   const [selectedActions, setSelectedActions] = useState<string[]>([]);
@@ -67,7 +67,7 @@ export default function WithdrawRequestsSuperAdminMain({
       search: debouncedSearch,
     },
     fetchPolicy: 'network-only',
-  }) as unknown as IQueryResult<IGetWithDrawRequestsData | undefined, any>;
+  }) as unknown as any<IGetWithDrawRequestsData | undefined, any>;
 
   // Global search handler
   const onGlobalFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,10 +84,10 @@ export default function WithdrawRequestsSuperAdminMain({
     setPageSize(size);
   };
 
-  const menuItems: IActionMenuProps<IWithDrawRequest>['items'] = [
+  const menuItems: any<any>['items'] = [
     {
       label: 'Bank Details',
-      command: (data?: IWithDrawRequest) => {
+      command: (data?: any) => {
         if (data) {
           setSelectedRequest(data);
           setVisible(true);

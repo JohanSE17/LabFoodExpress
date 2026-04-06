@@ -42,7 +42,7 @@ const StripeAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: IStripeForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

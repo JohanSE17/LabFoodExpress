@@ -55,7 +55,7 @@ import TextIconClickable from '@/lib/ui/useable-components/text-icon-clickable';
 import InputSkeleton from '@/lib/ui/useable-components/custom-skeletons/inputfield.skeleton';
 import { useTheme } from 'next-themes';
 
-const initialValues: IFoodDetailsForm = {
+const initialValues: any = {
   _id: null,
   title: '',
   description: '',
@@ -65,7 +65,7 @@ const initialValues: IFoodDetailsForm = {
 };
 export default function FoodDetails({
   stepperProps,
-}: IFoodDetailsComponentProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { theme } = useTheme();
@@ -92,7 +92,7 @@ export default function FoodDetails({
   >([]);
   const [category, setCategory] = useState<ICategory | null>(null);
   const [categoryDropDown, setCategoryDropDown] =
-    useState<IDropdownSelectItem>();
+    useState<any>();
   const [foodInitialValues, setFoodInitialValues] = useState(
     foodContextData?.isEditing || foodContextData?.food?.data?.title
       ? { ...initialValues, ...foodContextData?.food?.data }
@@ -111,7 +111,7 @@ export default function FoodDetails({
       fetchPolicy: 'no-cache',
       enabled: !!restaurantId,
     }
-  ) as IQueryResult<ICategoryByRestaurantResponse | undefined, undefined>;
+  ) as any<ICategoryByRestaurantResponse | undefined, undefined>;
 
   const {
     data: subCategoriesData,
@@ -126,7 +126,7 @@ export default function FoodDetails({
       enabled: !!categoryDropDown?.code,
       fetchPolicy: 'cache-and-network',
     }
-  ) as IQueryResult<
+  ) as any<
     ISubCategoryByParentIdResponse | undefined,
     { parentCategoryId: string }
   >;
@@ -134,7 +134,7 @@ export default function FoodDetails({
   // Memoized Data
   const categoriesDropdown = useMemo(
     () =>
-      data?.restaurant?.categories.map((category: ICategory) => {
+      data?.restaurant?.categories.map((category: any) => {
         return { label: category.title, code: category._id };
       }),
     [data?.restaurant?.categories]
@@ -143,7 +143,7 @@ export default function FoodDetails({
   const subCategoriesDropdown = useMemo(
     () =>
       subCategoriesData?.subCategoriesByParentId.map(
-        (sub_category: ISubCategory) => {
+        (sub_category: any) => {
           return { label: sub_category.title, code: sub_category._id };
         }
       ),
@@ -151,8 +151,8 @@ export default function FoodDetails({
   );
 
   // Handlers
-  const onFoodSubmitHandler = (values: IFoodDetailsForm) => {
-    const foodData: IFoodNew = {
+  const onFoodSubmitHandler = (values: any) => {
+    const foodData: any = {
       _id: foodContextData?.food?.data?._id ?? '',
       title: values.title,
       description: values.description,
@@ -183,10 +183,10 @@ export default function FoodDetails({
 
   useEffect(() => {
     if (categoryDropDown) {
-      const selectedSubCategory: IDropdownSelectItem[] =
+      const selectedSubCategory: any[] =
         subCategoriesData?.subCategoriesByParentId
           .filter((sub_ctg) => sub_ctg.parentCategoryId)
-          .map((sub_ctg_: ISubCategory) => ({
+          .map((sub_ctg_: any) => ({
             code: sub_ctg_?._id || '',
             label: sub_ctg_?.title || '',
           })) || [];
@@ -215,7 +215,7 @@ export default function FoodDetails({
         ...JSON.parse(JSON.stringify(foodInitialValues)),
         category: editing_category,
       });
-      setCategoryDropDown(editing_category ?? ({} as IDropdownSelectItem));
+      setCategoryDropDown(editing_category ?? ({} as any));
     }
   }, [categoriesDropdown]);
 

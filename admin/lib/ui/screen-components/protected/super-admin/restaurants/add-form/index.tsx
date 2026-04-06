@@ -35,7 +35,7 @@ import { useTranslations } from 'next-intl';
 
 const RestaurantsForm = ({
   position = 'right',
-}: IRestaurantsAddFormComponentProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
 
@@ -58,12 +58,12 @@ const RestaurantsForm = ({
     {
       debounceMs: 300,
     }
-  ) as IQueryResult<IVendorResponseGraphQL | undefined, undefined>;
+  ) as any<IVendorResponseGraphQL | undefined, undefined>;
 
   // Memoized Data
   const vendorsDropdown = useMemo(
     () =>
-      vendorResponse?.data?.vendors?.map((vendorItem: IVendorReponse) => {
+      vendorResponse?.data?.vendors?.map((vendorItem: any) => {
         return { label: vendorItem.email, code: vendorItem._id };
       }),
     [vendorResponse?.data?.vendors]
@@ -77,7 +77,7 @@ const RestaurantsForm = ({
     // Clean Context State
     onActiveStepChange(0);
     onRestaurantsFormVisible(false);
-    onSetRestaurantsContextData({} as IRestaurantsContextPropData);
+    onSetRestaurantsContextData({} as any);
   };
 
   // Use Effect

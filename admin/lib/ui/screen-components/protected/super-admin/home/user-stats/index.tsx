@@ -27,7 +27,7 @@ export default function UserStats() {
   const { data, loading } = useQueryGQL(GET_DASHBOARD_USERS, {
     fetchPolicy: 'network-only',
     debounceMs: 300,
-  }) as IQueryResult<IDashboardUsersResponseGraphQL | undefined, undefined>;
+  }) as any<IDashboardUsersResponseGraphQL | undefined, undefined>;
 
   // Hooks
   const t = useTranslations();

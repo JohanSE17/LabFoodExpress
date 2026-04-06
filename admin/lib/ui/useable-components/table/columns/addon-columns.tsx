@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export const ADDON_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IAddon>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -16,7 +16,7 @@ export const ADDON_TABLE_COLUMNS = ({
     { headerName: t('Maximum'), propertyName: 'quantityMaximum' },
     {
       propertyName: 'actions',
-      body: (option: IAddon) => (
+      body: (option: any) => (
         <ActionMenu items={menuItems} data={option} onToggle={() => {}} />
       ),
     },

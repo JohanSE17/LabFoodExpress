@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function NotificationTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: ICuisineTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

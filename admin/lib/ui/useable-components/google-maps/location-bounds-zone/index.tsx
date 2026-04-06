@@ -92,7 +92,7 @@ const CustomGoogleMapsLocationZoneBounds: React.FC<
   const createPolygonAroundPoint = (
     center: { lat: number; lng: number },
     sizeMeters = 100
-  ): ILocationPoint[] => {
+  ): any[] => {
     const latOffset = sizeMeters * 0.0000089;
     const lngOffset =
       (sizeMeters * 0.0000089) / Math.cos((center.lat * Math.PI) / 180);
@@ -110,7 +110,7 @@ const CustomGoogleMapsLocationZoneBounds: React.FC<
     setInputValue(value);
   };
 
-  const focusZone = (zonePath: ILocationPoint[]) => {
+  const focusZone = (zonePath: any[]) => {
     if (!mapRef.current || !zonePath.length) return;
     const bounds = new window.google.maps.LatLngBounds();
     zonePath.forEach((point) => bounds.extend(point));
@@ -125,7 +125,7 @@ const CustomGoogleMapsLocationZoneBounds: React.FC<
   const onHandlerAutoCompleteSelectionChange = (
     event: AutoCompleteSelectEvent
   ) => {
-    const selectedOption = event?.value as IPlaceSelectedOption;
+    const selectedOption = event?.value as any;
     if (selectedOption) {
       const geocoder = new window.google.maps.Geocoder();
       geocoder.geocode(
@@ -145,7 +145,7 @@ const CustomGoogleMapsLocationZoneBounds: React.FC<
             setCenter(centerPoint);
             setLastSelectedLocation(centerPoint);
 
-            let newPath: ILocationPoint[];
+            let newPath: any[];
             if (deliveryZoneType === 'polygon') {
               newPath = createPolygonAroundPoint(centerPoint);
               setPath(newPath);
@@ -252,8 +252,8 @@ const CustomGoogleMapsLocationZoneBounds: React.FC<
       return;
     }
 
-    fetch({ input: search }, (results: IPlaceSelectedOption[]) => {
-      let newOptions: IPlaceSelectedOption[] = [];
+    fetch({ input: search }, (results: any[]) => {
+      let newOptions: any[] = [];
       if (selectedPlaceObject) {
         newOptions = [selectedPlaceObject];
       }
@@ -421,7 +421,7 @@ const CustomGoogleMapsLocationZoneBounds: React.FC<
         onClick={(val: string) => {
           setDeliveryZoneType(val);
           if (lastSelectedLocation) {
-            let newPath: ILocationPoint[];
+            let newPath: any[];
             if (val === 'polygon') {
               newPath = createPolygonAroundPoint(lastSelectedLocation);
               setPath(newPath);

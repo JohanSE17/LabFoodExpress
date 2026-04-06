@@ -44,7 +44,7 @@ import { useTranslations } from 'next-intl';
 export default function SubCategoriesAddForm({
   onHide,
   isAddSubCategoriesVisible,
-}: ISubCategoriesAddFormProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -56,7 +56,7 @@ export default function SubCategoriesAddForm({
   const { showToast } = useToast();
 
   // Initial Values
-  const initialValues: { subCategories: ISubCategory[] } = {
+  const initialValues: { subCategories: any[] } = {
     subCategories: [
       {
         parentCategoryId: isAddSubCategoriesVisible.parentCategoryId,
@@ -105,8 +105,8 @@ export default function SubCategoriesAddForm({
 
   // Handlers
   async function handleFormSubmit(
-    values: ISubCategory[],
-    formikHelpers: FormikHelpers<{ subCategories: ISubCategory[] }>
+    values: any[],
+    formikHelpers: FormikHelpers<{ subCategories: any[] }>
   ) {
     try {
       if (values.filter((subCategory) => !subCategory.title).length > 0) {
@@ -174,7 +174,7 @@ export default function SubCategoriesAddForm({
             <FieldArray name="subCategories">
               {({ remove, push }) => (
                 <div>
-                  {values?.subCategories?.map((value: ISubCategory, index) => {
+                  {values?.subCategories?.map((value: any, index) => {
                     value.parentCategoryId =
                       isAddSubCategoriesVisible.parentCategoryId;
                     return (

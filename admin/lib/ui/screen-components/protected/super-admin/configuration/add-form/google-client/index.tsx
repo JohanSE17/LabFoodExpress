@@ -49,7 +49,7 @@ const GoogleClientAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: IGoogleClientForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

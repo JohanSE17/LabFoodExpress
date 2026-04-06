@@ -12,7 +12,7 @@ import { useTranslations } from 'next-intl';
 import DateFilterCustomTab from '@/lib/ui/useable-components/date-filter-custom-tab';
 import { useTheme } from 'next-themes';
 
-const OrderSuperAdminTableHeader: React.FC<IOrderSuperAdminHeaderProps> = ({
+const OrderSuperAdminTableHeader: React.FC<any> = ({
   setSelectedActions,
   selectedActions,
   globalFilterValue,
@@ -34,7 +34,7 @@ const OrderSuperAdminTableHeader: React.FC<IOrderSuperAdminHeaderProps> = ({
     );
   };
 
-  const menuItems: IMenuItem[] = [
+  const menuItems: any[] = [
     { label: t('PENDING'), value: 'PENDING' },
     { label: t('ACCEPTED'), value: 'ACCEPTED' },
     { label: t('ASSIGNED'), value: 'ASSIGNED' },

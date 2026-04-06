@@ -29,7 +29,7 @@ import { useUserContext } from '@/lib/hooks/useUser';
 import { onUseLocalStorage } from '@/lib/utils/methods';
 import { useTranslations } from 'next-intl';
 
-function AdminSidebar({ children }: IGlobalComponentProps) {
+function AdminSidebar({ children }: any) {
   // Context
   const { isRestaurantSidebarVisible } =
     useContext<LayoutContextProps>(LayoutContext);
@@ -64,7 +64,7 @@ export default function MakeSidebar() {
   const lastRoute =
     routeStack.length > 0 ? routeStack[routeStack.length - 1] : null;
 
-  const navBarItems: ISidebarMenuItem[] = [
+  const navBarItems: any[] = [
     {
       text: t('Dashboard'),
       route: '/admin/store/dashboard',

@@ -5,7 +5,7 @@ import { Avatar } from 'primereact/avatar';
 import { IUserResponse } from '@/lib/utils/interfaces/users.interface';
 
 interface UserCardProps {
-  user: IUserResponse;
+  user: any;
 }
 
 const UserCard: React.FC<UserCardProps> = ({ user }) => {

@@ -37,7 +37,7 @@ export default function OrderSuperAdminMain() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<IExtendedOrder | null>(null);
-  const [dateFilter, setDateFilter] = useState<IDateFilter>({
+  const [dateFilter, setDateFilter] = useState<any>({
     dateKeyword: 'All',
     startDate: `${new Date().getFullYear()}-01-01`, // Current year, January 1st
     endDate: `${new Date().getFullYear()}-${String(new Date().getMonth() + 1).padStart(2, '0')}-${String(new Date().getDate()).padStart(2, '0')}`, // Today's date
@@ -50,7 +50,7 @@ export default function OrderSuperAdminMain() {
   const [globalFilterValue, setGlobalFilterValue] = useState('');
   const debouncedSearch = useDebounce(globalFilterValue, 600);
 
-  const handleDateFilter = (dateFilter: IDateFilter) => {
+  const handleDateFilter = (dateFilter: any) => {
     setDateFilter({
       ...dateFilter,
       dateKeyword: dateFilter.dateKeyword ?? '',
@@ -76,7 +76,7 @@ export default function OrderSuperAdminMain() {
     {
       fetchPolicy: 'network-only',
     }
-  ) as IQueryResult<
+  ) as any<
     | {
         allOrdersPaginated: {
           totalCount: number;
@@ -84,7 +84,7 @@ export default function OrderSuperAdminMain() {
           totalPages: number;
           prevPage: number;
           nextPage: number;
-          orders: IOrder[];
+          orders: any[];
         };
       }
     | undefined,
@@ -114,7 +114,7 @@ export default function OrderSuperAdminMain() {
   };
 
   const handleRowClick = (event: DataTableRowClickEvent) => {
-    const selectedOrder = event?.data as IExtendedOrder;
+    const selectedOrder = event?.data as any;
     setSelectedRestaurant(selectedOrder);
     setIsModalOpen(true);
   };
@@ -130,7 +130,7 @@ export default function OrderSuperAdminMain() {
     if (!data?.allOrdersPaginated?.orders) return [];
 
     return data?.allOrdersPaginated?.orders?.map(
-      (order: IOrder): IExtendedOrder => ({
+      (order: any): any => ({
         ...order,
         itemsTitle:
           order?.items
@@ -176,7 +176,7 @@ export default function OrderSuperAdminMain() {
             data?.allOrdersPaginated
               ? {
                   ...data.allOrdersPaginated,
-                  orders: displayData as IExtendedOrder[],
+                  orders: displayData as any[],
                 }
               : undefined
           }

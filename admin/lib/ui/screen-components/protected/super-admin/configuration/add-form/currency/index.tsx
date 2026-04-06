@@ -47,7 +47,7 @@ const CurrencyAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: ICurrencyForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

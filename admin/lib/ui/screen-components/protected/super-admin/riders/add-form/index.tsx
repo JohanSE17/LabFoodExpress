@@ -46,8 +46,8 @@ export default function RiderAddForm({
   rider,
   position = 'right',
   isAddRiderVisible,
-}: IRidersAddFormComponentProps) {
-  const initialValues: IRiderForm = {
+}: any) {
+  const initialValues: any = {
     name: '',
     username: '',
     password: '',
@@ -68,7 +68,7 @@ export default function RiderAddForm({
   // Query
   const { data } = useQueryGQL(GET_ZONES, {
     fetchPolicy: 'cache-and-network',
-  }) as IQueryResult<IRiderZonesResponse | undefined, undefined>;
+  }) as any<IRiderZonesResponse | undefined, undefined>;
 
   // Mutation
   const mutation = rider ? EDIT_RIDER : CREATE_RIDER;
@@ -78,8 +78,8 @@ export default function RiderAddForm({
 
   // Form Submission
   const handleSubmit = (
-    values: IRiderForm,
-    { resetForm }: FormikHelpers<IRiderForm>
+    values: any,
+    { resetForm }: FormikHelpers<any>
   ) => {
     if (data) {
       mutate({

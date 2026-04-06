@@ -15,7 +15,7 @@ export const LayoutContext = createContext<LayoutContextProps>(
   {} as LayoutContextProps
 );
 
-export const LayoutProvider = ({ children }: IProvider) => {
+export const LayoutProvider = ({ children }: any) => {
   const [isSuperAdminSidebarVisible, setShowSuperAdminSidebar] =
     useState<boolean>(true);
   const [isRestaurantSidebarVisible, setRestaurantShowSidebar] =

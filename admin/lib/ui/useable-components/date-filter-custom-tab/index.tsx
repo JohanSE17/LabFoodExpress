@@ -6,7 +6,7 @@ const DateFilterCustomTab = ({
   options,
   selectedTab,
   setSelectedTab,
-}: IDateFilterCustomTabProps) => {
+}: any) => {
   const t = useTranslations();
 
   return (

@@ -47,7 +47,7 @@ const VerificationAddForm = () => {
   );
 
   // Handle form submission
-  const handleSubmit = (values: IVerificationConfigForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

@@ -3,8 +3,8 @@ import { ILoginResponse } from '@/lib/utils/interfaces';
 import { APP_NAME } from '@/lib/utils/constants';
 
 interface IUserContext {
-  user: ILoginResponse | null;
-  setUser: (user: ILoginResponse | null) => void;
+  user: any | null;
+  setUser: (user: any | null) => void;
 }
 
 export const UserContext = createContext<IUserContext | undefined>(undefined);

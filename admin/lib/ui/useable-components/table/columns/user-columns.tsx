@@ -16,7 +16,7 @@ export const USERS_TABLE_COLUMNS = (openMenuId?: string | null, setOpenMenuId?: 
 
       headerName: t('Name'),
       propertyName: 'name',
-      body: (user: IUserResponse) => {
+      body: (user: any) => {
         return (
           <div className="flex items-center gap-2">
             <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-300">
@@ -33,7 +33,7 @@ export const USERS_TABLE_COLUMNS = (openMenuId?: string | null, setOpenMenuId?: 
     {
       headerName: t('registration_method'),
       propertyName: 'userType',
-      body: (user: IUserResponse) => {
+      body: (user: any) => {
         const userType = user.userType || 'default';
         const formattedUserType = {
           google: 'Google',
@@ -46,7 +46,7 @@ export const USERS_TABLE_COLUMNS = (openMenuId?: string | null, setOpenMenuId?: 
     {
       headerName: t('account_status'),
       propertyName: 'status',
-      body: (user: IUserResponse) => {
+      body: (user: any) => {
         const status = user.status || 'active';
         const formattedStatus = {
           active: 'Active',
@@ -58,7 +58,7 @@ export const USERS_TABLE_COLUMNS = (openMenuId?: string | null, setOpenMenuId?: 
     },
     {
       headerName: t('last_login'), propertyName: 'lastLogin',
-      body: (user: IUserResponse) => {
+      body: (user: any) => {
         if (!user.lastLogin) return <div className="text-gray-400">—</div>;
 
         const date = new Date(user.lastLogin);
@@ -86,7 +86,7 @@ export const USERS_TABLE_COLUMNS = (openMenuId?: string | null, setOpenMenuId?: 
     {
       headerName: t('Created At'),
       propertyName: 'createdAt',
-      body: (user: IUserResponse) => {
+      body: (user: any) => {
         const formattedDate = new Date(
           Number(user.createdAt)
         ).toLocaleDateString('en-GB');
@@ -96,7 +96,7 @@ export const USERS_TABLE_COLUMNS = (openMenuId?: string | null, setOpenMenuId?: 
     {
       headerName: t('Actions'),
       propertyName: '_id',
-      body: (rowData: IUserResponse) => <ActionMenu rowData={rowData} openMenuId={openMenuId} setOpenMenuId={setOpenMenuId} />,
+      body: (rowData: any) => <ActionMenu rowData={rowData} openMenuId={openMenuId} setOpenMenuId={setOpenMenuId} />,
       style: { width: '60px', textAlign: 'right', paddingRight: '12px' },
       headerStyle: { textAlign: 'right', paddingRight: '12px' },
     }

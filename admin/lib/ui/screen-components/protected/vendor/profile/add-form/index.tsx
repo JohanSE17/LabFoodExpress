@@ -35,7 +35,7 @@ import { EDIT_VENDOR } from '@/lib/api/graphql';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 
-const initialValues: IVendorForm = {
+const initialValues: any = {
   name: '',
   email: '',
   password: '',
@@ -47,7 +47,7 @@ export default function VendorUpdateForm({
   position = 'right',
   vendorFormVisible,
   setIsUpdateProfileVisible,
-}: IVendorUpdateFormComponentProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -57,7 +57,7 @@ export default function VendorUpdateForm({
   let vendor = vendorProfileResponse.data?.getVendor;
 
   // States
-  const [formInitialValues, setFormValues] = useState<IVendorForm>({
+  const [formInitialValues, setFormValues] = useState<any>({
     ...initialValues,
   });
 
@@ -69,7 +69,7 @@ export default function VendorUpdateForm({
   });
 
   // Handlers
-  const onVendorCreate = async (data: IVendorForm) => {
+  const onVendorCreate = async (data: any) => {
     try {
       await createVendor({
         variables: {

@@ -31,7 +31,7 @@ import { useTranslations } from 'next-intl';
 export default function BannersMain({
   setIsAddBannerVisible,
   setBanner,
-}: IBannersMainComponentsProps) {
+}: any) {
   // Hooks
   const { showToast } = useToast();
   const t = useTranslations();
@@ -83,10 +83,10 @@ export default function BannersMain({
     }
   );
 
-  const menuItems: IActionMenuItem<IBannersResponse>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: IBannersResponse) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddBannerVisible(true);
           setBanner(data);
@@ -95,7 +95,7 @@ export default function BannersMain({
     },
     {
       label: t('Delete'),
-      command: (data?: IBannersResponse) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }

@@ -8,7 +8,7 @@ export default function DashboardSubHeader({
   handleViewChange,
   dateFilter,
   handleDateFilter,
-}: IDashboardSubHeaderComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

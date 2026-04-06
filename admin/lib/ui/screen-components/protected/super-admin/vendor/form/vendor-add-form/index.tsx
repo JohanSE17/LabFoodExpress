@@ -45,7 +45,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import CustomPhoneTextField from '@/lib/ui/useable-components/phone-input-field';
 import { useTranslations } from 'next-intl';
 
-const initialValues: IVendorForm = {
+const initialValues: any = {
   // name: '',
   email: '',
   password: '',
@@ -58,7 +58,7 @@ const initialValues: IVendorForm = {
 
 export default function VendorAddForm({
   position = 'right',
-}: IVendorAddFormComponentProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -73,7 +73,7 @@ export default function VendorAddForm({
   const { showToast } = useContext(ToastContext);
 
   // States
-  const [formInitialValues, setFormValues] = useState<IVendorForm>({
+  const [formInitialValues, setFormValues] = useState<any>({
     ...initialValues,
   });
 
@@ -104,10 +104,10 @@ export default function VendorAddForm({
   } = useLazyQueryQL(GET_VENDOR_BY_ID, {
     fetchPolicy: 'network-only',
     debounceMs: 300,
-  }) as ILazyQueryResult<IGetVendorResponseGraphQL | undefined, { id: string }>;
+  }) as any<IGetVendorResponseGraphQL | undefined, { id: string }>;
 
   // Handlers
-  const onVendorCreate = async (data: IVendorForm) => {
+  const onVendorCreate = async (data: any) => {
     try {
       await createVendor({
         variables: {

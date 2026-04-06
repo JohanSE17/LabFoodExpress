@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export const ZONE_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IZoneResponse>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -14,7 +14,7 @@ export const ZONE_TABLE_COLUMNS = ({
     { headerName: t('Description'), propertyName: 'description' },
     {
       propertyName: 'actions',
-      body: (zone: IZoneResponse) => (
+      body: (zone: any) => (
         <ActionMenu items={menuItems} data={zone} />
       ),
     },

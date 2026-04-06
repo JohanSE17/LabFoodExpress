@@ -21,14 +21,14 @@ export default function CustomPhoneTextField({
   // mask,
   page,
   onChange,
-}: IPhoneTextFieldProps) {
+}: any) {
   // Transformed Country Codes
-  // const transformedCountryCodes: IDropdownSelectItem[] =
+  // const transformedCountryCodes: any[] =
   //   transformCountryCodes(CountryCodes);
 
   // States
   // const [selectedCountryCode, setSelectedCountryCode] =
-  //   useState<IDropdownSelectItem>();
+  //   useState<any>();
   const [, setPhone] = useState('');
 
   const handlePhoneInputChange = (phone: string) => {

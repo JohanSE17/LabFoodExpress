@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export default function DashboardSubHeader({
   dateFilter,
   handleDateFilter,
-}: IDashboardSubHeaderComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   return (

@@ -11,7 +11,7 @@ export default function CustomCommissionTextField({
   value,
   onChange,
   ...props
-}: ICustomNumberTippingProps) {
+}: any) {
   const MIN_VALUE = 0;
   const MAX_VALUE = 100;
 

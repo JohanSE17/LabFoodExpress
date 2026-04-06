@@ -38,7 +38,7 @@ const Table = <T extends ITableExtends>({
   currentPage = 1,
   minWidth,
   globalFilterFields,
-}: IDataTableProps<T>) => {
+}: any<T>) => {
   const handleSelectionChange = (
     e: DataTableSelectionMultipleChangeEvent<T[]>
   ) => {

@@ -12,7 +12,7 @@ export default function CustomPasswordTextField({
   feedback = true,
   isLoading = false,
   ...props
-}: IPasswordTextFieldProps) {
+}: any) {
   const t = useTranslations();
 
   return !isLoading ? (

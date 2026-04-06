@@ -30,13 +30,13 @@ const TippingAddForm = () => {
   // Query
   const { loading, data } = useQueryGQL(GET_TIPPING, {
     fetchPolicy: 'cache-and-network',
-  }) as IQueryResult<ITippingResponse | undefined, undefined>;
+  }) as any<ITippingResponse | undefined, undefined>;
 
   // Hooks
   const t = useTranslations();
 
   // State
-  const initialValues: ITippingsForm = {
+  const initialValues: any = {
     tip1: data?.tips?.tipVariations[0] ?? 1,
     tip2: data?.tips?.tipVariations[1] ?? 2,
     tip3: data?.tips?.tipVariations[2] ?? 3,
@@ -51,8 +51,8 @@ const TippingAddForm = () => {
 
   //Form Submission
   const handleSubmit = (
-    values: ITippingsForm,
-    { resetForm }: FormikHelpers<ITippingsForm>
+    values: any,
+    { resetForm }: FormikHelpers<any>
   ) => {
     if (data) {
       mutate({

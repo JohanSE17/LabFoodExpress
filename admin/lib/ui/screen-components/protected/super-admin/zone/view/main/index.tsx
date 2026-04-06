@@ -40,7 +40,7 @@ import { useTranslations } from 'next-intl';
 export default function ZoneMain({
   setIsAddZoneVisible,
   setZone,
-}: IZoneMainComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { showToast } = useToast();
@@ -56,7 +56,7 @@ export default function ZoneMain({
   // Query
   const { data, loading } = useQueryGQL(GET_ZONES, {
     fetchPolicy: 'cache-and-network',
-  }) as IQueryResult<IZonesResponse | undefined, undefined>;
+  }) as any<IZonesResponse | undefined, undefined>;
 
   //Mutation
   const [mutateDelete, { loading: mutationLoading }] = useMutation(
@@ -75,10 +75,10 @@ export default function ZoneMain({
     setGlobalFilterValue(value);
   };
 
-  const menuItems: IActionMenuItem<IZoneResponse>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: IZoneResponse) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddZoneVisible(true);
           setZone(data); // Zone here
@@ -87,7 +87,7 @@ export default function ZoneMain({
     },
     {
       label: t('Delete'),
-      command: (data?: IZoneResponse) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }

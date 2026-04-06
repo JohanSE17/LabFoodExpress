@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function BannerTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: IBannerTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   return (

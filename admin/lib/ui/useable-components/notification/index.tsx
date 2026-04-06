@@ -6,7 +6,7 @@ const CustomNotification = ({
   type,
   title,
   message,
-}: IToastNotificationComponentProps) => {
+}: any) => {
   const styles = SEVERITY_STYLES[type];
 
   return (

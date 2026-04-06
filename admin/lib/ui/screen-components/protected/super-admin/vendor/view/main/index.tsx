@@ -27,7 +27,7 @@ import { Chip } from 'primereact/chip';
 import NoData from '@/lib/ui/useable-components/no-data';
 import { useTranslations } from 'next-intl';
 
-export default function VendorMain({ activeTab }: IVendorMainComponentProps) {
+export default function VendorMain({ activeTab }: any) {
   // Hooks
   const t = useTranslations();
 

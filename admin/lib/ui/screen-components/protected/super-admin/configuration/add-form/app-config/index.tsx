@@ -44,7 +44,7 @@ const AppConfigAddForm = () => {
   );
 
   // Handle form submission
-  const handleSubmit = (values: IAppConfigForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

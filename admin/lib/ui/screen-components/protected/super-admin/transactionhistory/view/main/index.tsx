@@ -53,7 +53,7 @@ export default function TransactionHistoryMain() {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
-  const [dateFilters, setDateFilters] = useState<ITransactionHistoryFilters>({
+  const [dateFilters, setDateFilters] = useState<any>({
     startingDate: '',
     endingDate: '',
     userType: undefined,
@@ -71,7 +71,7 @@ export default function TransactionHistoryMain() {
       endingDate: dateFilters.endingDate || undefined,
       ...(dateFilters.userType !== 'ALL' && { userType: dateFilters.userType }),
     },
-  }) as unknown as IQueryResult<ITransactionHistoryResponse | undefined, any>;
+  }) as unknown as any<ITransactionHistoryResponse | undefined, any>;
 
   // Global search handler
   const onGlobalFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,10 +89,10 @@ export default function TransactionHistoryMain() {
   };
 
   // Action menu items
-  const menuItems: IActionMenuItem<ITransactionHistory>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('View Details'),
-      command: (data?: ITransactionHistory) => {
+      command: (data?: any) => {
         if (data) {
           setSelectedTransaction(data);
           setIsModalOpen(true);

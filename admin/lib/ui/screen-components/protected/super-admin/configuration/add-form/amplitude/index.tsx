@@ -42,7 +42,7 @@ const AmplitudeAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: IAmplitudeForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

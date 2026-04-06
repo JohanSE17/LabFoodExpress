@@ -36,13 +36,13 @@ const RatingMain: React.FC = () => {
     let filtered = data.reviews;
 
     if (searchTerm) {
-      filtered = filtered.filter((review: IReview) => {
+      filtered = filtered.filter((review: any) => {
         console.log(review.order);
         return (
           review.order?.user?.name
             ?.toLowerCase()
             ?.includes(searchTerm?.toLowerCase()) ||
-          review.order?.items?.some((item: IItem) =>
+          review.order?.items?.some((item: any) =>
             item.title.toLowerCase().includes(searchTerm.toLowerCase())
           )
         );
@@ -50,7 +50,7 @@ const RatingMain: React.FC = () => {
     }
 
     if (selectedActions.length > 0) {
-      filtered = filtered.filter((review: IReview) => {
+      filtered = filtered.filter((review: any) => {
         return selectedActions.some((action) => {
           switch (action) {
             case '1-2 stars':

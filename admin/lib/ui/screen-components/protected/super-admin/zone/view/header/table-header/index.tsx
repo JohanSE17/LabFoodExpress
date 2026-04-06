@@ -6,7 +6,7 @@ import React from 'react';
 export default function ZoneTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: IZoneTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   return (

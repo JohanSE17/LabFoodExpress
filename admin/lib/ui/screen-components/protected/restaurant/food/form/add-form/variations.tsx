@@ -53,7 +53,7 @@ import { useMutation } from '@apollo/client';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
-const initialFormValuesTemplate: IVariationForm = {
+const initialFormValuesTemplate: any = {
   title: '',
   price: 0,
   discounted: 0,
@@ -63,7 +63,7 @@ const initialFormValuesTemplate: IVariationForm = {
 
 export default function VariationAddForm({
   stepperProps,
-}: IFoodVariationsAddRestaurantComponentProps) {
+}: any) {
   // Props
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => { },
@@ -111,7 +111,7 @@ export default function VariationAddForm({
       onCompleted: onFetchAddonsByRestaurantCompleted,
       onError: onErrorFetchAddonsByRestaurant,
     }
-  ) as IQueryResult<IAddonByRestaurantResponse | undefined, undefined>;
+  ) as any<IAddonByRestaurantResponse | undefined, undefined>;
 
   const [createFood] = useMutation(
     foodContextData?.isEditing ? EDIT_FOOD : CREATE_FOOD,
@@ -150,7 +150,7 @@ export default function VariationAddForm({
   // Memoized Data
   const addonsDropdown = useMemo(
     () =>
-      data?.restaurant?.addons.map((addon: IAddon) => {
+      data?.restaurant?.addons.map((addon: any) => {
         return { label: addon.title, code: addon._id };
       }),
     [data?.restaurant?.addons]
@@ -171,16 +171,16 @@ export default function VariationAddForm({
   const onHandleSubmit = async ({
     variations,
   }: {
-    variations: IVariationForm[];
+    variations: any[];
   }) => {
     try {
       const _variations = variations.map(
-        ({ discounted, ...item }: IVariationForm) => {
+        ({ discounted, ...item }: any) => {
           delete item.__typename;
           return {
             ...item,
             discounted: discounted,
-            addons: item?.addons?.map((item: IDropdownSelectItem) => item.code),
+            addons: item?.addons?.map((item: any) => item.code),
           };
         }
       );
@@ -200,9 +200,9 @@ export default function VariationAddForm({
       });
       onSetFoodContextData({
         food: {
-          data: {} as IFoodNew,
+          data: {} as any,
           _id: '',
-          variations: [] as IVariationForm[],
+          variations: [] as any[],
         },
       });
     } catch (err) {
@@ -217,12 +217,12 @@ export default function VariationAddForm({
   const onBackClickHandler = ({
     variations,
   }: {
-    variations: IVariationForm[];
+    variations: any[];
   }) => {
     onSetFoodContextData({
       food: {
         _id: foodContextData?.food?._id ?? '',
-        data: foodContextData?.food?.data ?? ({} as IFoodNew),
+        data: foodContextData?.food?.data ?? ({} as any),
         variations: variations,
       },
     });
@@ -250,9 +250,9 @@ export default function VariationAddForm({
                 isSubmitting,
                 setFieldValue,
                 handleSubmit,
-              }: FormikProps<{ variations: IVariationForm[] }>) => {
-                const _errors: FormikErrors<IVariationForm>[] =
-                  (errors?.variations as FormikErrors<IVariationForm>[]) ?? [];
+              }: FormikProps<{ variations: any[] }>) => {
+                const _errors: FormikErrors<any>[] =
+                  (errors?.variations as FormikErrors<any>[]) ?? [];
                 return (
                   <Form onSubmit={handleSubmit}>
                     <div>
@@ -261,7 +261,7 @@ export default function VariationAddForm({
                           <div>
                             {values.variations.length > 0 &&
                               values.variations.map(
-                                (value: IVariationForm, index: number) => {
+                                (value: any, index: number) => {
                                   return (
                                     <div
                                       className="mb-2"

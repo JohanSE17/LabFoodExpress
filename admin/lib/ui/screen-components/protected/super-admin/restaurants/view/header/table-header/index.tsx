@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function RestaurantsTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: IRestaurantsTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

@@ -16,7 +16,7 @@ import { useRef, useState } from 'react';
 export default function ShopTypesTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: IShopTypesTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

@@ -33,7 +33,7 @@ export const PasswordErrors = [
   'password_does_not_match',
 ];
 
-export const SignUpErrors: ISignUpFormErrors = {
+export const SignUpErrors: any = {
   firstName: ['Required', 'Name cannot be only spaces'],
   lastName: ['Required', 'Name cannot be only spaces'],
   email: ['Required', 'Invalid email'],
@@ -41,12 +41,12 @@ export const SignUpErrors: ISignUpFormErrors = {
   confirmPassword: ['Required', 'Password must match'],
 };
 
-export const SignInErrors: ISignInFormErrors = {
+export const SignInErrors: any = {
   email: ['Required', 'Invalid email'],
   password: ['Required'],
 };
 
-export const VendorErrors: IVendorErrors = {
+export const VendorErrors: any = {
   _id: ['Required'],
   name: ['Required', 'Name cannot be only spaces'],
   email: ['Required', 'Invalid email'],
@@ -58,7 +58,7 @@ export const VendorErrors: IVendorErrors = {
   phoneNumber: ['Required', 'Minimum 5 Numbers are Required'],
 };
 
-export const RestaurantErrors: IRestaurantFormErrors = {
+export const RestaurantErrors: any = {
   name: ['Required', 'Name cannot be only spaces'],
   username: ['Required', 'Invalid email'],
   password: ['Required', ...PasswordErrors],
@@ -74,7 +74,7 @@ export const RestaurantErrors: IRestaurantFormErrors = {
   phoneNumber: ['Required', 'Minimum 5 Numbers are Required'],
 };
 
-export const ProfileErrors: IUpdateProfileFormErrors = {
+export const ProfileErrors: any = {
   name: ['Required', 'Name cannot be only spaces'],
   email: ['Required', 'Invalid email'],
   username: ['Required', 'Invalid email'],
@@ -91,7 +91,7 @@ export const ProfileErrors: IUpdateProfileFormErrors = {
   logo: ['Required', 'Invalid logo URL'],
 };
 
-export const BussinessDetailsErrors: IUpdateBussinessDetailsFormErrors = {
+export const BussinessDetailsErrors: any = {
   bankName: ['Required'],
   accountName: ['Required'],
   accountCode: ['Required'],
@@ -101,7 +101,7 @@ export const BussinessDetailsErrors: IUpdateBussinessDetailsFormErrors = {
   taxRate: ['Required'],
 };
 
-export const RiderErrors: IRiderErrors = {
+export const RiderErrors: any = {
   name: ['Required', 'Name cannot be only spaces'],
   username: ['Required'],
   password: ['Required', ...PasswordErrors],
@@ -111,7 +111,7 @@ export const RiderErrors: IRiderErrors = {
   vehicleType: ['Required'],
 };
 
-export const BannersErrors: IBannersErrors = {
+export const BannersErrors: any = {
   title: ['Required', 'Name cannot be only spaces'],
   description: ['Required', 'Name cannot be only spaces'],
   action: ['Required'],
@@ -119,13 +119,13 @@ export const BannersErrors: IBannersErrors = {
   file: ['Required'],
 };
 
-export const CategoryErrors: ICategoryErrors = {
+export const CategoryErrors: any = {
   _id: [],
   title: ['Required', 'Name cannot be only spaces'],
   image: ['Required'],
 };
 
-export const OptionErrors: IOptionErrors = {
+export const OptionErrors: any = {
   _id: [],
   title: ['Required', 'Name cannot be only spaces'],
   description: [],
@@ -136,7 +136,7 @@ export const OptionErrors: IOptionErrors = {
   ],
 };
 
-export const AddonsErrors: IAddonsErrors = {
+export const AddonsErrors: any = {
   _id: [],
   title: ['Required', 'Name cannot be only spaces'],
   description: [],
@@ -153,12 +153,12 @@ export const AddonsErrors: IAddonsErrors = {
   options: ['Required', 'Option field must have at least 1 items'],
 };
 
-export const ZoneErrors: IZoneErrors = {
+export const ZoneErrors: any = {
   title: ['Required', 'Name cannot be only spaces'],
   description: ['Required', 'Name cannot be only spaces'],
 };
 
-export const StaffErrors: IStaffErrors = {
+export const StaffErrors: any = {
   name: ['Required', 'Name cannot be only spaces'],
   email: ['Required'],
   phone: ['Required', 'Minimum 5 Numbers are Required'],
@@ -168,14 +168,14 @@ export const StaffErrors: IStaffErrors = {
   permissions: ['Required', 'Permissions field must have at least 1 items'],
 };
 
-export const CuisineErrors: ICuisineErrors = {
+export const CuisineErrors: any = {
   name: ['Required', 'Name cannot be only spaces'],
   description: ['Required', 'Name cannot be only spaces'],
   shopType: ['Required'],
   image: ['Required'],
 };
 
-export const ShopTypeErrors: IShopTypeErrors = {
+export const ShopTypeErrors: any = {
   title: [
     'Required',
     'Name cannot be only spaces',
@@ -188,7 +188,7 @@ export const ShopTypeErrors: IShopTypeErrors = {
 
 
 
-export const CouponErrors: ICouponErrors = {
+export const CouponErrors: any = {
   title: [
     'Required',
     'Name cannot be only spaces',
@@ -208,12 +208,12 @@ export const CouponErrors: ICouponErrors = {
 
 
 
-export const NotificationErrors: INoticiationErrors = {
+export const NotificationErrors: any = {
   title: ['Required'],
   body: ['Required'],
 };
 
-export const FoodErrors: IFoodErrors = {
+export const FoodErrors: any = {
   title: ['Required', 'Name cannot be only spaces'],
   description: [],
   image: ['Required'],
@@ -221,7 +221,7 @@ export const FoodErrors: IFoodErrors = {
   subCategory: [''],
 };
 
-export const VariationErrors: IVariationErrors = {
+export const VariationErrors: any = {
   title: ['Required', 'Name cannot be only spaces'],
   discounted: ['Required'],
   price: ['Required', 'Minimum value must be greater than 0'],
@@ -229,7 +229,7 @@ export const VariationErrors: IVariationErrors = {
   isOutOfStock: ['Required'],
 };
 
-export const RestaurantDeliveryErrors: IRestaurantDeliveryFormErrors = {
+export const RestaurantDeliveryErrors: any = {
   minDeliveryFee: ['Required'],
   deliveryDistance: ['Required'],
   deliveryFee: ['Required'],

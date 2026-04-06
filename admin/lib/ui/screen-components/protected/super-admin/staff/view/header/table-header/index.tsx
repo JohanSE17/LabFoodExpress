@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function StaffTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: IStaffTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

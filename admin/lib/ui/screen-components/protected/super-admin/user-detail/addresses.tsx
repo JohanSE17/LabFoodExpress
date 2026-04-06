@@ -6,7 +6,7 @@ import { Card } from 'primereact/card';
 import { useTranslations } from 'next-intl';
 
 interface AddressesProps {
-  addresses: IAddress[];
+  addresses: any[];
 }
 
 const Addresses: React.FC<AddressesProps> = ({ addresses }) => {

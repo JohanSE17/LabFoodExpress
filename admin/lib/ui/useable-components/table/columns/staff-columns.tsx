@@ -17,7 +17,7 @@ import { useTranslations } from 'next-intl';
 export const STAFF_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IStaffResponse>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -52,7 +52,7 @@ export const STAFF_TABLE_COLUMNS = ({
 
   const onHandleBannerStatusChange = async (
     isActive: boolean,
-    staff: IStaffResponse
+    staff: any
   ) => {
     try {
       setSelectedStaffId(staff._id);
@@ -85,14 +85,14 @@ export const STAFF_TABLE_COLUMNS = ({
     // {
     //   headerName: 'Permissions',
     //   propertyName: 'permissions',
-    //   body: (staff: IStaffResponse) => {
+    //   body: (staff: any) => {
     //     return staff.permissions.map((v) => v + ', ');
     //   },
     // },
     {
       headerName: t('Status'),
       propertyName: 'status',
-      body: (staff: IStaffResponse) => {
+      body: (staff: any) => {
         return (
           <CustomInputSwitch
             loading={staff._id === selectedStaffId && loading}
@@ -106,7 +106,7 @@ export const STAFF_TABLE_COLUMNS = ({
     },
     {
       propertyName: 'actions',
-      body: (staff: IStaffResponse) => (
+      body: (staff: any) => (
         <ActionMenu items={menuItems} data={staff} />
       ),
     },

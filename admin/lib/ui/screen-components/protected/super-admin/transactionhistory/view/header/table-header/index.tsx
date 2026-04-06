@@ -10,7 +10,7 @@ export default function TransactionHistoryTableHeader({
   onGlobalFilterChange,
   dateFilters,
   setDateFilters,
-}: ITransactionHistoryTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

@@ -41,7 +41,7 @@ export default function ShopTypesForm({
   isEditing,
   visible,
   setIsEditing,
-}: IAddShopTypeProps) {
+}: any) {
   // Hooks
   const { showToast } = useContext(ToastContext);
   const t = useTranslations();

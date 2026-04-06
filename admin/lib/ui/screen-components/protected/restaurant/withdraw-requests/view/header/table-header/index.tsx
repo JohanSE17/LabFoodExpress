@@ -5,7 +5,7 @@ import { IWithdrawRequestsTableHeaderProps } from '@/lib/utils/interfaces/withdr
 export default function WithdrawRequestAdminTableHeader({
   globalFilterValue,
   onGlobalFilterChange,
-}: IWithdrawRequestsTableHeaderProps) {
+}: any) {
   return (
     <div className="mb-4 flex flex-col gap-6">
       <div className="flex-colm:flex-row flex w-fit items-center gap-2">

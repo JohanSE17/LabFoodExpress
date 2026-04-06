@@ -4,7 +4,7 @@
 // Interface
 import { IProvider } from '@/lib/utils/interfaces';
 
-const HomeLayout = ({ children }: IProvider) => {
+const HomeLayout = ({ children }: any) => {
   return <div className="h-full px-4">{children}</div>;
 };
 

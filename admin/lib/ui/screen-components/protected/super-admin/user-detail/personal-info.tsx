@@ -4,7 +4,7 @@ import { IUserResponse } from '@/lib/utils/interfaces/users.interface';
 import { useTranslations } from 'next-intl';
 
 interface PersonalInfoProps {
-  user: IUserResponse;
+  user: any;
 }
 
 const PersonalInfo: React.FC<PersonalInfoProps> = ({ user }) => {

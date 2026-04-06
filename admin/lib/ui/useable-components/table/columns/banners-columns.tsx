@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 export const BANNERS_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IBannersResponse>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -18,7 +18,7 @@ export const BANNERS_TABLE_COLUMNS = ({
     {
       headerName: t('Image'),
       propertyName: 'image',
-      body: (product: IBannersResponse) => {
+      body: (product: any) => {
         const fileUrl = product.file?.toLowerCase() || '';
         const isVideo = fileUrl.includes('.mp4') || fileUrl.includes('.webm') || fileUrl.includes('video');
         
@@ -58,7 +58,7 @@ export const BANNERS_TABLE_COLUMNS = ({
     { headerName: t('Actions'), propertyName: 'action' },
     {
       propertyName: 'actions',
-      body: (banner: IBannersResponse) => (
+      body: (banner: any) => (
         <ActionMenu items={menuItems} data={banner} />
       ),
     },

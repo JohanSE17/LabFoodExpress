@@ -40,7 +40,7 @@ export default function CouponsMain({
   setVisible,
   isEditing,
   setIsEditing,
-}: ICouponMainProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -49,7 +49,7 @@ export default function CouponsMain({
 
   // States
   const [selectedData, setSelectedData] = useState<ICoupon[]>([]);
-  const [isDeleting, setIsDeleting] = useState<IEditState<ICoupon>>({
+  const [isDeleting, setIsDeleting] = useState<IEditState<any>>({
     bool: false,
     data: {
       __typename: '',
@@ -67,7 +67,7 @@ export default function CouponsMain({
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // Filters
-  const filters: IFilterType = {
+  const filters: any = {
     global: { value: globalFilterValue, matchMode: FilterMatchMode.CONTAINS },
 
     enabled: {
@@ -84,7 +84,7 @@ export default function CouponsMain({
     fetchPolicy: 'network-only',
     debounceMs: 5000,
     onCompleted: () => setIsLoading(false),
-  }) as ILazyQueryResult<IGetCouponsData | undefined, undefined>;
+  }) as any<IGetCouponsData | undefined, undefined>;
 
   // Mutations
   const [deleteCoupon, { loading: deleteCouponLoading }] = useMutation(
@@ -134,10 +134,10 @@ export default function CouponsMain({
   }
 
   // Menu Items
-  const menuItems: IActionMenuItem<ICoupon>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: ICoupon) => {
+      command: (data?: any) => {
         if (data) {
           setIsEditing({
             bool: true,
@@ -152,7 +152,7 @@ export default function CouponsMain({
     },
     {
       label: t('Delete'),
-      command: (data?: ICoupon) => {
+      command: (data?: any) => {
         if (data) {
           setIsDeleting({
             bool: true,

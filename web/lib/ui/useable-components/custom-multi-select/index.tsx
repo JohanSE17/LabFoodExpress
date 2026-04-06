@@ -21,7 +21,7 @@ const CustomMultiSelectComponent = ({
   isLoading = false,
   onChange,
   ...props
-}: IMultiSelectComponentProps) => {
+}: any) => {
   const itemTemplate = (option: { label: string }) => {
     return (
       <div className="align-items-center flex">

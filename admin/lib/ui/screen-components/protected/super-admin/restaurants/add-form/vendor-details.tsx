@@ -43,7 +43,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 import CustomPhoneTextField from '@/lib/ui/useable-components/phone-input-field';
 
-const initialValues: IRestauransVendorDetailsForm = {
+const initialValues: any = {
   _id: null,
   name: '',
   email: '',
@@ -57,7 +57,7 @@ const initialValues: IRestauransVendorDetailsForm = {
 export default function VendorDetails({
   stepperProps,
   vendorsDropdown,
-}: IRestaurantsVendorDetailsComponentProps) {
+}: any) {
   // Props
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => {},
@@ -75,7 +75,7 @@ export default function VendorDetails({
 
   // States
   const [formInitialValues, setFormValues] =
-    useState<IRestauransVendorDetailsForm>({
+    useState<any>({
       ...initialValues,
     });
   const [showAddForm, setShowAddForm] = useState<boolean>(false);
@@ -87,7 +87,7 @@ export default function VendorDetails({
   const [createVendor] = useMutation(CREATE_VENDOR, {
     refetchQueries: [{ query: GET_VENDORS }],
     onError,
-    onCompleted: (data: ICreateVendorResponseGraphQL) => {
+    onCompleted: (data: any) => {
       showToast({
         type: 'success',
         title: t('New Vendor'),
@@ -110,7 +110,7 @@ export default function VendorDetails({
 
   // Handlers
   const onVendorSubmitHandler = async (
-    formData: IRestauransVendorDetailsForm
+    formData: any
   ) => {
     try {
       if (showAddForm) {

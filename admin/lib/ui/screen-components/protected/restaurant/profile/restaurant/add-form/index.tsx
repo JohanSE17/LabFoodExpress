@@ -21,7 +21,7 @@ import UpdateBusinessDetails from './update-bussiness-details';
 
 const UpdateRestaurantsProfileForm = ({
   position = 'right',
-}: IRestaurantsAddFormComponentProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
 

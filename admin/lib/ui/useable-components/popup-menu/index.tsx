@@ -20,7 +20,7 @@ import { useEffect, useRef } from 'react';
 export default function CustomPopupMenu<T>({
   close,
   items,
-}: IPopupMenuComponentProps<T>) {
+}: any<T>) {
   //popup ref
   const popupRef = useRef<HTMLDivElement | null>(null);
 
@@ -45,7 +45,7 @@ export default function CustomPopupMenu<T>({
       ref={popupRef}
       className="flex w-full flex-col gap-2 rounded-lg border border-gray-200 dark:bg-dark-900 dark:text-white bg-white shadow-xl"
     >
-      {items.map((item: IPopupMenuItem<T>, index) => {
+      {items.map((item: any<T>, index) => {
         return (
           <button
             key={`${item.title}-${index}`}

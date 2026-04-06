@@ -24,7 +24,7 @@ export default function EarningTableHeader({
   dateFilters,
   setDateFilters,
   onClearFilters,
-}: IEarningTableHeaderProps) {
+}: any) {
   const [errors, setErrors] = useState({ startDate: '', endDate: '' });
   const [userType, setUserType] = useState<UserTypeEnum>();
   // Hooks
@@ -33,7 +33,7 @@ export default function EarningTableHeader({
   // Query
   const { data } = useQueryGQL(GET_STORE_RIDER, {
     fetchPolicy: 'network-only',
-  }) as IQueryResult<IStoreRidersResponse | undefined, undefined>;
+  }) as any<IStoreRidersResponse | undefined, undefined>;
 
   const storesDropdown = useMemo(
     () =>

@@ -22,8 +22,8 @@ import { useRouter } from 'next/navigation';
 
 interface UsersMainProps {
   debouncedSearch: string;
-  registrationMethodFilter: IDropdownSelectItem[];
-  accountStatusFilter: IDropdownSelectItem[];
+  registrationMethodFilter: any[];
+  accountStatusFilter: any[];
 }
 
 export default function UsersMain({
@@ -36,11 +36,11 @@ export default function UsersMain({
   const [limit, setLimit] = useState(10);
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
 
-  const { data, loading } = useQuery<IUsersDataResponse>(GET_USERS, {
+  const { data, loading } = useQuery<any>(GET_USERS, {
     fetchPolicy: 'network-only',
   });
 
-  const allUsers: IUserResponse[] = useMemo(() => data?.users ?? [], [data]);
+  const allUsers: any[] = useMemo(() => data?.users ?? [], [data]);
 
   const filteredUsers = useMemo(() => {
     let currentUsers = allUsers;

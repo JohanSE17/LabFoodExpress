@@ -3,7 +3,7 @@ import { Rating } from 'primereact/rating';
 import { IProfileCardProps } from '@/lib/utils/interfaces';
 import Image from 'next/image';
 
-const ProfileCard: React.FC<IProfileCardProps> = ({
+const ProfileCard: React.FC<any> = ({
   name,
   orderedItems,
   rating,

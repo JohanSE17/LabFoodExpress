@@ -5,6 +5,6 @@ export default function TextComponent({
   title,
   text,
   className,
-}: ITextComponentProps) {
+}: any) {
   return <div title={title} className={` dark:text-white custom-text md:mt-8 lg:mt-0 ${className}`}>{text}</div>;
 }

@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 
 export default function ShopTypeScreenHeader({
   handleButtonClick,
-}: IShopTypesScreenHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   return (

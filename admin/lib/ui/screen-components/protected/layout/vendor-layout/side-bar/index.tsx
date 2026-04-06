@@ -25,7 +25,7 @@ import SidebarItem from './side-bar-item';
 import { onUseLocalStorage } from '@/lib/utils/methods';
 import { useTranslations } from 'next-intl';
 
-function VendorSidebar({ children }: IGlobalComponentProps) {
+function VendorSidebar({ children }: any) {
   // Context
   const { isVendorSidebarVisible } =
     useContext<LayoutContextProps>(LayoutContext);
@@ -59,7 +59,7 @@ export default function MakeVendorSidebar() {
   const lastRoute =
     routeStack.length > 0 ? routeStack[routeStack.length - 1] : null;
 
-  const navBarItems: ISidebarMenuItem[] = [
+  const navBarItems: any[] = [
     {
       text: t('Dashboard'),
       route: '/admin/vendor/dashboard',

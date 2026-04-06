@@ -9,7 +9,7 @@ import { useState } from 'react';
 export default function CustomDateRange({
   dateFilter,
   setDateFilter,
-}: IDashboardDateFilterComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

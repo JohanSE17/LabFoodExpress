@@ -53,7 +53,7 @@ const VendorGrowthOverViewGraph = () => {
       fetchPolicy: 'network-only',
       debounceMs: 300,
     }
-  ) as IQueryResult<
+  ) as any<
     IGetVendorDashboardGrowthDetailsByYearResponseGraphQL | undefined,
     undefined
   >;
@@ -181,7 +181,7 @@ const VendorGrowthOverViewGraph = () => {
 
 const VendorGrowthOverViewTabular = ({
   dateFilter,
-}: IDashboardVendorGrowthOverViewTabularComponentsProps) => {
+}: any) => {
   const {
     vendorLayoutContextData: { vendorId },
   } = useContext(VendorLayoutContext);
@@ -201,11 +201,11 @@ const VendorGrowthOverViewTabular = ({
       fetchPolicy: 'network-only',
       enabled: !!vendorId,
     }
-  ) as IQueryResult<IVendorStoreDetailsResponseGraphQL | undefined, undefined>;
+  ) as any<IVendorStoreDetailsResponseGraphQL | undefined, undefined>;
 
   // Handler
   const handleRowClick = (event: DataTableRowClickEvent) => {
-    const details = event.data as IVendorStoreDetails;
+    const details = event.data as any;
     onUseLocalStorage('save', 'restaurantId', details._id);
     router.push(`/admin/store/`);
   };
@@ -230,7 +230,7 @@ const VendorGrowthOverViewTabular = ({
 export default function VendorGrowthOverView({
   isStoreView,
   dateFilter,
-}: IDashboardGrowthOverviewComponentsProps) {
+}: any) {
   // Add keyword filter to the VendorGrowthOverViewGraphq
   return isStoreView ? (
     <VendorGrowthOverViewTabular dateFilter={dateFilter} />

@@ -20,7 +20,7 @@ export default function CustomRadiusInputField({
   max,
   onChange,
   ...props
-}: ICustomRadiusInputFieldComponentProps) {
+}: any) {
   const MIN_VALUE = 1;
   // const MAX_VALUE = 100;
 

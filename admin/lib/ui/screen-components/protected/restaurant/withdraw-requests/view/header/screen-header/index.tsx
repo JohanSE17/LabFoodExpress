@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 
 export default function WithdrawRequestAdminHeader({
   setIsAddWithdrawRequestVisible,
-}: IWithDrawRequestAdminHeaderProps) {
+}: any) {
   const t = useTranslations();
   return (
     <div className="sticky top-0 z-10 w-full flex-shrink-0 bg-white dark:bg-dark-950 p-3 shadow-sm">

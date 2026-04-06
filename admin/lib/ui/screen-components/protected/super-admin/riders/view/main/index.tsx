@@ -39,7 +39,7 @@ import { useRouter } from 'next/navigation';
 export default function RidersMain({
   setIsAddRiderVisible,
   setRider,
-}: IRidersMainComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { showToast } = useToast();
@@ -56,7 +56,7 @@ export default function RidersMain({
   });
 
   // Query
-  const { data, loading } = useQueryGQL(GET_RIDERS, {}) as IQueryResult<
+  const { data, loading } = useQueryGQL(GET_RIDERS, {}) as any<
     IRidersDataResponse | undefined,
     undefined
   >;
@@ -78,10 +78,10 @@ export default function RidersMain({
     setGlobalFilterValue(value);
   };
 
-  const menuItems: IActionMenuItem<IRiderResponse>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('View'),
-      command: (data?: IRiderResponse) => {
+      command: (data?: any) => {
         if (data) {
           router.push(`/general/riders/${data._id}`);
         }
@@ -89,7 +89,7 @@ export default function RidersMain({
     },
     {
       label: t('Edit'),
-      command: (data?: IRiderResponse) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddRiderVisible(true);
           setRider(data);
@@ -98,7 +98,7 @@ export default function RidersMain({
     },
     {
       label: t('Delete'),
-      command: (data?: IRiderResponse) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }

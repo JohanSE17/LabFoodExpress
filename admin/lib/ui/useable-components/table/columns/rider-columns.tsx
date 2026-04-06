@@ -20,7 +20,7 @@ import { toTextCase } from '@/lib/utils/methods';
 export const RIDER_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IRiderResponse>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -81,18 +81,18 @@ export const RIDER_TABLE_COLUMNS = ({
     {
       headerName: t('Zone'),
       propertyName: 'zone',
-      body: (rider: IRiderResponse) => rider.zone.title,
+      body: (rider: any) => rider.zone.title,
     },
     {
       headerName: t('Vehicle Type'),
       propertyName: 'vehicleType',
-      body: (rider: IRiderResponse) =>
+      body: (rider: any) =>
         toTextCase(rider.vehicleType.replaceAll('_', ' '), 'title'),
     },
     {
       headerName: t('Available'),
       propertyName: 'available',
-      body: (rider: IRiderResponse) => (
+      body: (rider: any) => (
         <CustomInputSwitch
           loading={rider._id === selectedRider.id && (loading || isLoading)}
           isActive={rider.available}
@@ -105,7 +105,7 @@ export const RIDER_TABLE_COLUMNS = ({
     },
     {
       propertyName: 'actions',
-      body: (rider: IRiderResponse) => (
+      body: (rider: any) => (
         <ActionMenu items={menuItems} data={rider} />
       ),
     },

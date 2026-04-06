@@ -14,7 +14,7 @@ import RestaurantSidebar from '@/lib/ui/screen-components/protected/layout/resta
 // Interface
 import { IProvider, LayoutContextProps } from '@/lib/utils/interfaces';
 
-const RestaurantLayout = ({ children }: IProvider) => {
+const RestaurantLayout = ({ children }: any) => {
   // Context
   const { isRestaurantSidebarVisible } =
     useContext<LayoutContextProps>(LayoutContext);

@@ -32,7 +32,7 @@ export default function RidersDetailScreen() {
     {
       fetchPolicy: 'cache-and-network',
     }
-  ) as IQueryResult<IRiderDetailDataResponse | undefined, undefined>;
+  ) as any<IRiderDetailDataResponse | undefined, undefined>;
 
   // Variables
   let rider = data?.rider;

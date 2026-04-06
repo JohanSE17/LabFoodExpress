@@ -54,7 +54,7 @@ const TwilioAddForm = () => {
     }
   );
 
-  const handleSubmit = (values: ITwilioForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         configurationInput: {

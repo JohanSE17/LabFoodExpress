@@ -30,7 +30,7 @@ const DeliveryMain = () => {
   const { restaurantProfileResponse, loading } = useContext(ProfileContext);
   const { showToast } = useContext(ToastContext);
 
-  const initialValues: IRestaurantDeliveryForm = {
+  const initialValues: any = {
     minDeliveryFee: null,
     deliveryDistance: null,
     deliveryFee: null,
@@ -52,7 +52,7 @@ const DeliveryMain = () => {
   });
 
   // Handlers
-  const onCreateDelivery = async (data: IRestaurantDeliveryForm) => {
+  const onCreateDelivery = async (data: any) => {
     try {
       await createRestaurant({
         variables: {

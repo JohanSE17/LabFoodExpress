@@ -69,7 +69,7 @@ import { useTranslations } from 'next-intl';
 import CustomPhoneTextField from '@/lib/ui/useable-components/phone-input-field';
 import { useShopTypes } from '@/lib/hooks/useShopType';
 
-const initialValues: IRestaurantForm = {
+const initialValues: any = {
   name: '',
   username: '',
   password: '',
@@ -88,7 +88,7 @@ const initialValues: IRestaurantForm = {
 
 export default function RestaurantDetails({
   stepperProps,
-}: IAddRestaurantComponentProps) {
+}: any) {
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => {},
     type: '',
@@ -112,7 +112,7 @@ export default function RestaurantDetails({
     onCompleted: ({
       createRestaurant,
     }: {
-      createRestaurant?: ICreateRestaurant;
+      createRestaurant?: any;
     }) => {
       showToast({
         type: 'success',
@@ -131,7 +131,7 @@ export default function RestaurantDetails({
   });
 
   const [isAddShopTypeVisible, setIsAddShopTypeVisible] = useState(false);
-  const [isEditShopType, setIsEditShopType] = useState<IEditState<IShopType>>({
+  const [isEditShopType, setIsEditShopType] = useState<IEditState<any>>({
     bool: false,
     data: {
       __typename: '',
@@ -142,7 +142,7 @@ export default function RestaurantDetails({
     },
   });
   const [isAddCuisineVisible, setIsAddCuisineVisible] = useState(false);
-  const [isEditCuisine, setIsEditCuisine] = useState<IEditState<ICuisine>>({
+  const [isEditCuisine, setIsEditCuisine] = useState<IEditState<any>>({
     bool: false,
     data: {
       _id: '',
@@ -163,20 +163,20 @@ export default function RestaurantDetails({
 
   const cuisineResponse = useQueryGQL(GET_CUISINES, {
     debounceMs: 300,
-  }) as IQueryResult<IGetCuisinesData | undefined, undefined>;
+  }) as any<IGetCuisinesData | undefined, undefined>;
   cuisineResponse.data?.cuisines;
 
   // Memoized Constants
   const cuisinesDropdown = useMemo(
     () =>
-      cuisineResponse.data?.cuisines?.map((cuisin: ICuisine) => {
+      cuisineResponse.data?.cuisines?.map((cuisin: any) => {
         return { label: toTextCase(cuisin.name, 'title'), code: cuisin.name };
       }),
     [cuisineResponse.data?.cuisines]
   );
 
   // Handlers
-  const onCreateRestaurant = async (data: IRestaurantForm) => {
+  const onCreateRestaurant = async (data: any) => {
     try {
       if (!vendorId) {
         showToast({
@@ -220,7 +220,7 @@ export default function RestaurantDetails({
               shopType: data.shopType?.code,
               salesTax: data.salesTax,
               cuisines: data.cuisines.map(
-                (cuisin: IDropdownSelectItem) => cuisin.code
+                (cuisin: any) => cuisin.code
               ),
             },
           },
@@ -249,11 +249,11 @@ export default function RestaurantDetails({
   }
   function update(
     cache: ApolloCache<unknown>,
-    data: ICreateRestaurantResponse
+    data: any
   ): void {
     if (!data) return;
 
-    const cachedData: IRestaurantsByOwnerResponseGraphQL | null =
+    const cachedData: any | null =
       cache.readQuery({
         query: GET_RESTAURANTS_BY_OWNER,
         variables: { id: vendorId },

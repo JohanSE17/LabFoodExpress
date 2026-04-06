@@ -12,7 +12,7 @@ export default function CustomPasswordTextField({
   feedback = true,
   isLoading = false,
   ...props
-}: IPasswordTextFieldProps) {
+}: any) {
   usePrimeReactLocales();
   return !isLoading ? (
     <div className="flex flex-col gap-y-1 rounded-lg dark:bg-gray-800">

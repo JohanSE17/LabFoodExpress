@@ -21,7 +21,7 @@ export default function SubCategoriesPreiwModal({
   subCategoryParentId,
   isSubCategoryModalOpen,
   setIsSubCategoryModalOpen,
-}: ISubCategoriesPreviewModalProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

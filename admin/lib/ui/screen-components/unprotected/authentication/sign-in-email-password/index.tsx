@@ -48,7 +48,7 @@ import { useRouter } from 'next/navigation';
 import { useUserContext } from '@/lib/hooks/useUser';
 import { DEFAULT_ROUTES } from '@/lib/utils/constants/routes';
 
-const initialValues: ISignInForm = {
+const initialValues: any = {
   email: '',
   password: '',
 };
@@ -68,7 +68,7 @@ export default function LoginEmailPasswordMain() {
   });
 
   // API Handlers
-  function onCompleted({ ownerLogin }: IOwnerLoginDataResponse) {
+  function onCompleted({ ownerLogin }: any) {
     onUseLocalStorage('save', `user-${APP_NAME}`, JSON.stringify(ownerLogin));
     setUser(ownerLogin);
     let redirect_url = DEFAULT_ROUTES[ownerLogin.userType];
@@ -103,7 +103,7 @@ export default function LoginEmailPasswordMain() {
   }
 
   // Handler
-  const onSubmitHandler = async (data: ISignInForm) => {
+  const onSubmitHandler = async (data: any) => {
     try {
       await onLogin({
         variables: {

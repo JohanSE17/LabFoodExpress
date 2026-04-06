@@ -9,7 +9,7 @@ import { IAddonHeaderProps } from '@/lib/utils/interfaces';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 
-const AddonHeader = ({ setIsAddAddonVisible }: IAddonHeaderProps) => {
+const AddonHeader = ({ setIsAddAddonVisible }: any) => {
   // Hooks
   const t = useTranslations();
   return (

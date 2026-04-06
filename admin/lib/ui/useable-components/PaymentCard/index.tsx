@@ -13,7 +13,7 @@ export default function PaymentCard({
   icon,
   type,
   isDetailsSubmitted
-}: IPaymentCardProps & { type: TPaymentType }) {
+}: any & { type: TPaymentType }) {
   const LogoComponent = type === 'stripe' ? StripeSVG : null;
 
   // Hooks

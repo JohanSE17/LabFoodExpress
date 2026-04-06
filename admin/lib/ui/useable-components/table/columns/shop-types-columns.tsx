@@ -22,7 +22,7 @@ export const SHOP_TYPES_TABLE_COLUMNS = ({
   menuItems,
 
 }: {
-  menuItems: IActionMenuProps<IShopType>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const { showToast } = useContext(ToastContext);
@@ -68,7 +68,7 @@ export const SHOP_TYPES_TABLE_COLUMNS = ({
   });
 
   // Handlers
-  async function handleEnableField(rowData: IShopType) {
+  async function handleEnableField(rowData: any) {
     setEditShopTypeLoading({
       bool: true,
       _id: rowData._id,
@@ -94,7 +94,7 @@ export const SHOP_TYPES_TABLE_COLUMNS = ({
         {
             headerName: t('Image'),
             propertyName: 'image',
-            body: (rowData: IShopType) => (
+            body: (rowData: any) => (
                   <Image
                     width={40}
                     height={40}
@@ -116,7 +116,7 @@ export const SHOP_TYPES_TABLE_COLUMNS = ({
       {
         headerName: t('Status'),
         propertyName: 'isActive',
-        body: (rowData: IShopType) => {
+        body: (rowData: any) => {
           return (
             <div className="flex w-full cursor-pointer items-center justify-between gap-2">
               <div className="flex w-20 items-start">

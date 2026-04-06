@@ -23,7 +23,7 @@ const VersionConfigAddForm = () => {
   const { data: versionsData } = useQuery(GET_VERSIONS);
 
   // Set initial values from query data
-  const initialValues: IVersionConfigForm = {
+  const initialValues: any = {
     customerAppVersionAndroid: versionsData?.getVersions?.customerAppVersion?.android ?? '',
     customerAppVersionIos: versionsData?.getVersions?.customerAppVersion?.ios ?? '',
     riderAppVersionAndroid: versionsData?.getVersions?.riderAppVersion?.android ?? '',
@@ -38,7 +38,7 @@ const VersionConfigAddForm = () => {
   });
 
   // Handle form submission
-  const handleSubmit = (values: IVersionConfigForm) => {
+  const handleSubmit = (values: any) => {
     mutate({
       variables: {
         customerAppVersion: {

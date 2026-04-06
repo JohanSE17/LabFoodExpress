@@ -8,7 +8,7 @@ import { IQueryResult } from '@/lib/utils/interfaces';
 import { IStepperFormProps } from '../global.interface';
 
 export interface IUpdateProfileProps extends IGlobalComponentProps {
-  stepperProps?: IStepperFormProps;
+  stepperProps?: any;
 }
 
 export interface IProfileProviderProps extends IProvider {}
@@ -18,7 +18,7 @@ export interface IProfileHeaderProps extends IGlobalComponentProps {
 }
 
 export interface IRestaurantData extends IGlobalComponentProps {
-  restaurant: IRestaurantData | undefined;
+  restaurant: any | undefined;
   restaurantName: string;
   username: string;
   password: string;
@@ -51,7 +51,7 @@ export interface IRestaurantData extends IGlobalComponentProps {
     accountName: string;
     accountCode: string;
     accountNumber: number;
-    bussinessType: IDropdownSelectItem;
+    bussinessType: any;
     bussinessRegNo: number;
     companyRegNo: number;
     taxRate: number;
@@ -63,7 +63,7 @@ export interface IRestaurantData extends IGlobalComponentProps {
 }
 
 export interface IRestaurantProfileProps extends IGlobalComponentProps {
-  restaurant: IRestaurantData;
+  restaurant: any;
 }
 
 export interface IInfoItemProps extends IGlobalComponentProps {
@@ -77,7 +77,7 @@ export interface IProfileContextData extends IGlobalComponentProps {
   loading: boolean;
   setIsUpdateProfileVisible: (visible: boolean) => void;
   handleUpdateProfile: () => void;
-  restaurantProfileResponse: IQueryResult<
+  restaurantProfileResponse: any<
     IRestaurantProfileProps | undefined,
     undefined
   >;
@@ -120,7 +120,7 @@ export interface IEditRestaurant extends IGlobalComponentProps {
 // The two interfaces are identical. There are no differences between them.
 export interface IEditRestaurantResponse {
   data?: {
-    editRestaurant?: IEditRestaurant;
+    editRestaurant?: any;
   };
 }
 

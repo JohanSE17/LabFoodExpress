@@ -36,7 +36,7 @@ import { useTranslations } from 'next-intl';
 
 export default function UpdateDelivery({
   stepperProps,
-}: IRestaurantsRestaurantDeliveryComponentProps) {
+}: any) {
   const { onStepChange, order } = stepperProps ?? {
     onStepChange: () => {},
     type: '',
@@ -52,7 +52,7 @@ export default function UpdateDelivery({
   const { restaurantId } = restaurantLayoutContextData;
   const { restaurantProfileResponse } = useContext(ProfileContext);
 
-  const initialValues: IRestaurantDeliveryForm = {
+  const initialValues: any = {
     minDeliveryFee: null,
     deliveryDistance: null,
     deliveryFee: null,
@@ -76,7 +76,7 @@ export default function UpdateDelivery({
   });
 
   // Handlers
-  const onCreateDelivery = async (data: IRestaurantDeliveryForm) => {
+  const onCreateDelivery = async (data: any) => {
     try {
       await createRestaurant({
         variables: {

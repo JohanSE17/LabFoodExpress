@@ -14,7 +14,7 @@ interface MenuItem {
   value: string;
 }
 
-const CommissionRateHeader: React.FC<ICommissionRateHeaderProps> = ({
+const CommissionRateHeader: React.FC<any> = ({
   setSelectedActions,
   selectedActions,
   onSearch,

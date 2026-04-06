@@ -22,7 +22,7 @@ import { useTranslations } from 'next-intl';
 
 export default function UserStats({
   dateFilter,
-}: IDashboardOrderStatsComponentsProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
@@ -45,7 +45,7 @@ export default function UserStats({
       fetchPolicy: 'network-only',
       debounceMs: 300,
     }
-  ) as IQueryResult<
+  ) as any<
     IDashboardRestaurantOrdersSalesStatsResponseGraphQL | undefined,
     undefined
   >;

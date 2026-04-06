@@ -35,7 +35,7 @@ import { useTranslations } from 'next-intl';
 export default function OptionMain({
   setIsAddOptionsVisible,
   setOption,
-}: IOptionsMainComponentsProps) {
+}: any) {
   // Context
   const { restaurantLayoutContextData } = useContext(RestaurantLayoutContext);
   const restaurantId = restaurantLayoutContextData?.restaurantId || '';
@@ -62,7 +62,7 @@ export default function OptionMain({
       onCompleted: onFetchCategoriesByRestaurantCompleted,
       onError: onErrorFetchCategoriesByRestaurant,
     }
-  ) as IQueryResult<IOptionsByRestaurantResponse | undefined, undefined>;
+  ) as any<IOptionsByRestaurantResponse | undefined, undefined>;
 
   //Mutation
   const [deleteCategory, { loading: mutationLoading }] = useMutation(
@@ -102,10 +102,10 @@ export default function OptionMain({
   }
 
   // Constants
-  const menuItems: IActionMenuItem<IOptions>[] = [
+  const menuItems: any<any>[] = [
     {
       label: t('Edit'),
-      command: (data?: IOptions) => {
+      command: (data?: any) => {
         if (data) {
           setIsAddOptionsVisible(true);
           setOption(data);
@@ -114,7 +114,7 @@ export default function OptionMain({
     },
     {
       label: t('Delete'),
-      command: (data?: IOptions) => {
+      command: (data?: any) => {
         if (data) {
           setDeleteId(data._id);
         }

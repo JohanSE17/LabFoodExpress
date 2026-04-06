@@ -43,7 +43,7 @@ export const NOTIFICATIONS_TABLE_COLUMNS = () => {
   );
 
   // Handlers
-  async function handleResendNotification(rowData: INotification) {
+  async function handleResendNotification(rowData: any) {
     await sendNotificationUser({
       variables: {
         notificationTitle: rowData.title,
@@ -66,14 +66,14 @@ export const NOTIFICATIONS_TABLE_COLUMNS = () => {
       {
         headerName: t('Date'),
         propertyName: 'createdAt',
-        body: (rowData: INotification) => {
+        body: (rowData: any) => {
           return <span>{rowData.createdAt}</span>;
         },
       },
       {
         headerName: t('Change Status'),
         propertyName: 'status',
-        body: (rowData: INotification) => (
+        body: (rowData: any) => (
           <CustomButton
             onClick={() => handleResendNotification(rowData)}
             label="Resend"

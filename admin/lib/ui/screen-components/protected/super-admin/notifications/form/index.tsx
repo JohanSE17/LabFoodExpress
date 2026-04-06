@@ -23,7 +23,7 @@ import { ChangeEvent, useContext } from 'react';
 export default function NotificationForm({
   setVisible,
   visible,
-}: INotificationFormProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 

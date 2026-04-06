@@ -39,7 +39,7 @@ import { CarSVG } from '@/lib/utils/assets/svgs/Car';
 import { FrameSVG } from '@/lib/utils/assets/svgs/Frame';
 import { useTranslations } from 'next-intl';
 
-export default function RestaurantCard({ restaurant }: IRestaurantCardProps) {
+export default function RestaurantCard({ restaurant }: any) {
   // Props
   const {
     _id,

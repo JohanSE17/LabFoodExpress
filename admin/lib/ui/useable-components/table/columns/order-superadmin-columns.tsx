@@ -22,7 +22,7 @@ export const ORDER_SUPER_ADMIN_COLUMNS = () => {
     {
       headerName: t('Items'),
       propertyName: 'items',
-      body: (rowData: IExtendedOrder) => {
+      body: (rowData: any) => {
         if (rowData.items && rowData.items.length > 0) {
           return <span>{rowData.items.length} items</span>;
         }
@@ -40,7 +40,7 @@ export const ORDER_SUPER_ADMIN_COLUMNS = () => {
     {
       headerName: t('Created At'),
       propertyName: 'createdAt',
-      body: (rowData: IExtendedOrder) => {
+      body: (rowData: any) => {
         let date: Date | null = null;
         console.log("rowData.createdAt", rowData.createdAt)
         if (rowData?.createdAt) {
@@ -74,13 +74,13 @@ export const ORDER_SUPER_ADMIN_COLUMNS = () => {
     {
       headerName: t('Restaurant'),
       propertyName: 'restaurant.name',
-      body: (rowData: IExtendedOrder) => rowData.restaurant?.name || 'N/A',
+      body: (rowData: any) => rowData.restaurant?.name || 'N/A',
     },
     {
 
       headerName: t('Delivery Address'),
       propertyName: 'deliveryAddress.deliveryAddress',
-      body: (rowData: IExtendedOrder) => (
+      body: (rowData: any) => (
         <div
           className="max-w-[250px] truncate"
           title={rowData.deliveryAddress?.deliveryAddress || 'N/A'}

@@ -13,9 +13,9 @@ import { RESTAURANTS_TABS } from '../../utils/constants';
 
 // Types
 
-export const RestaurantsContext = createContext({} as IRestaurantsContextProps);
+export const RestaurantsContext = createContext({} as any);
 
-export const RestaurantsProvider = ({ children }: IRestaurantsProvider) => {
+export const RestaurantsProvider = ({ children }: any) => {
   // Form Visibility
   const [isRestaurantsFormVisible, setRestaurantsFormVisible] =
     useState<boolean>(false);
@@ -49,7 +49,7 @@ export const RestaurantsProvider = ({ children }: IRestaurantsProvider) => {
   };
 
   // Vendor
-  const onSetRestaurantsContextData = (vendor: IRestaurantsContextPropData) => {
+  const onSetRestaurantsContextData = (vendor: any) => {
     setRestaurantsContextData(vendor);
   };
 
@@ -57,7 +57,7 @@ export const RestaurantsProvider = ({ children }: IRestaurantsProvider) => {
     setCurrentTab(tab);
   };
 
-  const value: IRestaurantsContextProps = {
+  const value: any = {
     // Form Visibility
     isRestaurantsFormVisible,
     onRestaurantsFormVisible,

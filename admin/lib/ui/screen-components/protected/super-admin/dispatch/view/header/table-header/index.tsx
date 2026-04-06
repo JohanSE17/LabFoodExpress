@@ -21,7 +21,7 @@ export default function DispatchTableHeader({
   setSelectedActions,
   search,
   setSearch,
-}: IDispatchTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const {theme } = useTheme()

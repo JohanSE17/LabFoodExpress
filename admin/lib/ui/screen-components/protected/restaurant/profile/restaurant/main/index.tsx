@@ -21,7 +21,7 @@ const RestaurantMain: React.FC = () => {
 
   if (restaurantProfileResponse.loading) return <RestaurantProfileSkeleton />;
 
-  const InfoItem: React.FC<IInfoItemProps> = ({ label, value }) => {
+  const InfoItem: React.FC<any> = ({ label, value }) => {
     // Conditionally render icons based on label
     let icon = null;
     if (label === t('Delivery Time')) {

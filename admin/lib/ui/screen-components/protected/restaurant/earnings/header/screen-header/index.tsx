@@ -10,7 +10,7 @@ import { IEarningsRestaurantHeaderComponentProps } from '@/lib/utils/interfaces/
 
 const EarningsRestaurantHeader = ({
   earnings,
-}: IEarningsRestaurantHeaderComponentProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
 

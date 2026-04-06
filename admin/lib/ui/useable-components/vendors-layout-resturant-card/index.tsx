@@ -44,7 +44,7 @@ import { useTranslations } from 'next-intl';
 
 export default function VendorsLayoutRestaurantCard({
   restaurant,
-}: IRestaurantCardProps) {
+}: any) {
   // Props
   const {
     _id,

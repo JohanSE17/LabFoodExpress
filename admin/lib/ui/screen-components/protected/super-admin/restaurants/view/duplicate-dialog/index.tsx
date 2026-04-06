@@ -35,7 +35,7 @@ const RestaurantDuplicateDialog = ({
   restaurantId,
   visible,
   onHide,
-}: IRestaurantDuplicateDialogComponentProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
 
@@ -43,7 +43,7 @@ const RestaurantDuplicateDialog = ({
   const { showToast } = useContext(ToastContext);
 
   // States
-  const [vendor, setSelectedVendor] = useState<IDropdownSelectItem>({
+  const [vendor, setSelectedVendor] = useState<any>({
     label: '',
     code: '',
   });
@@ -55,7 +55,7 @@ const RestaurantDuplicateDialog = ({
     {
       debounceMs: 300,
     }
-  ) as IQueryResult<IVendorResponseGraphQL | undefined, undefined>;
+  ) as any<IVendorResponseGraphQL | undefined, undefined>;
 
   const [duplicateRestaurant, { loading }] = useMutation(
     DUPLICATE_RESTAURANT,
@@ -96,7 +96,7 @@ const RestaurantDuplicateDialog = ({
   // Memoized Data
   const vendorsDropdown = useMemo(
     () =>
-      vendorResponse?.data?.vendors?.map((vendorItem: IVendorReponse) => {
+      vendorResponse?.data?.vendors?.map((vendorItem: any) => {
         return { label: vendorItem.email, code: vendorItem._id };
       }),
     [vendorResponse?.data?.vendors]
@@ -161,7 +161,7 @@ const RestaurantDuplicateDialog = ({
         placeholder={t('Select Vendor')}
         showLabel={true}
         selectedItem={vendor}
-        setSelectedItem={(key: string, item: IDropdownSelectItem) =>
+        setSelectedItem={(key: string, item: any) =>
           setSelectedVendor(item)
         }
         options={vendorsDropdown ?? []}

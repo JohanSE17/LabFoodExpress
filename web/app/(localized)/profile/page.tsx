@@ -1,5 +1,7 @@
-"use client";
 import dynamic from 'next/dynamic';
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+import { ThemeProvider } from "@/lib/providers/ThemeProvider";
 
 // Dynamically import the component with SSR disabled
 const PersonalInfoScreen = dynamic(
@@ -7,10 +9,16 @@ const PersonalInfoScreen = dynamic(
   { ssr: false }
 );
 
-// import { PersonalInfoScreen } from "@/lib/ui/screens/protected/profile";
+export default async function PersonalInfo() {
+  const locale = await getLocale();
+  const messages = await getMessages({ locale });
 
-export default function PersonalInfo() {
   return (
-    <PersonalInfoScreen/>
-  )
+    <ThemeProvider>
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <PersonalInfoScreen />
+      </NextIntlClientProvider>
+    </ThemeProvider>
+  );
 }
+

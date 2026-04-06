@@ -19,7 +19,7 @@ import FoodDetails from './food.index';
 import VariationAddForm from './variations';
 import { useTranslations } from 'next-intl';
 
-const FoodForm = ({ position = 'right' }: IFoodAddFormComponentProps) => {
+const FoodForm = ({ position = 'right' }: any) => {
   // Hooks
   const t = useTranslations();
 

@@ -47,7 +47,7 @@ export default function SidebarItem({
   isParent,
   isClickable,
   shouldOpenInNewTab, // <-- add this prop
-}: ISidebarMenuItem) {
+}: any) {
   // States
   const [expandSubMenu, setExpandSubMenu] = useState(false);
 

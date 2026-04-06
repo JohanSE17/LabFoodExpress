@@ -26,7 +26,7 @@ import { useTranslations } from 'next-intl';
 export const RESTAURANT_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<IRestaurantResponse>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const t = useTranslations();
@@ -100,7 +100,7 @@ export const RESTAURANT_TABLE_COLUMNS = ({
     {
       headerName: t('Image'),
       propertyName: 'image',
-      body: (restaurant: IRestaurantResponse) => {
+      body: (restaurant: any) => {
         return (
           <Image
             width={30}
@@ -128,7 +128,7 @@ export const RESTAURANT_TABLE_COLUMNS = ({
     {
       headerName: t('Status'),
       propertyName: 'actions',
-      body: (rowData: IRestaurantResponse) => {
+      body: (rowData: any) => {
         return (
           <CustomInputSwitch
             className="prevent-row-click"
@@ -145,7 +145,7 @@ export const RESTAURANT_TABLE_COLUMNS = ({
     {
       headerName: t('Actions'),
       propertyName: 'actions',
-      body: (rowData: IRestaurantResponse) => (
+      body: (rowData: any) => (
         <ActionMenu items={menuItems} data={rowData} />
       ),
     },

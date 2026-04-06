@@ -23,7 +23,7 @@ export const RestaurantLayoutContext =
     {} as RestaurantLayoutContextProps
   );
 
-export const RestaurantLayoutProvider = ({ children }: IProvider) => {
+export const RestaurantLayoutProvider = ({ children }: any) => {
   // States
   const [isAddOptionsVisible, setIsAddOptionsVisible] = useState(false);
   const [option, setOption] = useState<IOptions | null>(null);

@@ -8,7 +8,7 @@ export interface IVendorProfileContextData extends IGlobalComponentProps {
   isUpdateProfileVisible: boolean;
   setIsUpdateProfileVisible: React.Dispatch<React.SetStateAction<boolean>>;
   handleUpdateProfile: () => void;
-  vendorProfileResponse: IQueryResult<
+  vendorProfileResponse: any<
     ISingleVendorResponseGraphQL | undefined,
     undefined
   >;

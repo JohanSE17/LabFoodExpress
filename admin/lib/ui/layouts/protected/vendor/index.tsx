@@ -14,7 +14,7 @@ import VendorSidebar from '@/lib/ui/screen-components/protected/layout/vendor-la
 // Interface
 import { IProvider, LayoutContextProps } from '@/lib/utils/interfaces';
 
-const VendorLayout = ({ children }: IProvider) => {
+const VendorLayout = ({ children }: any) => {
   // Context
   const { isVendorSidebarVisible } =
     useContext<LayoutContextProps>(LayoutContext);

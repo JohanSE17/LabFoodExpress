@@ -8,7 +8,7 @@ export default function DashboardSubHeader({
   handleViewChange,
   dateFilter,
   handleDateFilter,
-}: IDashboardSubHeaderComponentsProps) {
+}: any) {
   const t = useTranslations();
 
   if (!isStoreView || !handleViewChange) return;

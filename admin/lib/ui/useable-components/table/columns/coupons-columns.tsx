@@ -20,7 +20,7 @@ import { useTranslations } from 'next-intl';
 export const COUPONS_TABLE_COLUMNS = ({
   menuItems,
 }: {
-  menuItems: IActionMenuProps<ICoupon>['items'];
+  menuItems: any<any>['items'];
 }) => {
   // Hooks
   const { showToast } = useContext(ToastContext);
@@ -66,7 +66,7 @@ export const COUPONS_TABLE_COLUMNS = ({
   });
 
   // Handlers
-  async function handleEnableField(rowData: ICoupon) {
+  async function handleEnableField(rowData: any) {
     setEditCouponLoading({
       bool: true,
       _id: rowData._id,
@@ -101,21 +101,21 @@ export const COUPONS_TABLE_COLUMNS = ({
       {
         headerName: t('Discount'),
         propertyName: 'discount',
-        body: (rowData: ICoupon) => {
+        body: (rowData: any) => {
           return <span>{rowData.discount}%</span>;
         },
       },
       {
         headerName: t('lifetime_active'),
         propertyName: 'lifeTimeActive',
-        body: (rowData: ICoupon) => {
+        body: (rowData: any) => {
           return <span>{rowData.lifeTimeActive ? t('Yes') : t('No')}</span>;
         },
       },
       {
         headerName: t('Start Date'),
         propertyName: 'startDate',
-        body: (rowData: ICoupon) => {
+        body: (rowData: any) => {
           if (rowData.lifeTimeActive) return <span>{t('Lifetime')}</span>;
           return (
             <span>
@@ -129,7 +129,7 @@ export const COUPONS_TABLE_COLUMNS = ({
       {
         headerName: t('End Date'),
         propertyName: 'endDate',
-        body: (rowData: ICoupon) => {
+        body: (rowData: any) => {
           if (rowData.lifeTimeActive) return <span>{t('Lifetime')}</span>;
           return (
             <span>
@@ -143,7 +143,7 @@ export const COUPONS_TABLE_COLUMNS = ({
       {
         headerName: t('Status'),
         propertyName: 'enabled',
-        body: (rowData: ICoupon) => {
+        body: (rowData: any) => {
           return (
             <div className="flex w-full cursor-pointer items-center justify-between gap-2">
               <div className="flex w-20 items-start">

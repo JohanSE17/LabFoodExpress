@@ -18,11 +18,11 @@ import { VendorLayoutContext } from './layout-vendor.context';
 import { GET_VENDOR_BY_ID } from '@/lib/api/graphql';
 import { useQueryGQL } from '../../hooks/useQueryQL';
 
-export const ProfileContext = createContext<IVendorProfileContextData>(
-  {} as IVendorProfileContextData
+export const ProfileContext = createContext<any>(
+  {} as any
 );
 
-export const ProfileProvider: React.FC<IProfileProviderProps> = ({
+export const ProfileProvider: React.FC<any> = ({
   children,
 }) => {
   const { showToast } = useContext(ToastContext);
@@ -49,7 +49,7 @@ export const ProfileProvider: React.FC<IProfileProviderProps> = ({
         });
       },
     }
-  ) as IQueryResult<ISingleVendorResponseGraphQL | undefined, undefined>;
+  ) as any<ISingleVendorResponseGraphQL | undefined, undefined>;
 
   const handleUpdateProfile = () => {
     setIsUpdateProfileVisible(true);
@@ -69,7 +69,7 @@ export const ProfileProvider: React.FC<IProfileProviderProps> = ({
     }
   }, [vendorId]);
 
-  const value: IVendorProfileContextData = {
+  const value: any = {
     isUpdateProfileVisible,
     setIsUpdateProfileVisible,
     handleUpdateProfile,

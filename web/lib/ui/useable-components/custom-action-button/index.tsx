@@ -8,7 +8,7 @@ export default function CustomActionActionButton({
   selectedOption,
   handleOptionChange,
   name,
-}: IGlobalButtonProps) {
+}: any) {
   return (
     <CustomMultiSelectComponent
       name={name}

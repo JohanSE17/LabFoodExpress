@@ -7,7 +7,7 @@ import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { IZoneHeaderProps } from '@/lib/utils/interfaces';
 import { useTranslations } from 'next-intl';
 
-const ZoneHeader = ({ onSetAddFormVisible }: IZoneHeaderProps) => {
+const ZoneHeader = ({ onSetAddFormVisible }: any) => {
   // Hooks
   const t = useTranslations();
   return (

@@ -49,7 +49,7 @@ export default function VendorCard({
   name,
   image,
   isLast = false,
-}: IVendorCardProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   console.log("isLast...", isLast)

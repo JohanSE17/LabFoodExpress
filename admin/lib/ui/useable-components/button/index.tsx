@@ -12,7 +12,7 @@ export default function CustomButton({
   label,
   type,
   ...props
-}: ICustomButtonProps) {
+}: any) {
   return (
     <Button
       className={`${classes['btn-custom']} ${className}`}

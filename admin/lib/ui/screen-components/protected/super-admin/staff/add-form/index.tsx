@@ -38,12 +38,12 @@ export default function StaffAddForm({
   staff,
   position = 'right',
   isAddStaffVisible,
-}: IStaffAddFormComponentProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
 
   // States
-  const initialValues: IStaffForm = {
+  const initialValues: any = {
     name: '',
     email: '',
     phone: String(staff?.phone) ?? '',
@@ -69,8 +69,8 @@ export default function StaffAddForm({
 
   // Form Submission
   const handleSubmit = (
-    values: IStaffForm,
-    { resetForm }: FormikHelpers<IStaffForm>
+    values: any,
+    { resetForm }: FormikHelpers<any>
   ) => {
     try {
       mutate({
@@ -259,7 +259,7 @@ export default function StaffAddForm({
 
                         <div>
                           <CustomMultiSelectComponent
-                            onChange={(selected: IDropdownSelectItem[]) => {
+                            onChange={(selected: any[]) => {
                               // Check if "Admin" is currently selected
                               const isAdminSelected = selected.some(
                                 (perm) => perm.code === 'Admin'
@@ -268,7 +268,7 @@ export default function StaffAddForm({
                               // Check if "Admin" was previously selected
                               const wasAdminPreviouslySelected =
                                 values.permissions.some(
-                                  (perm: IDropdownSelectItem) =>
+                                  (perm: any) =>
                                     perm.code === 'Admin'
                                 );
 

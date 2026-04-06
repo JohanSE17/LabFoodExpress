@@ -23,7 +23,7 @@ import { useTranslations } from 'next-intl';
 
 const RestaurantsForm = ({
   position = 'right',
-}: IRestaurantsAddFormComponentProps) => {
+}: any) => {
   // Hooks
   const t = useTranslations();
 
@@ -48,7 +48,7 @@ const RestaurantsForm = ({
     // Clean Context State
     onActiveStepChange(0);
     onSetRestaurantFormVisible(false);
-    onSetRestaurantContextData({} as IRestaurantContextData);
+    onSetRestaurantContextData({} as any);
   };
 
   // Use Effect

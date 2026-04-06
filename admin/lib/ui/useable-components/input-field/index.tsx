@@ -12,7 +12,7 @@ export default function CustomTextField({
   isLoading = false,
   error,
   ...props
-}: ITextFieldProps) {
+}: any) {
   return !isLoading ? (
     <div className={`flex w-full flex-col justify-center gap-y-1`}>
       {showLabel && (

@@ -7,7 +7,7 @@ import { IExtendedOrder } from '@/lib/utils/interfaces'; // Import IExtendedOrde
 import { DataTableRowClickEvent } from 'primereact/datatable';
 
 interface OrderHistoryProps {
-  orders: IExtendedOrder[];
+  orders: any[];
   totalRecords: number;
   rowsPerPage: number;
   currentPage: number;
@@ -22,7 +22,7 @@ const OrderHistory: React.FC<OrderHistoryProps> = ({ orders, totalRecords, rowsP
   const [selectedOrder, setSelectedOrder] = useState<IExtendedOrder | null>(null); // Use IExtendedOrder
 
   const handleRowClick = (event: DataTableRowClickEvent) => {
-    setSelectedOrder(event.data as IExtendedOrder);
+    setSelectedOrder(event.data as any);
     setIsModalVisible(true);
   };
 

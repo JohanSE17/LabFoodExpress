@@ -21,7 +21,7 @@ export default function CouponTableHeader({
   onGlobalFilterChange,
   selectedActions,
   setSelectedActions,
-}: ICouponTableHeaderProps) {
+}: any) {
   // Hooks
   const t = useTranslations();
   const { theme } = useTheme();

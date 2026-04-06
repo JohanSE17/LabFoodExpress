@@ -31,7 +31,7 @@ import { EDIT_VENDOR } from '@/lib/api/graphql';
 import CustomPhoneTextField from '@/lib/ui/useable-components/phone-input-field';
 import { useTranslations } from 'next-intl';
 
-const initialValues: IVendorForm = {
+const initialValues: any = {
   name: '',
   email: '',
   password: '',
@@ -52,7 +52,7 @@ export default function VendorUpdateForms() {
   let vendor = vendorProfileResponse.data?.getVendor;
 
   // States
-  const [formInitialValues, setFormValues] = useState<IVendorForm>({
+  const [formInitialValues, setFormValues] = useState<any>({
     ...initialValues,
   });
   const [profileImage, setprofileImage] = useState('');
@@ -66,7 +66,7 @@ export default function VendorUpdateForms() {
   });
 
   // Handlers
-  const onVendorCreate = async (data: IVendorForm) => {
+  const onVendorCreate = async (data: any) => {
     try {
       await updateVendor({
         variables: {

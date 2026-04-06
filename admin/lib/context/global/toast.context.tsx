@@ -16,16 +16,16 @@ import {
   IToastProviderProps,
 } from '@/lib/utils/interfaces/toast.interface';
 
-export const ToastContext = React.createContext<IToastContext>(
-  {} as IToastContext
+export const ToastContext = React.createContext<any>(
+  {} as any
 );
 
-export const ToastProvider: React.FC<IToastProviderProps> = ({ children }) => {
+export const ToastProvider: React.FC<any> = ({ children }) => {
   // Ref
   const toastRef = useRef<Toast>(null);
 
   // Handlers
-  const onShowToast = (config: IToast) => {
+  const onShowToast = (config: any) => {
     toastRef.current?.show({
       severity: config.type,
       life: config.sticky ? undefined : (config?.duration ?? 2500),
@@ -44,7 +44,7 @@ export const ToastProvider: React.FC<IToastProviderProps> = ({ children }) => {
     });
   };
 
-  const value: IToastContext = {
+  const value: any = {
     showToast: onShowToast,
   };
 

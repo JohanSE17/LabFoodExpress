@@ -33,7 +33,7 @@ export const ORDER_COLUMNS = () => {
     {
       headerName: t('Created At'),
       propertyName: 'DateCreated',
-      body: (rowData: IExtendedOrder) => {
+      body: (rowData: any) => {
         const formatedDate = new Date(
           Number(rowData?.createdAt)
         ).toLocaleDateString('en-US', dateOptions);
